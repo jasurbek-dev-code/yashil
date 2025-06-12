@@ -6,6 +6,8 @@ import Gallery from "./Gallery";
 import Hero from "./Hero"
 import NewsCards from "./NewsCards";
 import Statistics from "./Statistics";
+import PartnersCarousel from './PartnersCarousel'
+import ProjectsCarousel from './ProjectsCarousel'
 
 const Section = () => {
     return (
@@ -14,6 +16,8 @@ const Section = () => {
             <Cards />
             <Statistics/>
             <NewsCards/>
+            <ProjectsCarousel/>
+            <PartnersCarousel/>
             <Gallery/>
             <Connection/>
         </div>

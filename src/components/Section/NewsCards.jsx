@@ -52,7 +52,7 @@ const NewsCards = () => {
           <h2 className="text-[30px] text-gray-800 font-bold">
             So'ngi yangiliklar
           </h2>
-          <button className="text-sm text-green-700 border border-green-700 px-4 py-2 rounded-md hover:bg-green-900 hover:text-white transition">
+          <button className="text-sm text-blue-600 border border-blue-600 px-4 py-2 rounded-md hover:bg-blue-600 hover:text-white transition">
             Barchasi
           </button>
         </div>
