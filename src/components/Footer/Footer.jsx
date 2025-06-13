@@ -11,7 +11,7 @@ import telegram from '../../../public/icons/telegram_f.svg'
 const Footer = () => {
   return (
     <footer className="bg-green-900 text-white py-10">
-      <div className="max-w-[1200px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Image src={logo} alt="Logo" width={50} height={50} />
@@ -74,7 +74,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-[1200px] mx-auto mt-10 border-t border-white pt-4 px-4 flex flex-col md:flex-row justify-between text-sm">
+      <div className="max-w-[1400px] mx-auto mt-10 border-t border-white pt-4 px-4 flex flex-col md:flex-row justify-between text-sm">
         <p>© 2025 YASHIL LOYIHA LOYIHALASH INSTITUTI</p>
         <p>So’nggi yangilanish 2023-04-13 (GMT+5)</p>
       </div>

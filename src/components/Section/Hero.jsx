@@ -14,7 +14,7 @@ const Hero = () => {
         priority
       />
 
-      <div className="max-w-[1100px] mx-auto flex flex-wrap gap-10 items-start relative z-10">
+      <div className="max-w-[1300px] mx-auto flex flex-wrap gap-10 items-start relative z-10">
         <h2 className="w-full text-[30px] text-left text-gray-800 font-bold">
           Hududiy boshqarmalar
         </h2>

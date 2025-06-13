@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import Card from "./Card";
 import greenBanner from "../../../public/images/green_banner.svg";
 import Icon1 from "../../../public/icons/card_icon1.svg";
@@ -14,6 +15,8 @@ import icon8 from "../../../public/icons/card_icon8.svg";
 import icon9 from "../../../public/icons/card_icon9.svg";
 
 const Cards = () => {
+  const pathname = usePathname();
+  const isSpecial = pathname.startsWith("/services");
   const data = [
     {
       icon: Icon1,
@@ -80,9 +83,9 @@ const Cards = () => {
         className="-z-20 object-cover"
       />
 
-      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-5 relative z-10">
         <h2 className="text-left text-white text-3xl mb-8 font-semibold">
-          Institut xizmatlari
+          {isSpecial ? "Xizmatlar" : "Institut xizmatlari"}
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data.map((item, index) => (

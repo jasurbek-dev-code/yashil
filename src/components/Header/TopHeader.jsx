@@ -1,13 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TopHeader() {
   return (
-    <div className="w-full">
+    <div className={`w-full`}>
       <header className="flex flex-wrap justify-around items-center py-5 px-5 bg-transparent">
         <div className="flex items-center mb-2 md:mb-0">
-          <img src="/icons/logo.svg" alt="Logo" className="w-16 h-16 mr-3" />
+          <Link href={"/"}>
+            <Image width={20} height={20} src="/icons/logo.svg" alt="Logo" className="w-16 h-16 mr-3" />
+          </Link>
           <h1 className="text-white text-sm md:text-base font-sans leading-tight">
             YASHIL LOYIHA
             <br />

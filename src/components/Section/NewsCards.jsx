@@ -43,7 +43,7 @@ const NewsCards = () => {
   ]
 
   return (
-    <div className="py-14 px-4 max-w-[1200px] mx-auto">
+    <div className="py-14 px-4 max-w-[1400px] mx-auto">
       {/* Wrapper: max-width 1200px + center */}
       {/* <div className="max-w-[1200px] mx-auto"> */}
         
