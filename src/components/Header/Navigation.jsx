@@ -37,12 +37,12 @@ export default function Navigation() {
       </Link>
 
       <Link
-        href="/projects"
+        href="/news"
         className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-2 transition ${
-          pathname.startsWith("/projects") ? "bg-white/10" : "hover:bg-white/10"
+          pathname.startsWith("/news") ? "bg-white/10" : "hover:bg-white/10"
         }`}
       >
-        Loyihalar
+        Yangiliklar
       </Link>
 
       <Link
@@ -51,7 +51,7 @@ export default function Navigation() {
           pathname.startsWith("/standards") ? "bg-white/10" : "hover:bg-white/10"
         }`}
       >
-        Me’yoriy hujjatlar
+        E’lonlar
       </Link>
 
       <Link

@@ -1,14 +1,19 @@
 "use client";
 
+import { usePathname } from 'next/navigation';
 import news1 from '../../../public/images/news1.svg'
 import news2 from '../../../public/images/news2.svg'
 import news3 from '../../../public/images/news3.svg'
 import news4 from '../../../public/images/news4.svg'
 import news5 from '../../../public/images/news5.svg'
 import news6 from '../../../public/images/news6.svg'
+import greenBanner from "../../../public/images/green_banner.svg";
 import NewsCard from './NewsCard';
+import Image from 'next/image';
 
 const NewsCards = () => {
+  const pathname = usePathname();
+  const isSpecial = pathname.startsWith("/news");
   const data = [
     {
       img: news1,
@@ -43,13 +48,17 @@ const NewsCards = () => {
   ]
 
   return (
-    <div className="py-14 px-4 max-w-[1400px] mx-auto">
-      {/* Wrapper: max-width 1200px + center */}
-      {/* <div className="max-w-[1200px] mx-auto"> */}
-        
-        {/* Header: title + button */}
+    <div className="relative bg-cover bg-center bg-no-repeat py-16">
+      {isSpecial ? <Image
+        src={greenBanner}
+        alt="background"
+        fill
+        className="-z-20 object-cover"
+      />
+        : null}
+      <div className={`${isSpecial ? "" : "py-14"} px-4 max-w-[1400px] mx-auto`}>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-[30px] text-gray-800 font-bold">
+          <h2 className={`text-[30px] ${isSpecial ? "text-white" : "text-gray-800"} font-bold`}>
             So'ngi yangiliklar
           </h2>
           <button className="text-sm text-blue-600 border border-blue-600 px-4 py-2 rounded-md hover:bg-blue-600 hover:text-white transition">
@@ -57,7 +66,6 @@ const NewsCards = () => {
           </button>
         </div>
 
-        {/* Cards: 3 column responsive grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.map((item, index) => (
             <NewsCard
@@ -68,8 +76,7 @@ const NewsCards = () => {
             />
           ))}
         </div>
-
-      {/* </div> */}
+      </div>
     </div>
   );
 };

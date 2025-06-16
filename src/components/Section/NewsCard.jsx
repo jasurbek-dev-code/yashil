@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const NewsCard = ({ imageSrc, description, title }) => {
+    const pathname = usePathname();
+    const isSpecial = pathname.startsWith("/news");
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden w-full cursor-pointer">
+    <div className={`${isSpecial ? "bg-transparent" : "bg-white"} rounded-xl shadow-md overflow-hidden w-full cursor-pointer`}>
       {/* Image */}
       <div className="w-full h-48 relative">
         <Image
@@ -18,7 +21,7 @@ const NewsCard = ({ imageSrc, description, title }) => {
       {/* Description and Title */}
       <div className="p-4">
         <p className="text-gray-500 text-sm mb-2">{description}</p>
-        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+        <h3 className={`text-lg font-semibold ${isSpecial ? "text-white" : "text-gray-900"}`}>{title}</h3>
       </div>
     </div>
   );

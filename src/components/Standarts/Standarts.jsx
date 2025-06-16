@@ -56,91 +56,91 @@ export default function Standarts() {
             </thead>
             <tbody>
               <tr>
-                <td className="px-6 py-6 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
+                <td className="text-center px-6 py-6 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
                   SHNK 12341244
                 </td>
                 <td className="px-6 py-6 bg-white border border-gray-300 shadow-sm">
                   Buxgalteriya hisobi va hisobot bo‘limi - Bosh buxgalter
                 </td>
-                <td className="px-6 py-6 bg-white border border-gray-300 rounded-br-lg shadow-sm">
+                <td className="text-center px-6 py-6 bg-white border border-gray-300 rounded-br-lg shadow-sm">
                   <Link href="#" className="text-blue-600 hover:underline">
                     Ochish <span className="text-xs">(UZ/RU)</span>
                   </Link>
                 </td>
               </tr>
               <tr>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
                   SHNK 12341244
                 </td>
                 <td className="px-6 py-4 bg-white border border-gray-300 shadow-sm">
                   Buxgalteriya hisobi va hisobot bo‘limi - Bosh buxgalter
                 </td>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
                   <Link href="#" className="text-blue-600 hover:underline">
                     Ochish <span className="text-xs">(UZ/RU)</span>
                   </Link>
                 </td>
               </tr>
               <tr>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
                   SHNK 12341244
                 </td>
                 <td className="px-6 py-4 bg-white border border-gray-300 shadow-sm">
                   Buxgalteriya hisobi va hisobot bo‘limi - Bosh buxgalter
                 </td>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
                   <Link href="#" className="text-blue-600 hover:underline">
                     Ochish <span className="text-xs">(UZ/RU)</span>
                   </Link>
                 </td>
               </tr>
               <tr>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
                   SHNK 12341244
                 </td>
                 <td className="px-6 py-4 bg-white border border-gray-300 shadow-sm">
                   Buxgalteriya hisobi va hisobot bo‘limi - Bosh buxgalter
                 </td>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
                   <Link href="#" className="text-blue-600 hover:underline">
                     Ochish <span className="text-xs">(UZ/RU)</span>
                   </Link>
                 </td>
               </tr>
               <tr>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
                   SHNK 12341244
                 </td>
                 <td className="px-6 py-4 bg-white border border-gray-300 shadow-sm">
                   Buxgalteriya hisobi va hisobot bo‘limi - Bosh buxgalter
                 </td>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
                   <Link href="#" className="text-blue-600 hover:underline">
                     Ochish <span className="text-xs">(UZ/RU)</span>
                   </Link>
                 </td>
               </tr>
               <tr>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
                   SHNK 12341244
                 </td>
                 <td className="px-6 py-4 bg-white border border-gray-300 shadow-sm">
                   Buxgalteriya hisobi va hisobot bo‘limi - Bosh buxgalter
                 </td>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
                   <Link href="#" className="text-blue-600 hover:underline">
                     Ochish <span className="text-xs">(UZ/RU)</span>
                   </Link>
                 </td>
               </tr>
               <tr>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-bl-lg shadow-sm">
                   SHNK 12341244
                 </td>
                 <td className="px-6 py-4 bg-white border border-gray-300 shadow-sm">
                   Buxgalteriya hisobi va hisobot bo‘limi - Bosh buxgalter
                 </td>
-                <td className="px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
+                <td className="text-center px-6 py-4 bg-white border border-gray-300 rounded-br-lg shadow-sm">
                   <Link href="#" className="text-blue-600 hover:underline">
                     Ochish <span className="text-xs">(UZ/RU)</span>
                   </Link>
@@ -151,11 +151,11 @@ export default function Standarts() {
         </div>
 
         {/* Footer */}
-        <div className="flex justify-between text-gray-500 border-t my-3 px-6 py-4">
+        <div className="flex justify-between text-gray-500 border-t my-3 px-4 py-4">
           <div className="flex items-center gap-2">
-            <Image src={facebook} alt="facebook" height={20} width={20} className="cursor-pointer"/>
-            <Image src={instagram} alt="instagram" height={20} width={20} className="cursor-pointer"/>
-            <Image src={telegram} alt="telegram" height={20} width={20} className="cursor-pointer"/>
+            <Image src={facebook} alt="facebook" height={18} width={18} className="cursor-pointer"/>
+            <Image src={instagram} alt="instagram" height={18} width={18} className="cursor-pointer"/>
+            <Image src={telegram} alt="telegram" height={18} width={18} className="cursor-pointer"/>
           </div>
           <p className="text-[17px] text-gray-500">
             Oxirgi yangilanish: 2023-07-21 10:21:30
