@@ -8,12 +8,12 @@ import TopNavbar from "./TopNavbar";
 
 export default function Header() {
   const pathname = usePathname();
-  const specialRoutes = ['/services', '/documents', '/vacancies', "/news", "/contact"];
+  const specialRoutes = ['/services', '/documents', '/vacancies', "/news", "/contact", "/about"];
   const isSpecial = specialRoutes.some(route => pathname.startsWith(route));
 
   return (
     <div
-      className={`relative w-full ${isSpecial ? "" : "min-h-screen"} overflow-hidden`}
+      className={`relative w-full ${isSpecial ? "" : "min-h-screen"}`}
     >
       {/* Video Background */}
       <video

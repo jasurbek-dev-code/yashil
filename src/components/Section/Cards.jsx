@@ -75,7 +75,7 @@ const Cards = () => {
   ];
 
   return (
-    <div className="relative bg-cover bg-center bg-no-repeat py-16">
+    <div className="relative bg-cover bg-center bg-no-repeat py-16 -z-0">
       <Image
         src={greenBanner}
         alt="background"
@@ -83,7 +83,7 @@ const Cards = () => {
         className="-z-20 object-cover"
       />
 
-      <div className="max-w-[1400px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1520px] mx-auto px-5 relative z-10">
         <h2 className="text-left text-white text-3xl mb-8 font-semibold">
           {isSpecial ? "Xizmatlar" : "Institut xizmatlari"}
         </h2>

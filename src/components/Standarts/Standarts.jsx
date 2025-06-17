@@ -10,7 +10,7 @@ import facebook from "../../../public/icons/facebook-little.png";
 
 export default function Standarts() {
   return (
-    <div className="relative w-full py-10 px-4 md:px-10">
+    <div className="relative w-full py-10 px-4 md:px-10 -z-0">
       {/* Background Image */}
       <Image
         src={greenBanner}
@@ -22,7 +22,7 @@ export default function Standarts() {
       />
 
       {/* Radiusli container */}
-      <div className="relative z-10 bg-white backdrop-blur-md rounded-2xl shadow-xl max-w-[1400px] mx-auto overflow-hidden">
+      <div className="relative z-10 bg-white backdrop-blur-md rounded-2xl shadow-xl max-w-[1500px] mx-auto overflow-hidden">
 
         {/* Breadcrumb */}
         <div className="px-6 pt-6 text-sm text-gray-600 flex justify-between">

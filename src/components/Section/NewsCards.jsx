@@ -56,7 +56,7 @@ const NewsCards = () => {
         className="-z-20 object-cover"
       />
         : null}
-      <div className={`${isSpecial ? "" : "py-14"} px-4 max-w-[1400px] mx-auto`}>
+      <div className={`${isSpecial ? "" : "py-14"} px-4 max-w-[1520px] mx-auto`}>
         <div className="flex items-center justify-between mb-6">
           <h2 className={`text-[30px] ${isSpecial ? "text-white" : "text-gray-800"} font-bold`}>
             So'ngi yangiliklar

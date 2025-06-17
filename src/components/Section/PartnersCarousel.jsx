@@ -72,7 +72,7 @@ const PartnersCarousel = () => {
   };
 
   return (
-    <div className="mx-auto px-4 py-8 max-w-[1400px]">
+    <div className="mx-auto px-4 py-8 max-w-[1520px]">
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Hamkorlarimiz</h2>
 
       <div className="relative">

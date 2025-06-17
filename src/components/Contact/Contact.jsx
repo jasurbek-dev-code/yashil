@@ -35,9 +35,9 @@ export default function Contact() {
         reset();
     };
     return (
-        <div className="relative w-full py-10 px-4 md:px-10">
+        <div className="relative w-full py-10 px-4 md:px-10 -z-0">
             {/* Container */}
-            <div className="relative z-10 bg-white backdrop-blur-md rounded-2xl shadow-xl max-w-[1400px] mx-auto overflow-hidden">
+            <div className="relative z-10 bg-white backdrop-blur-md rounded-2xl shadow-xl max-w-[1500px] mx-auto overflow-hidden">
                 {/* Breadcrumb */}
                 <div className="px-6 pt-6 text-sm text-gray-600 flex justify-between">
                     <div>
