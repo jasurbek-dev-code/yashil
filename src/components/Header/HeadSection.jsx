@@ -17,7 +17,7 @@ export default function HeadSection() {
         o‘zgarishi vazirligi faoliyati”
       </p>
 
-      <button className="bg-[#0d3d0d] text-white border-none px-8 py-[18px] text-[16px] rounded-md cursor-pointer mt-[20px] mb-[10px] hover:bg-[#0d3d0d] transition">
+      <button className="bg-[#0d3d0d] text-white border-none px-8 py-[12px] text-[16px] rounded-md cursor-pointer mt-[20px] mb-[10px] hover:bg-[#0d3d0d] transition">
         Barchasi
       </button>
 

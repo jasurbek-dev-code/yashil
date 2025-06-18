@@ -65,7 +65,7 @@ const ProjectsCarousel = () => {
         className="-z-20 object-cover"
       />
 
-      <div className="max-w-[1520px] mx-auto px-4 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 relative z-10">
         <h2 className="text-3xl font-bold text-white mb-8 text-center">
           Loyihalar
         </h2>

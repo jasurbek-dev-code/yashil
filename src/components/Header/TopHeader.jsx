@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function TopHeader() {
   return (
-    <div className={`w-full`}>
-      <header className="flex flex-wrap justify-between items-center py-5 px-5 lg:px-48 bg-transparent">
+    <div className="w-full px-5">
+      <header className="max-w-[1200px] mx-auto flex flex-wrap justify-between items-center py-5 bg-transparent">
         <div className="flex items-center mb-2 md:mb-0">
-          <Link href={"/"}>
+          <Link href="/">
             <Image width={20} height={20} src="/icons/logo.svg" alt="Logo" className="w-16 h-16 mr-3" />
           </Link>
           <h1 className="text-white text-sm md:text-base font-sans leading-tight">
@@ -36,7 +36,6 @@ export default function TopHeader() {
               className="w-3.5 h-3.5 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none"
             />
           </div>
-
 
           <div className="w-10 h-10 flex items-center justify-center border-2 border-white rounded-md text-white hover:border-green-900 cursor-pointer transition-colors">
             <Image src="/icons/search-normal.svg" alt="Ser" width={20} height={20} />

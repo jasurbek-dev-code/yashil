@@ -22,7 +22,7 @@ export default function Standarts() {
       />
 
       {/* Radiusli container */}
-      <div className="relative z-10 bg-white backdrop-blur-md rounded-2xl shadow-xl max-w-[1500px] mx-auto overflow-hidden">
+      <div className="relative z-10 bg-white backdrop-blur-md rounded-2xl shadow-xl max-w-[1200px] mx-auto overflow-hidden">
 
         {/* Breadcrumb */}
         <div className="px-6 pt-6 text-sm text-gray-600 flex justify-between">
@@ -153,11 +153,11 @@ export default function Standarts() {
         {/* Footer */}
         <div className="flex justify-between text-gray-500 border-t my-3 px-4 py-4">
           <div className="flex items-center gap-2">
-            <Image src={facebook} alt="facebook" height={18} width={18} className="cursor-pointer"/>
-            <Image src={instagram} alt="instagram" height={18} width={18} className="cursor-pointer"/>
-            <Image src={telegram} alt="telegram" height={18} width={18} className="cursor-pointer"/>
+            <Image src={facebook} alt="facebook" height={18} width={18} className="cursor-pointer" />
+            <Image src={instagram} alt="instagram" height={18} width={18} className="cursor-pointer" />
+            <Image src={telegram} alt="telegram" height={18} width={18} className="cursor-pointer" />
           </div>
-          <p className="text-[17px] text-gray-500">
+          <p className="text-[15px] text-gray-500">
             Oxirgi yangilanish: 2023-07-21 10:21:30
           </p>
         </div>

@@ -22,7 +22,7 @@ export default function Vacancies() {
       />
 
       {/* Radiusli container */}
-      <div className="relative z-10 bg-white backdrop-blur-md rounded-[20px] shadow-xl max-w-[1500px] mx-auto overflow-hidden">
+      <div className="relative z-10 bg-white backdrop-blur-md rounded-[20px] shadow-xl max-w-[1200px] mx-auto overflow-hidden">
 
         {/* Breadcrumb */}
         <div className="px-6 pt-6 text-sm text-gray-600 flex justify-between">
