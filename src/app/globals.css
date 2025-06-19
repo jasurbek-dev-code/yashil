@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 html, body {
-  /* overflow-x: hidden; */
-  overflow: visible !important;
+  overflow-x: hidden;
   z-index: 0 !important;
 }

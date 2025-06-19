@@ -11,7 +11,7 @@ import facebook from "../../../public/icons/facebook-little.png";
 
 export default function AboutStructure() {
     return (
-        <div className="relative w-full pr-4 -z-0">
+        <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
 
             {/* Radiusli container */}
             <div className="relative z-10 bg-white backdrop-blur-md rounded-2xl shadow-xl max-w-[1000px] mx-auto overflow-hidden">
@@ -27,7 +27,7 @@ export default function AboutStructure() {
 
                 {/* Sarlavha */}
                 <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300">
-                    <h1 className="text-xl font-bold text-gray-800">Tashkiliy tuzilma</h1>
+                    <h1 className="text-[28px] font-bold text-gray-800">Tashkiliy tuzilma</h1>
                 </div>
 
                 {/* Jadval */}

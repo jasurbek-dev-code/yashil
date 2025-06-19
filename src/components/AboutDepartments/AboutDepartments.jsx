@@ -12,7 +12,7 @@ import telegram from "../../../public/icons/telegram-little.png";
 import instagram from "../../../public/icons/instagram-little.png";
 import facebook from "../../../public/icons/facebook-little.png";
 
-export default function AboutLeadership() {
+export default function AboutDepartments() {
     return (
         <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
 
@@ -22,7 +22,7 @@ export default function AboutLeadership() {
                 {/* Breadcrumb */}
                 <div className="px-6 pt-6 text-sm text-gray-600 flex justify-between">
                     <div>
-                        <Link href="/" className="hover:underline">Asosiy</Link> / Rahbariyat
+                        <Link href="/" className="hover:underline">Asosiy</Link> / Bo’lim tarkibi
                     </div>
 
                     <div className="text-gray-500 text-sm flex gap-1"><Image src={eye} alt="eye" height={20} width={20} /> <p>326</p></div>
@@ -30,7 +30,7 @@ export default function AboutLeadership() {
 
                 {/* Sarlavha */}
                 <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300">
-                    <h1 className="text-[28px] font-bold text-gray-800">Rahbariyat</h1>
+                    <h1 className="text-[28px] font-bold text-gray-800">Bo’lim tarkibi</h1>
                 </div>
                 {/* Card */}
                 <div className="flex flex-wrap md:flex-nowrap items-start gap-6 rounded-xl p-6">

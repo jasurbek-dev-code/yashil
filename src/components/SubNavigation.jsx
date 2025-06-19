@@ -8,12 +8,13 @@ import arrowUpBlack from '../../public/icons/arrow-up-black.svg'
 
 
 const subLinks = [
-  { title: "Umumiy ma'lumotlar", href: "/about/overview" },
-  { title: "Rahbariyat", href: "/about/leadership" },
-  { title: "Bo‘limlar", href: "/about/departments" },
-  { title: "Faoliyat", href: "/about/activity" },
+  { title: "Intitut haqida", href: "/about/overview" },
+  { title: "Bo’lim tarkibi", href: "/about/departments" },
   { title: "Tashkiliy tuzilma", href: "/about/structure" },
-  { title: "Quyi tashkilotlar", href: "/about/suborganizations" },
+  { title: "Rahbariyat", href: "/about/leadership" },
+  { title: "Markaziy apparat", href: "/about/center-apparat" },
+  { title: "Hududiy filiallar", href: "/about/suborganizations" },
+  { title: "Bo’sh ish o’rinlari", href: "/about/vacancies" },
 ];
 
 export default function SubNavigation() {

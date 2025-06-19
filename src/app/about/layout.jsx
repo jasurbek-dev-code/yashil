@@ -13,11 +13,11 @@ export default function AboutLayout({ children }) {
       />
       <main className="max-w-[1200px] mx-auto relative z-10">
         <div className="flex flex-col-reverse lg:flex-row">
-          <div className="flex-1 mt-3 ml-3 lg:mt-0">
+          <div className="flex-1 mt-3 lg:mt-0">
             {children}
           </div>
 
-          <div className="w-full lg:w-[267px] pl-3 lg:pl-0 lg:pr-3">
+          <div className="w-full lg:w-[267px] pr-4 lg:pr-0 pl-4 lg:pl-0">
             <SubNavigation />
           </div>
         </div>

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import greenBanner from "../../../public/images/green_banner.svg";
 import eye from "../../../public/icons/eye-little.svg";
 import telegram from "../../../public/icons/telegram-little.png";
 import instagram from "../../../public/icons/instagram-little.png";
@@ -10,17 +9,7 @@ import facebook from "../../../public/icons/facebook-little.png";
 
 export default function Vacancies() {
   return (
-    <div className="relative w-full py-10 px-4 md:px-10 -z-0">
-      {/* Background Image */}
-      <Image
-        src={greenBanner}
-        alt="background"
-        fill
-        className="-z-20 object-cover"
-        quality={100}
-        priority
-      />
-
+    <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
       {/* Radiusli container */}
       <div className="relative z-10 bg-white backdrop-blur-md rounded-[20px] shadow-xl max-w-[1200px] mx-auto overflow-hidden">
 
@@ -37,7 +26,7 @@ export default function Vacancies() {
 
         {/* Sarlavha */}
         <div className="flex justify-between items-center px-6 py-4">
-          <h1 className="text-2xl font-bold text-gray-800">Bo’sh ish o‘rinlari</h1>
+          <h1 className="text-[28px] font-bold text-gray-800">Bo’sh ish o‘rinlari</h1>
         </div>
 
         {/* Jadval */}
