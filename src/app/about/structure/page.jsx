@@ -1,4 +1,4 @@
-import AboutStructure from "@/components/AboutStructure/AboutStructure";
+import AboutStructure from "@/components/About/AboutStructure";
 
 export default function StructurePage() {
   return (

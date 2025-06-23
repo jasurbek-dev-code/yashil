@@ -1,4 +1,4 @@
-import AboutLeadership from "@/components/AboutLeadership/AboutLeadership";
+import AboutLeadership from "@/components/About/AboutLeadership";
 
 
 export default function LeadershipPage() {

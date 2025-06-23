@@ -69,12 +69,15 @@ export default function AboutSubOrganizations() {
                 </div>
 
                 {/* Footer */}
-                <div className="flex justify-between items-center text-gray-500 px-4 pb-4 text-[17px]">
+                <div className="flex justify-between text-gray-500 border-t my-3 px-4 py-4">
                     <div className="flex items-center gap-2">
                         <Image src={facebook} alt="facebook" height={18} width={18} className="cursor-pointer" />
                         <Image src={instagram} alt="instagram" height={18} width={18} className="cursor-pointer" />
                         <Image src={telegram} alt="telegram" height={18} width={18} className="cursor-pointer" />
                     </div>
+                    <p className="text-[15px] text-gray-500">
+                        Oxirgi yangilanish: 2023-07-21 10:21:30
+                    </p>
                 </div>
             </div>
         </div>

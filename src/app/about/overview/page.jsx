@@ -1,4 +1,4 @@
-import AboutOverview from '../../../components/AboutOverview/AboutOverview'
+import AboutOverview from '../../../components/About/AboutOverview'
 
 export default function OverviewPage() {
   return (

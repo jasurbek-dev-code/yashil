@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import arrowUp from '../../public/icons/arrow-up.svg'
-import arrowUpBlack from '../../public/icons/arrow-up-black.svg'
+import arrowUp from '../../../public/icons/arrow-up.svg'
+import arrowUpBlack from '../../../public/icons/arrow-up-black.svg'
 
 
 const subLinks = [

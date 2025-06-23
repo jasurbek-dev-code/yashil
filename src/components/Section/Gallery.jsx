@@ -28,7 +28,7 @@ const Gallery = () => {
         className="-z-20 object-cover"
       />
 
-      <section className="max-w-[1200px] mx-auto px-4 py-12">
+      <section className="max-w-[1200px] mx-auto px-4 lg:px-0 py-12">
         <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
           <h2 className="text-3xl font-bold text-white">Galereya</h2>
           <button className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">

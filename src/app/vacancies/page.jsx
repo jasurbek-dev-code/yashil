@@ -1,4 +1,4 @@
-import Vacancies from "@/components/AboutVacancies/AboutVacancies";
+import Vacancies from "@/components/About/AboutVacancies";
 
 export default function VacanciesPage() {
     return (

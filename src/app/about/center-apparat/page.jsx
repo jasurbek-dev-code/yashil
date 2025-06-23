@@ -1,4 +1,4 @@
-import AboutCenterApparat from "@/components/AboutCenterApparat/AboutCenterApparat";
+import AboutCenterApparat from "@/components/About/AboutCenterApparat";
 
 
 export default function CenterPage() {

@@ -3,68 +3,96 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import arrowDown from '../../../public/icons/arrow-down.svg'
 import Image from "next/image";
+import arrowDown from "../../../public/icons/arrow-down.svg";
 
 export default function Navigation() {
   const pathname = usePathname();
-  const [isHovered, setIsHovered] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
 
   return (
     <div className="bg-[#0d3d0d] w-full px-4">
       <nav className="max-w-[1200px] mx-auto flex flex-wrap justify-between py-2 gap-4 font-sans">
+        {/* Yashil loyiha */}
         <div
           className="relative z-[9999]"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={() => setHoveredItem("about")}
+          onMouseLeave={() => setHoveredItem(null)}
         >
           <div
-            className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-2 transition ${pathname.startsWith("/about") ? "bg-white/10" : "hover:bg-white/10"
+            className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${pathname.startsWith("/about") ? "bg-white/10" : "hover:bg-white/10"
               }`}
           >
-            Yashil loyiha{" "}
-            <span className="text-[22px] ml-1">
-              <Image src={arrowDown} alt="arrow down" height={14} width={14} />
-            </span>
+            Yashil loyiha
+            <Image src={arrowDown} alt="arrow" width={14} height={14} />
           </div>
-          {isHovered && (
-            <div className="absolute top-full left-0 mt-0 w-48 transition duration-300 bg-white shadow-lg rounded-md py-2 z-[999]">
-              <Link href="/about/overview" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 text-[16px]">
-                Institut haqida
-              </Link>
-              <Link href="/about/departments" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 text-[16px]">
-                Bo’limlar
-              </Link>
-              <Link href="/about/structure" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 text-[16px]">
-                Tashkiliy tuzilma
-              </Link>
-              <Link href="/about/leadership" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 text-[16px]">
-                Rahbariyat
-              </Link>
-              <Link href="/about/center-apparat" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 text-[16px]">
-                Markaziy apparat
-              </Link>
-              <Link href="/about/suborganizations" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 text-[16px]">
-                Hududiy filiallar
-              </Link>
-              <Link href="/about/vacancies" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 text-[16px]">
-                Bo’sh ish o’rinlari
-              </Link>
+
+          {hoveredItem === "about" && (
+            <div className="absolute top-full left-0 mt-0 w-48 bg-white shadow-lg rounded-md py-2 z-[999]">
+              <Link href="/about/overview" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Institut haqida</Link>
+              <Link href="/about/departments" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Bo‘limlar</Link>
+              <Link href="/about/structure" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Tashkiliy tuzilma</Link>
+              <Link href="/about/leadership" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Rahbariyat</Link>
+              <Link href="/about/center-apparat" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Markaziy apparat</Link>
+              <Link href="/about/suborganizations" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Hududiy filiallar</Link>
+              <Link href="/about/vacancies" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Bo‘sh ish o‘rinlari</Link>
             </div>
           )}
         </div>
 
-        <Link
-          href="/services"
-          className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-2 transition ${pathname.startsWith("/services") ? "bg-white/10" : "hover:bg-white/10"
-            }`}
+        {/* Xizmatlar */}
+        <div
+          className="relative z-[9999]"
+          onMouseEnter={() => setHoveredItem("services")}
+          onMouseLeave={() => setHoveredItem(null)}
         >
-          Xizmatlar
-        </Link>
+          <div
+            className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${pathname.startsWith("/services") ? "bg-white/10" : "hover:bg-white/10"
+              }`}
+          >
+            Xizmatlar
+            <Image src={arrowDown} alt="arrow" width={14} height={14} />
+          </div>
+          {hoveredItem === "services" && (
+            <div className="absolute top-full left-0 mt-0 w-48 bg-white shadow-lg rounded-md py-2 z-[999]">
+              <Link href="/services/forest-fund" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">O‘rmon fondi yerlarini xatlovdan o‘tkazish</Link>
+              <Link href="/services/cartographic-geoinformation" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Kartografik geoaxborot tizimini ishlab chiqish</Link>
+              <Link href="/services/geodesy-topography-mine" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Geodeziya, topografiya va marksheyderlik ishlari</Link>
+              <Link href="/services/project-exploration-works" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Loyiha qidiruv ishlari</Link>
+              <Link href="/services/architectural-design" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Arxitektura va dizaynerlik xizmatlari</Link>
+              <Link href="/services/scientific-and-methodological" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Ilmiy metodologik xizmatlar</Link>
+              <Link href="/services/author-supervision" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Mualliflik nazorati</Link>
+              <Link href="/services/project-cost-estimate" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Loyiha smeta xujjatlarini ishlab chiqish</Link>
+            </div>
+          )}
+        </div>
 
+        {/* Axborot xizmati */}
+        <div
+          className="relative z-[9999]"
+          onMouseEnter={() => setHoveredItem("news")}
+          onMouseLeave={() => setHoveredItem(null)}
+        >
+          <div
+            className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${pathname.startsWith("/news") ? "bg-white/10" : "hover:bg-white/10"
+              }`}
+          >
+            Axborot xizmati
+            <Image src={arrowDown} alt="arrow" width={14} height={14} />
+          </div>
+          {hoveredItem === "news" && (
+            <div className="absolute top-full left-0 mt-0 w-48 bg-white shadow-lg rounded-md py-2 z-[999]">
+              <Link href="/news/institute-news" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Institut yangiliklari</Link>
+              <Link href="/news/photo-report" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Fotoreportaj</Link>
+              <Link href="/news/video-report" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Videoreportaj</Link>
+            </div>
+          )}
+        </div>
+
+        {/* Qolgan menyular */}
         <Link
           href="/documents"
-          className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-2 transition ${pathname.startsWith("/documents") ? "bg-white/10" : "hover:bg-white/10"
+          className={`text-white text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/documents") ? "bg-white/10" : "hover:bg-white/10"
             }`}
         >
           Normativ hujjatlar
@@ -72,23 +100,14 @@ export default function Navigation() {
 
         <Link
           href="/vacancies"
-          className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-2 transition ${pathname.startsWith("/vacancies") ? "bg-white/10" : "hover:bg-white/10"
+          className={`text-white text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/vacancies") ? "bg-white/10" : "hover:bg-white/10"
             }`}
         >
           Bo‘sh ish o‘rinlari
         </Link>
-
-        <Link
-          href="/news"
-          className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-2 transition ${pathname.startsWith("/news") ? "bg-white/10" : "hover:bg-white/10"
-            }`}
-        >
-          Yangiliklar
-        </Link>
-
         <Link
           href="/standards"
-          className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-2 transition ${pathname.startsWith("/standards") ? "bg-white/10" : "hover:bg-white/10"
+          className={`text-white text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/standards") ? "bg-white/10" : "hover:bg-white/10"
             }`}
         >
           E’lonlar
@@ -96,7 +115,7 @@ export default function Navigation() {
 
         <Link
           href="/contact"
-          className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-2 transition ${pathname.startsWith("/contact") ? "bg-white/10" : "hover:bg-white/10"
+          className={`text-white text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/contact") ? "bg-white/10" : "hover:bg-white/10"
             }`}
         >
           Bog‘lanish

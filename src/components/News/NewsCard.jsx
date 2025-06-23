@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const NewsCard = ({ imageSrc, description, title }) => {
   return (
-    <div className={`bg-white rounded-xl shadow-md overflow-hidden w-full cursor-pointer`}>
+    <div className={`bg-white overflow-hidden w-full cursor-pointer`}>
       {/* Image */}
       <div className="w-full h-48 relative">
         <Image
@@ -16,7 +16,7 @@ const NewsCard = ({ imageSrc, description, title }) => {
       </div>
 
       {/* Description and Title */}
-      <div className="p-4">
+      <div className="py-4">
         <p className="text-gray-500 text-sm mb-2">{description}</p>
         <h3 className={`text-[15px] font-semibold "text-gray-900"}`}>{title}</h3>
       </div>

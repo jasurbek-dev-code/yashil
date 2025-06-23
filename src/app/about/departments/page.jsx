@@ -1,4 +1,4 @@
-import AboutDepartments from "@/components/AboutDepartments/AboutDepartments";
+import AboutDepartments from "@/components/About/AboutDepartments";
 
 
 export default function DepartmentsPage() {

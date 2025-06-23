@@ -2,7 +2,7 @@
 
 const Statistics = () => {
   return (
-    <div className="bg-green-900 py-10 text-white">
+    <div className="bg-green-900 py-10 px-4 lg:px-0 text-white">
       <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
           <p className="text-5xl">50</p>

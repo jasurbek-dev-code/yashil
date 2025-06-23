@@ -1,4 +1,4 @@
-import AboutSubOrganizations from "@/components/AboutSubOrganizations/AboutSubOrganizations";
+import AboutSubOrganizations from "@/components/About/AboutSubOrganizations";
 
 export default function SubOrganizationsPage() {
   return (

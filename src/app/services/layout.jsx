@@ -1,8 +1,8 @@
 import Image from "next/image";
-import SubNavigation from "@/components/About/AboutNavigation";
+import SubNavigation from "@/components/Services/ServicesNavigation";
 import greenBanner from "../../../public/images/green_banner.svg";
 
-export default function AboutLayout({ children }) {
+export default function ServicesLayout({ children }) {
   return (
     <div className="relative bg-cover bg-center bg-no-repeat py-16 -z-0">
       <Image

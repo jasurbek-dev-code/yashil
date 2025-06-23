@@ -83,7 +83,7 @@ const Cards = () => {
         className="-z-20 object-cover"
       />
 
-      <div className="max-w-[1200px] mx-auto px-5 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 lg:px-0 relative z-10">
         <h2 className="text-left text-white text-3xl mb-8 font-semibold">
           {isSpecial ? "Xizmatlar" : "Institut xizmatlari"}
         </h2>
