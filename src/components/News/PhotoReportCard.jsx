@@ -10,7 +10,7 @@ const PhotoReportCard = ({ imageSrc }) => {
           src={imageSrc}
           alt={"Foto reportaj"}
           fill
-          className="object-cover"
+          className="object-cover rounded-xl"
         />
       </div>
     </div>

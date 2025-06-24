@@ -2,32 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import greenBanner from "../../../public/images/green_banner.svg";
 import eye from "../../../public/icons/eye-little.svg";
 import telegram from "../../../public/icons/telegram-little.png";
 import instagram from "../../../public/icons/instagram-little.png";
 import facebook from "../../../public/icons/facebook-little.png";
 
-export default function Standarts() {
+export default function CertificateAndLicense() {
   return (
-    <div className="relative w-full py-10 px-4 md:px-10 -z-0">
-      {/* Background Image */}
-      <Image
-        src={greenBanner}
-        alt="background"
-        fill
-        className="-z-20 object-cover"
-        quality={100}
-        priority
-      />
-
+    <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
       {/* Radiusli container */}
       <div className="relative z-10 bg-white backdrop-blur-md rounded-2xl shadow-xl max-w-[1200px] mx-auto overflow-hidden">
 
         {/* Breadcrumb */}
         <div className="px-6 pt-6 text-sm text-gray-600 flex justify-between">
           <div>
-            <Link href="/" className="hover:underline">Asosiy</Link> / Me’yoriy hujjatlar
+            <Link href="/" className="hover:underline">Asosiy</Link> / Loyiha institutining guvoxnoma va litsensiyasi
           </div>
 
           <div className="text-gray-500 text-sm flex gap-1"><Image src={eye} alt="eye" height={20} width={20} /> <p>326</p></div>
@@ -35,7 +24,7 @@ export default function Standarts() {
 
         {/* Sarlavha */}
         <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300">
-          <h1 className="text-xl font-bold text-gray-800">Me’yoriy hujjatlar</h1>
+          <h1 className="text-xl font-bold text-gray-800">Loyiha institutining guvoxnoma va litsensiyasi</h1>
         </div>
 
         {/* Jadval */}

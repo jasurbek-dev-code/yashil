@@ -89,28 +89,56 @@ export default function Navigation() {
           )}
         </div>
 
-        {/* Qolgan menyular */}
-        <Link
-          href="/documents"
-          className={`text-white text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/documents") ? "bg-white/10" : "hover:bg-white/10"
-            }`}
-        >
-          Normativ hujjatlar
+        {/* Davlat Xizmatlari */}
+        <Link href="https://e-auksion.uz/home" target="_blank">
+          <div
+            className="relative z-[9999]"
+          >
+            <div
+              className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition hover:bg-white/10`}
+            >
+              Davlat xizmatlari
+              <Image src={arrowDown} alt="arrow" width={14} height={14} />
+            </div>
+          </div>
         </Link>
 
-        <Link
-          href="/vacancies"
-          className={`text-white text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/vacancies") ? "bg-white/10" : "hover:bg-white/10"
-            }`}
+        {/* Normativ hujjatlar */}
+        <div
+          className="relative z-[9999]"
+          onMouseEnter={() => setHoveredItem("docs")}
+          onMouseLeave={() => setHoveredItem(null)}
         >
-          Bo‘sh ish o‘rinlari
-        </Link>
-        <Link
-          href="/standards"
-          className={`text-white text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/standards") ? "bg-white/10" : "hover:bg-white/10"
-            }`}
-        >
-          E’lonlar
+          <div
+            className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${pathname.startsWith("/docs") ? "bg-white/10" : "hover:bg-white/10"
+              }`}
+          >
+            Normativ hujjatlar
+            <Image src={arrowDown} alt="arrow" width={14} height={14} />
+          </div>
+          {hoveredItem === "docs" && (
+            <div className="absolute top-full left-0 mt-0 w-48 bg-white shadow-lg rounded-md py-2 z-[999]">
+              <Link href="/docs/laws" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">O’zbekiston Respublikasi qonunlari</Link>
+              <Link href="/docs/decrees" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">O’zbekiston Respublikasi Prezidentining farmonlari</Link>
+              <Link href="/docs/resolutions" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">O’zbekiston Respublikasi Prezidentining qarorlari</Link>
+              <Link href="/docs/ministers-resolutions" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">O’zbekiston Respublikasi Vazirlar Maxkamasining qarorlari</Link>
+              <Link href="/docs/certificate-and-license" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100">Loyiha institutining guvoxnoma va litsensiyasi</Link>
+            </div>
+          )}
+        </div>
+
+        {/*Axborot tizimlar */}
+        <Link href="https://e-auksion.uz/home" target="_blank">
+          <div
+            className="relative z-[9999]"
+          >
+            <div
+              className={`text-white text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition hover:bg-white/10`}
+            >
+              Axborot tizimlar
+              <Image src={arrowDown} alt="arrow" width={14} height={14} />
+            </div>
+          </div>
         </Link>
 
         <Link

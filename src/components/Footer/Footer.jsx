@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import logo from "../../../public/icons/logo.svg";
-import carp from "../../../public/icons/image.png";
+import carp from '../../../public/icons/carp.svg'
 import facebook from '../../../public/icons/facebook_f.svg'
 import instagram from '../../../public/icons/instagram_f.svg'
 import youtube from '../../../public/icons/youtube_f.svg'
