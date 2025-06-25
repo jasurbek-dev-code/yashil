@@ -28,7 +28,7 @@ export default function Header() {
       </video>
 
       {/* Overlay layer */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0" />
+      <div className="absolute top-0 left-0 w-full h-full bg-black/40 dark:bg-black/60 z-0 transition-colors" />
 
       {/* Content */}
       <div className="relative z-10">

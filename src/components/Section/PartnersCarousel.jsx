@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -38,51 +40,28 @@ const PartnersCarousel = () => {
     autoplaySpeed: 2000,
     pauseOnHover: true,
     responsive: [
-      {
-        breakpoint: 1536,
-        settings: {
-          slidesToShow: 5
-        }
-      },
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 4
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1
-        }
-      }
+      { breakpoint: 1536, settings: { slidesToShow: 5 } },
+      { breakpoint: 1280, settings: { slidesToShow: 4 } },
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } }
     ]
   };
 
   return (
     <div className="mx-auto px-4 lg:px-0 py-8 max-w-[1200px]">
-      <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Hamkorlarimiz</h2>
+      <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white mb-8">Hamkorlarimiz</h2>
 
       <div className="relative">
         <Slider {...settings}>
           {partners.map((partner, index) => (
             <div key={index} className="px-2 h-full">
               <div
-                className="bg-white border rounded-lg h-full flex flex-col
+                className="bg-white dark:bg-[#1f1f1f] border border-gray-200 dark:border-gray-700 rounded-lg h-full flex flex-col
                 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06),0_0_0_1px_rgba(0,0,0,0.1)]
+                dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.05),0_2px_4px_-1px_rgba(255,255,255,0.04)]
                 hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05),0_0_0_1px_rgba(0,0,0,0.1)]
+                dark:hover:shadow-[0_10px_15px_-3px_rgba(255,255,255,0.08),0_4px_6px_-2px_rgba(255,255,255,0.04)]
                 transition-shadow duration-300"
                 style={{ height: '220px' }}
               >
@@ -102,7 +81,7 @@ const PartnersCarousel = () => {
                 </div>
 
                 <div className="px-4 pb-4 flex-1 flex flex-col justify-start">
-                  <h3 className="text-center font-semibold text-gray-800 text-sm md:text-base leading-tight">
+                  <h3 className="text-center font-semibold text-gray-800 dark:text-gray-300 text-sm md:text-base leading-tight">
                     {partner.title}
                   </h3>
                 </div>

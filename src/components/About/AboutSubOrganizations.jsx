@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import greenBanner from "../../../public/images/green_banner.svg";
 import eye from "../../../public/icons/eye-little.svg";
 import telegram from "../../../public/icons/telegram-little.png";
 import instagram from "../../../public/icons/instagram-little.png";
@@ -12,22 +11,22 @@ export default function AboutSubOrganizations() {
     return (
         <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
             {/* Radiusli container */}
-            <div className="relative z-10 bg-white backdrop-blur-md rounded-[20px] shadow-xl max-w-[1200px] mx-auto overflow-hidden">
+            <div className="relative z-10 bg-white dark:bg-[#0f1a0f] backdrop-blur-md rounded-[20px] shadow-xl max-w-[1200px] mx-auto overflow-hidden">
 
                 {/* Breadcrumb */}
-                <div className="px-6 pt-6 text-sm text-gray-600 flex justify-between">
+                <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
                     <div>
                         <Link href="/" className="hover:underline">Asosiy</Link> / Hududiy filiallar
                     </div>
-                    <div className="text-gray-500 text-sm flex gap-1">
-                        <Image src={eye} alt="eye" height={20} width={20} />
+                    <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
+                        <Image src={eye} alt="eye" height={20} width={20} className="dark:invert dark:brightness-0" />
                         <p>326</p>
                     </div>
                 </div>
 
                 {/* Sarlavha */}
                 <div className="flex justify-between items-center px-6 py-4">
-                    <h1 className="text-[28px] font-bold text-gray-800">Hududiy filiallar</h1>
+                    <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">Hududiy filiallar</h1>
                 </div>
 
                 <div className="overflow-x-auto px-4 pb-6">
@@ -38,13 +37,13 @@ export default function AboutSubOrganizations() {
                             alt="Uzbekistan map"
                             width={600}
                             height={400}
-                            className="w-full h-auto rounded-lg"
+                            className="w-full h-auto rounded-lg dark:invert dark:brightness-0"
                         />
                     </div>
 
                     {/* Ma'lumot bloki */}
-                    <div className="flex-1 min-w-[300px] bg-transparent rounded-xl text-[18px] leading-relaxed text-gray-800">
-                        <h2 className="mb-4 text-2xl font-semibold text-gray-900">
+                    <div className="flex-1 min-w-[300px] bg-transparent rounded-xl text-[18px] leading-relaxed text-gray-800 dark:text-gray-200">
+                        <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
                             Navoiy viloyati
                         </h2>
                         <p className="mt-2">
@@ -57,7 +56,7 @@ export default function AboutSubOrganizations() {
                             Manzil:&nbsp;<span className="font-medium">Navoiy shahri, Navoiy ko‘chasi 30A-uy</span>
                         </p>
                         <p className="mt-2">
-                            Telefon::&nbsp;<span className="font-medium">36–224–36–51</span>
+                            Telefon:&nbsp;<span className="font-medium">36–224–36–51</span>
                         </p>
                         <p className="mt-2">
                             Faks:&nbsp;<span className="font-medium">36–224–36–51</span>
@@ -69,13 +68,13 @@ export default function AboutSubOrganizations() {
                 </div>
 
                 {/* Footer */}
-                <div className="flex justify-between text-gray-500 border-t my-3 px-4 py-4">
+                <div className="flex justify-between text-gray-500 dark:text-gray-400 border-t dark:border-gray-600 my-3 px-4 py-4">
                     <div className="flex items-center gap-2">
-                        <Image src={facebook} alt="facebook" height={18} width={18} className="cursor-pointer" />
-                        <Image src={instagram} alt="instagram" height={18} width={18} className="cursor-pointer" />
-                        <Image src={telegram} alt="telegram" height={18} width={18} className="cursor-pointer" />
+                        <Image src={facebook} alt="facebook" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
+                        <Image src={instagram} alt="instagram" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
+                        <Image src={telegram} alt="telegram" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
                     </div>
-                    <p className="text-[15px] text-gray-500">
+                    <p className="text-[15px]">
                         Oxirgi yangilanish: 2023-07-21 10:21:30
                     </p>
                 </div>

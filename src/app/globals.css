@@ -6,3 +6,11 @@ html, body {
   overflow-x: hidden;
   z-index: 0 !important;
 }
+
+body {
+  @apply bg-white text-black;
+}
+
+.dark body {
+  @apply bg-[#111827] text-white;
+}
