@@ -1,28 +1,18 @@
 "use client";
 
-import news1 from '../../../public/images/news1.svg'
-import news2 from '../../../public/images/news2.svg'
-import news3 from '../../../public/images/news3.svg'
-import news4 from '../../../public/images/news4.svg'
-import news5 from '../../../public/images/news5.svg'
-import news6 from '../../../public/images/news6.svg'
 import eye from "../../../public/icons/eye-little.svg";
-import telegram from "../../../public/icons/telegram-little.png";
-import instagram from "../../../public/icons/instagram-little.png";
-import facebook from "../../../public/icons/facebook-little.png";
 import Image from 'next/image';
 import Link from 'next/link';
 import VideoReportCard from './VideoReportCard';
+import CardFooter from '../CardFooter';
+import { useFetchData } from '@/hooks/useFetchData';
+import Loading from '../Loading';
+import ErrorAlert from '../ErrorAlert';
 
 const VideoReport = () => {
-  const data = [
-    { img: news1, title: "“Yoshlar bandligi dasturlari” ijrosi yuzasidan amalga..." },
-    { img: news2, title: "“Yoshlar bandligi dasturlari” ijrosi yuzasidan amalga..." },
-    { img: news3, title: "“Yoshlar bandligi dasturlari” ijrosi yuzasidan amalga..." },
-    { img: news4, title: "“Yoshlar bandligi dasturlari” ijrosi yuzasidan amalga..." },
-    { img: news5, title: "“Yoshlar bandligi dasturlari” ijrosi yuzasidan amalga..." },
-    { img: news6, title: "“Yoshlar bandligi dasturlari” ijrosi yuzasidan amalga..." },
-  ];
+  const { data, isLoading, error } = useFetchData('videos', '/gallery/videos');
+  if (isLoading) return <Loading />;
+  if (error) return <ErrorAlert />;
 
   return (
     <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
@@ -53,9 +43,8 @@ const VideoReport = () => {
               {data.map((item, index) => (
                 <VideoReportCard
                   key={index}
-                  imageSrc={item.img}
+                  link={item.link}
                   title={item.title}
-                  description={item.desc}
                 />
               ))}
             </div>
@@ -63,16 +52,7 @@ const VideoReport = () => {
         </div>
 
         {/* Footer */}
-        <div className="flex justify-between text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-600 my-3 px-4 py-4">
-          <div className="flex items-center gap-2">
-            <Image src={facebook} alt="facebook" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
-            <Image src={instagram} alt="instagram" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
-            <Image src={telegram} alt="telegram" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
-          </div>
-          <p className="text-[15px]">
-            Oxirgi yangilanish: 2023-07-21 10:21:30
-          </p>
-        </div>
+         <CardFooter/>
       </div>
     </div>
   );

@@ -1,58 +1,36 @@
-// "use client";
-
-// import Image from "next/image";
-// import date from '../../../public/icons/calendar.svg'
-// import eye from "../../../public/icons/eye-little.svg";
-
-// const VideoReportCard = ({ imageSrc, title }) => {
-//   return (
-//     <div className={`bg-white overflow-hidden w-full cursor-pointer border border-gray-200 p-4 rounded-xl shadow-sm`}>
-//       {/* Image */}
-//       <div className="w-full h-48 relative">
-//         <Image
-//           src={imageSrc}
-//           alt={title}
-//           fill
-//           className="object-cover rounded-xl"
-//         />
-//       </div>
-
-//       {/* Description and Title */}
-//       <div className="py-4">
-//         <h3 className={`text-[15px] font-semibold "text-gray-900"}`}>{title}</h3>
-//       </div>
-//       <div className="flex justify-between">
-//         <div className="flex gap-2 opacity-50">
-//             <Image src={date} height={20} width={20} alt="date"/>
-//             <p>12.12.23 - 13:00</p>
-//         </div>
-//         <div className="flex gap-2">
-//             <Image src={eye} height={20} width={20} alt="eye"/>
-//             <p className="opacity-50">326</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default VideoReportCard;
 "use client";
 
 import Image from "next/image";
 import date from '../../../public/icons/calendar.svg';
 import eye from "../../../public/icons/eye-little.svg";
 
-const VideoReportCard = ({ imageSrc, title }) => {
+const VideoReportCard = ({ link, title }) => {
+  // YouTube video ID ni linkdan ajratib olish
+  const getYouTubeId = (url) => {
+    const match = url.match(/(?:\?v=|\/embed\/|\.be\/)([a-zA-Z0-9_-]{11})/);
+    return match ? match[1] : null;
+  };
+
+  const videoId = getYouTubeId(link);
+  const embedLink = videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+
   return (
     <div className="bg-white dark:bg-[#0f1a0f] overflow-hidden w-full cursor-pointer border border-gray-200 dark:border-gray-700 p-4 rounded-xl shadow-sm">
-      {/* Image */}
+      {/* Video iframe */}
       <div className="w-full h-48 relative rounded-xl overflow-hidden">
-        <Image
-          src={imageSrc}
-          alt={title}
-          fill
-          className="object-cover"
-        />
+        {embedLink ? (
+          <iframe
+            className="absolute top-0 left-0 w-full h-full rounded-xl"
+            src={embedLink}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <div className="flex items-center justify-center w-full h-full bg-gray-200 text-gray-600 text-sm">
+            Noto‘g‘ri video havola
+          </div>
+        )}
       </div>
 
       {/* Title */}

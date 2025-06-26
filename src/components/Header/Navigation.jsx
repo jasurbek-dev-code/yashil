@@ -18,7 +18,7 @@ export default function Navigation() {
         
         {/* Yashil loyiha */}
         <div
-          className="relative z-[9999]"
+          className="relative z-[11]"
           onMouseEnter={() => setHoveredItem("about")}
           onMouseLeave={() => setHoveredItem(null)}
         >
@@ -32,7 +32,7 @@ export default function Navigation() {
           </div>
 
           {hoveredItem === "about" && (
-            <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[999]">
+            <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[1]">
               <Link href="/about/overview" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Institut haqida</Link>
               <Link href="/about/departments" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Bo‘limlar</Link>
               <Link href="/about/structure" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Tashkiliy tuzilma</Link>
@@ -46,7 +46,7 @@ export default function Navigation() {
 
         {/* Xizmatlar */}
         <div
-          className="relative z-[9999]"
+          className="relative z-[1]"
           onMouseEnter={() => setHoveredItem("services")}
           onMouseLeave={() => setHoveredItem(null)}
         >
@@ -59,7 +59,7 @@ export default function Navigation() {
             <Image src={arrowDown} alt="arrow" width={14} height={14} />
           </div>
           {hoveredItem === "services" && (
-            <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[999]">
+            <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[1]">
               <Link href="/services/forest-fund" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">O‘rmon fondi yerlarini xatlovdan o‘tkazish</Link>
               <Link href="/services/cartographic-geoinformation" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Kartografik geoaxborot tizimi</Link>
               <Link href="/services/geodesy-topography-mine" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Geodeziya va topografiya</Link>
@@ -74,7 +74,7 @@ export default function Navigation() {
 
         {/* Axborot xizmati */}
         <div
-          className="relative z-[9999]"
+          className="relative z-[1]"
           onMouseEnter={() => setHoveredItem("news")}
           onMouseLeave={() => setHoveredItem(null)}
         >
@@ -87,7 +87,7 @@ export default function Navigation() {
             <Image src={arrowDown} alt="arrow" width={14} height={14} />
           </div>
           {hoveredItem === "news" && (
-            <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[999]">
+            <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[1]">
               <Link href="/news/institute-news" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Institut yangiliklari</Link>
               <Link href="/news/photo-report" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Fotoreportaj</Link>
               <Link href="/news/video-report" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Videoreportaj</Link>
@@ -97,7 +97,7 @@ export default function Navigation() {
 
         {/* Davlat xizmatlari */}
         <Link href="https://e-auksion.uz/home" target="_blank">
-          <div className="relative z-[9999]">
+          <div className="relative z-[1]">
             <div className="text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition hover:bg-white/10 dark:hover:bg-white/20">
               Davlat xizmatlari
               <Image src={arrowDown} alt="arrow" width={14} height={14} />
@@ -107,7 +107,7 @@ export default function Navigation() {
 
         {/* Normativ hujjatlar */}
         <div
-          className="relative z-[9999]"
+          className="relative z-[1]"
           onMouseEnter={() => setHoveredItem("docs")}
           onMouseLeave={() => setHoveredItem(null)}
         >
@@ -132,7 +132,7 @@ export default function Navigation() {
 
         {/* Axborot tizimlar */}
         <Link href="https://e-auksion.uz/home" target="_blank">
-          <div className="relative z-[9999]">
+          <div className="relative z-[1]">
             <div className="text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition hover:bg-white/10 dark:hover:bg-white/20">
               Axborot tizimlar
               <Image src={arrowDown} alt="arrow" width={14} height={14} />

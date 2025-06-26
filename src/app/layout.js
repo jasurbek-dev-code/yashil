@@ -4,6 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer/Footer";
 import ScrollToTop from "./ScrollToTop";
 import ScrollToTopButton from "./ScrollToTopBtn";
+import ProgressBar from "./ProgressBar";
+import '../i18n.js';
+import ReactQueryProvider from "./ReactQueryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,11 +32,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ScrollToTop />
-        <ScrollToTopButton/>
-        <Header />
-        {children}
-        <Footer />
+        <ReactQueryProvider>
+          <ScrollToTop />
+          <ScrollToTopButton />
+          <ProgressBar />
+          <Header />
+          {children}
+          <Footer />
+        </ReactQueryProvider>
       </body>
     </html>
   );

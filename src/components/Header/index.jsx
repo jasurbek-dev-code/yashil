@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import useIsClient from '@/hooks/useIsClient';
 import HeaderTop from "./TopHeader";
 import Navigation from "./Navigation";
 import HeadSection from "./HeadSection";
@@ -10,6 +11,9 @@ export default function Header() {
   const pathname = usePathname();
   const specialRoutes = ['/services', '/docs', '/vacancies', "/news", "/contact", "/about"];
   const isSpecial = specialRoutes.some(route => pathname.startsWith(route));
+
+    const isClient = useIsClient();
+    if (!isClient) return null;
 
   return (
     <div

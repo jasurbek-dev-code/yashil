@@ -7,12 +7,10 @@ import news4 from '../../../public/images/news4.svg';
 import news5 from '../../../public/images/news5.svg';
 import news6 from '../../../public/images/news6.svg';
 import eye from "../../../public/icons/eye-little.svg";
-import telegram from "../../../public/icons/telegram-little.png";
-import instagram from "../../../public/icons/instagram-little.png";
-import facebook from "../../../public/icons/facebook-little.png";
 import NewsCard from './NewsCard';
 import Image from 'next/image';
 import Link from 'next/link';
+import CardFooter from '../CardFooter';
 
 const NewsCards = () => {
   const data = [
@@ -85,14 +83,7 @@ const NewsCards = () => {
         </div>
 
         {/* Footer */}
-        <div className="flex justify-between text-gray-500 dark:text-gray-400 border-t border-gray-300 dark:border-gray-600 my-3 px-4 py-4">
-          <div className="flex items-center gap-2">
-            <Image src={facebook} alt="facebook" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
-            <Image src={instagram} alt="instagram" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
-            <Image src={telegram} alt="telegram" height={18} width={18} className="cursor-pointer dark:invert dark:brightness-0" />
-          </div>
-          <p className="text-[15px]">Oxirgi yangilanish: 2023-07-21 10:21:30</p>
-        </div>
+        <CardFooter/>
       </div>
     </div>
   );
