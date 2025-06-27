@@ -2,30 +2,36 @@
 
 import Image from "next/image";
 import date from '../../../public/icons/calendar.svg';
-import eye from "../../../public/icons/eye-little.svg";
+import eye from "../../../public/icons/eye-little.svg"
 
 const VideoReportCard = ({ link, title }) => {
-  // YouTube video ID ni linkdan ajratib olish
+  // YouTube ID ni ajratish
   const getYouTubeId = (url) => {
-    const match = url.match(/(?:\?v=|\/embed\/|\.be\/)([a-zA-Z0-9_-]{11})/);
+    const match = url?.match(/(?:\?v=|\/embed\/|\.be\/)([a-zA-Z0-9_-]{11})/);
     return match ? match[1] : null;
   };
 
   const videoId = getYouTubeId(link);
-  const embedLink = videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+  const isYouTube = !!videoId;
+  const isVideoFile = link && /\.(mp4|webm|ogg)$/i.test(link);
 
   return (
     <div className="bg-white dark:bg-[#0f1a0f] overflow-hidden w-full cursor-pointer border border-gray-200 dark:border-gray-700 p-4 rounded-xl shadow-sm">
-      {/* Video iframe */}
+      {/* Video preview */}
       <div className="w-full h-48 relative rounded-xl overflow-hidden">
-        {embedLink ? (
+        {isYouTube ? (
           <iframe
             className="absolute top-0 left-0 w-full h-full rounded-xl"
-            src={embedLink}
+            src={`https://www.youtube.com/embed/${videoId}`}
             title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+        ) : isVideoFile ? (
+          <video controls className="absolute top-0 left-0 w-full h-full rounded-xl object-cover">
+            <source src={link} type="video/mp4" />
+            Brauzeringiz video formatni qo‘llab-quvvatlamaydi.
+          </video>
         ) : (
           <div className="flex items-center justify-center w-full h-full bg-gray-200 text-gray-600 text-sm">
             Noto‘g‘ri video havola

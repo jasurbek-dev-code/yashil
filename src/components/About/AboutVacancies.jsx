@@ -4,8 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import eye from "../../../public/icons/eye-little.svg";
 import CardFooter from "../CardFooter";
+import { useFetchData } from "@/hooks/useFetchData";
+import Loading from "../Loading";
+import ErrorAlert from "../ErrorAlert";
 
 export default function Vacancies() {
+  const { data, isLoading, error } = useFetchData('vacancy', '/about/vacancy');
+
+  if (isLoading) return <Loading />;
+  if (error) return <ErrorAlert />;
   return (
     <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
       {/* Radiusli container */}
@@ -39,19 +46,12 @@ export default function Vacancies() {
               </tr>
             </thead>
             <tbody>
-              {[
-                { id: 1, title: "Buxgalteriya hisobi va hisobot bo‘limi - Bosh buxgalter", edu: "Oliy", count: 2 },
-                { id: 2, title: "Buxgalteriya hisobi va hisobot bo‘limi - Mutaxasis", edu: "Oliy", count: 5 },
-                { id: 3, title: "Kadrlar bo‘limi - Mutaxasis", edu: "Oliy", count: 1 },
-                { id: 4, title: "Kadrlar bo‘limi - Mutaxasis", edu: "Oliy", count: 1 },
-                { id: 5, title: "Kadrlar bo‘limi - Mutaxasis", edu: "Oliy", count: 1 },
-                { id: 6, title: "Kadrlar bo‘limi - Mutaxasis", edu: "Oliy", count: 1 },
-              ].map((row) => (
-                <tr key={row.id}>
-                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{row.id}</td>
-                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600">{row.title}</td>
-                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{row.edu}</td>
-                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{row.count}</td>
+              {data.map((item) => (
+                <tr key={item.id}>
+                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item.id}</td>
+                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600">{item.name}</td>
+                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item.education}</td>
+                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item.count}</td>
                 </tr>
               ))}
             </tbody>
@@ -59,7 +59,7 @@ export default function Vacancies() {
         </div>
 
         {/* Footer */}
-        <CardFooter/>
+        <CardFooter />
       </div>
     </div>
   );

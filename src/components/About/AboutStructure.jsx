@@ -3,10 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import eye from "../../../public/icons/eye-little.svg";
-import structure from "../../../public/images/structure.svg";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 import CardFooter from "../CardFooter";
+import { useFetchData } from "@/hooks/useFetchData";
+import Loading from "../Loading";
+import ErrorAlert from "../ErrorAlert";
 
 export default function AboutStructure() {
+    const { data, isLoading, error } = useFetchData('struct', '/about/struct');
+
+    if (isLoading) return <Loading />;
+    if (error) return <ErrorAlert />;
     return (
         <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
 
@@ -32,7 +40,9 @@ export default function AboutStructure() {
 
                 {/* Jadval */}
                 <div className="overflow-x-auto px-4 my-5 flex justify-center">
-                    <Image src={structure} alt="structure" className="w-full h-auto" />
+                    <Zoom>
+                        <Image src={data?.photo?.src} width={data?.photo?.weight} height={data?.photo?.height} alt="structure" className="w-full h-auto" />
+                    </Zoom>
                 </div>
 
                 {/* Footer */}
