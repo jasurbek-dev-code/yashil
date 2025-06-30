@@ -1,4 +1,4 @@
-import Laws from '@/components/Docs/Laws';
+import Laws from '@/components/Docst/Laws';
 
 export default function LawsPage() {
   return (

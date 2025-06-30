@@ -1,6 +1,12 @@
 import Image from "next/image";
+import Loading from "../Loading";
+import ErrorAlert from "../ErrorAlert";
+import { useFetchData } from "@/hooks/useFetchData";
 
 export default function SocialBtns() {
+  const { data, isLoading, error } = useFetchData('contact', '/about/get-contact');
+  if (isLoading) return <Loading />;
+  if (error) return <ErrorAlert />;
   return (
     <div className="absolute top-32 right-0 bg-white dark:bg-gray-800 rounded-tl-xl rounded-bl-xl shadow-md w-12 py-2">
       {/* Facebook */}

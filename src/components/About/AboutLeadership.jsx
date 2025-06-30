@@ -2,10 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Zoom from "react-medium-image-zoom";
 import eye from "../../../public/icons/eye-little.svg";
-import leader1 from "../../../public/images/leader1.svg";
-import leader2 from "../../../public/images/leader2.svg";
-import leader3 from "../../../public/images/leader3.svg";
 import call from "../../../public/icons/call_l.svg";
 import sms from "../../../public/icons/sms_l.svg";
 import CardFooter from "../CardFooter";
@@ -14,7 +12,10 @@ import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";
 
 export default function AboutLeadership() {
-  const { data, isLoading, error } = useFetchData('employees', '/about/employees');
+  const { data, isLoading, error } = useFetchData(
+    'employees',
+    '/about/employees?department=management'
+  );
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
   return (
@@ -42,13 +43,15 @@ export default function AboutLeadership() {
           <div key={i} className="flex flex-wrap md:flex-nowrap items-start gap-6 rounded-xl p-6">
             {/* Image */}
             <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden">
-              <Image
-                src={person.photo.src}
-                alt={person.fullname}
-                width={person.photo.weight}
-                height={person.photo.height}
-                className="object-cover w-full h-full"
-              />
+              <Zoom>
+                <Image
+                  src={person.photo.src}
+                  alt={person.fullname}
+                  width={person.photo.weight}
+                  height={person.photo.height}
+                  className="object-cover w-full h-full"
+                />
+              </Zoom>
             </div>
 
             {/* Text Content */}

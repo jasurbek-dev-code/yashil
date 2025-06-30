@@ -1,4 +1,4 @@
-import Resolutions from '@/components/Docs/Resolutions';
+import Resolutions from '@/components/Docst/Resolutions';
 
 export default function ResolutionsPage() {
   return (

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const NewsCard = ({ imageSrc, description, title }) => {
   return (
-    <div className="bg-white dark:bg-[#1f1f1f] rounded-xl shadow-md overflow-hidden w-full cursor-pointer transition-colors">
+    <div className="bg-white dark:bg-[#1f1f1f] rounded-xl shadow-md overflow-hidden w-full transition-colors">
       {/* Image */}
       <div className="w-full h-48 relative">
         <Image

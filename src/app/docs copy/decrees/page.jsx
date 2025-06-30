@@ -1,4 +1,4 @@
-import Decrees from '@/components/Docs/Decrees';
+import Decrees from '@/components/Docst/Decrees';
 
 export default function DecreesPage() {
   return (

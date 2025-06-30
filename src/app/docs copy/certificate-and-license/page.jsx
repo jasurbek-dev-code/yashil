@@ -1,4 +1,4 @@
-import CertificateAndLicense from '@/components/Docs/CertificateAndLicense';
+import CertificateAndLicense from '@/components/Docst/CertificateAndLicense';
 
 export default function CertificateAndLicensePage() {
   return (

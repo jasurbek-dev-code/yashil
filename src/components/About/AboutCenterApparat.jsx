@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Zoom from "react-medium-image-zoom";
 import eye from "../../../public/icons/eye-little.svg";
 import call from "../../../public/icons/call_l.svg";
 import sms from "../../../public/icons/sms_l.svg";
@@ -11,7 +12,10 @@ import ErrorAlert from "../ErrorAlert";
 import { useFetchData } from "@/hooks/useFetchData";
 
 export default function AboutCenterApparat() {
-  const { data, isLoading, error } = useFetchData('employees', '/about/employees');
+  const { data, isLoading, error } = useFetchData(
+    'employees',
+    '/about/employees?department=central_hardware'
+  );
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
   return (
@@ -43,13 +47,15 @@ export default function AboutCenterApparat() {
           <div key={i} className="flex flex-wrap md:flex-nowrap items-start gap-6 rounded-xl p-6">
             {/* Image */}
             <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden">
-              <Image
-                src={person.photo.src}
-                alt={person.fullname}
-                width={person.photo.weight}
-                height={person.photo.height}
-                className="object-cover w-full h-full"
-              />
+              <Zoom>
+                <Image
+                  src={person.photo.src}
+                  alt={person.fullname}
+                  width={person.photo.weight}
+                  height={person.photo.height}
+                  className="object-cover w-full h-full"
+                />
+              </Zoom>
             </div>
 
             {/* Text Content */}

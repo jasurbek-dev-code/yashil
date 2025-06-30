@@ -1,4 +1,4 @@
-import MinistersResolutions from '@/components/Docs/MinistersResolutions';
+import MinistersResolutions from '@/components/Docst/MinistersResolutions';
 
 export default function MinistersResolutionsPage() {
   return (

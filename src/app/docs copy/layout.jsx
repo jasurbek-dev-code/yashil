@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SubNavigation from "@/components/Docs/DocsNavigation";
+import SubNavigation from "@/components/Docst/DocsNavigation";
 import greenBanner from "../../../public/images/green_banner.svg";
 
 export default function DocsLayout({ children }) {

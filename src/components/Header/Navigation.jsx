@@ -15,7 +15,7 @@ export default function Navigation() {
       {/* <div className="hidden md:block bg-[#0d3d0d] dark:bg-gray-900 w-full px-4"></div> */}
       <nav className="max-w-[1200px] mx-auto flex flex-wrap justify-between py-2 gap-4 font-sans">
         {/* Har bir menyu elementi uchun dark qo'llab-quvvatlash */}
-        
+
         {/* Yashil loyiha */}
         <div
           className="relative z-[11]"
@@ -23,9 +23,8 @@ export default function Navigation() {
           onMouseLeave={() => setHoveredItem(null)}
         >
           <div
-            className={`text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${
-              pathname.startsWith("/about") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
-            }`}
+            className={`text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${pathname.startsWith("/about") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
+              }`}
           >
             Yashil loyiha
             <Image src={arrowDown} alt="arrow" width={14} height={14} />
@@ -45,32 +44,13 @@ export default function Navigation() {
         </div>
 
         {/* Xizmatlar */}
-        <div
-          className="relative z-[1]"
-          onMouseEnter={() => setHoveredItem("services")}
-          onMouseLeave={() => setHoveredItem(null)}
-        >
-          <div
-            className={`text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${
-              pathname.startsWith("/services") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
+        <Link
+          href="/services"
+          className={`text-white dark:text-gray-100 text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/services") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
             }`}
-          >
-            Xizmatlar
-            <Image src={arrowDown} alt="arrow" width={14} height={14} />
-          </div>
-          {hoveredItem === "services" && (
-            <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[1]">
-              <Link href="/services/forest-fund" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">O‘rmon fondi yerlarini xatlovdan o‘tkazish</Link>
-              <Link href="/services/cartographic-geoinformation" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Kartografik geoaxborot tizimi</Link>
-              <Link href="/services/geodesy-topography-mine" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Geodeziya va topografiya</Link>
-              <Link href="/services/project-exploration-works" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Loyiha qidiruv ishlari</Link>
-              <Link href="/services/architectural-design" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Arxitektura xizmatlari</Link>
-              <Link href="/services/scientific-and-methodological" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Ilmiy xizmatlar</Link>
-              <Link href="/services/author-supervision" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Mualliflik nazorati</Link>
-              <Link href="/services/project-cost-estimate" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Smeta hujjatlari</Link>
-            </div>
-          )}
-        </div>
+        >
+          Xizmatlar
+        </Link>
 
         {/* Axborot xizmati */}
         <div
@@ -79,9 +59,8 @@ export default function Navigation() {
           onMouseLeave={() => setHoveredItem(null)}
         >
           <div
-            className={`text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${
-              pathname.startsWith("/news") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
-            }`}
+            className={`text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${pathname.startsWith("/news") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
+              }`}
           >
             Axborot xizmati
             <Image src={arrowDown} alt="arrow" width={14} height={14} />
@@ -100,42 +79,24 @@ export default function Navigation() {
           <div className="relative z-[1]">
             <div className="text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition hover:bg-white/10 dark:hover:bg-white/20">
               Davlat xizmatlari
-              <Image src={arrowDown} alt="arrow" width={14} height={14} />
             </div>
           </div>
         </Link>
 
         {/* Normativ hujjatlar */}
-        <div
-          className="relative z-[1]"
-          onMouseEnter={() => setHoveredItem("docs")}
-          onMouseLeave={() => setHoveredItem(null)}
-        >
-          <div
-            className={`text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition ${
-              pathname.startsWith("/docs") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
+        <Link
+          href="/docs"
+          className={`text-white dark:text-gray-100 text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/docs") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
             }`}
-          >
-            Normativ hujjatlar
-            <Image src={arrowDown} alt="arrow" width={14} height={14} />
-          </div>
-          {hoveredItem === "docs" && (
-            <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[999]">
-              <Link href="/docs/laws" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Qonunlar</Link>
-              <Link href="/docs/decrees" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Farmonlar</Link>
-              <Link href="/docs/resolutions" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Prezident qarorlari</Link>
-              <Link href="/docs/ministers-resolutions" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">VM qarorlari</Link>
-              <Link href="/docs/certificate-and-license" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">Guvohnoma/litsenziya</Link>
-            </div>
-          )}
-        </div>
+        >
+          Normativ hujjatlar
+        </Link>
 
         {/* Axborot tizimlar */}
         <Link href="https://e-auksion.uz/home" target="_blank">
           <div className="relative z-[1]">
             <div className="text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition hover:bg-white/10 dark:hover:bg-white/20">
               Axborot tizimlar
-              <Image src={arrowDown} alt="arrow" width={14} height={14} />
             </div>
           </div>
         </Link>
@@ -143,9 +104,8 @@ export default function Navigation() {
         {/* Bog‘lanish */}
         <Link
           href="/contact"
-          className={`text-white dark:text-gray-100 text-[18px] font-medium px-3 py-2 rounded-md transition ${
-            pathname.startsWith("/contact") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
-          }`}
+          className={`text-white dark:text-gray-100 text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/contact") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"
+            }`}
         >
           Bog‘lanish
         </Link>
