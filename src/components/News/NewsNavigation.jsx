@@ -3,17 +3,22 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import arrowUp from '../../../public/icons/arrow-up.svg';
 import arrowUpBlack from '../../../public/icons/arrow-up-black.svg';
-
-const subLinks = [
-  { title: "Yangiliklar",     href: "/news/institute-news" },
-  { title: "Fotoreportaj",    href: "/news/photo-report"   },
-  { title: "Videoreportaj",   href: "/news/video-report"   },
-];
+import useIsClient from "@/hooks/useIsClient";
 
 export default function SubNavigation() {
   const pathname = usePathname();
+  const { t } = useTranslation();
+  const isClient = useIsClient();
+  if (!isClient) return null;
+
+  const subLinks = [
+    { title: t("news"), href: "/news/institute-news" },
+    { title: t("photo_report"), href: "/news/photo-report" },
+    { title: t("video_report"), href: "/news/video-report" },
+  ];
 
   return (
     <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-4 w-full max-w-xs transition-colors">
@@ -23,11 +28,10 @@ export default function SubNavigation() {
           <Link
             key={link.href}
             href={link.href}
-            className={`flex items-center justify-between px-4 py-3 mb-2 rounded-lg text-[16px] font-medium transition-colors ${
-              isActive
+            className={`flex items-center justify-between px-4 py-3 mb-2 rounded-lg text-[16px] font-medium transition-colors ${isActive
                 ? "bg-[#0d3d0d] text-white"
                 : "text-black hover:bg-gray-100 dark:text-white dark:hover:bg-[#2a2a2a]"
-            }`}
+              }`}
           >
             {link.title}
             <Image

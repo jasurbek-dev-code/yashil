@@ -9,8 +9,10 @@ import CardFooter from "../CardFooter";
 import { useFetchData } from "@/hooks/useFetchData";
 import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";
+import { useTranslation } from "react-i18next";
 
 export default function AboutStructure() {
+    const { t } = useTranslation();
     const { data, isLoading, error } = useFetchData('struct', '/about/struct');
 
     if (isLoading) return <Loading />;
@@ -24,7 +26,7 @@ export default function AboutStructure() {
                 {/* Breadcrumb */}
                 <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
                     <div>
-                        <Link href="/" className="hover:underline">Asosiy</Link> / Tashkiliy tuzilma
+                       <Link href="/" className="hover:underline">{t("home")}</Link> / {t("structure")}
                     </div>
 
                     <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
@@ -35,7 +37,7 @@ export default function AboutStructure() {
 
                 {/* Sarlavha */}
                 <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300 dark:border-gray-600">
-                    <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">Tashkiliy tuzilma</h1>
+                    <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">{t("structure")}</h1>
                 </div>
 
                 {/* Jadval */}

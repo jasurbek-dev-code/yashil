@@ -6,9 +6,11 @@ import NewsCard from './NewsCard';
 import Loading from '../Loading';
 import ErrorAlert from '../ErrorAlert';
 import { useFetchData } from '@/hooks/useFetchData';
+import { useTranslation } from 'react-i18next';
 
 const NewsCards = () => {
   const router = useRouter();
+  const { t } = useTranslation();
   const { data, isLoading, error } = useFetchData('posts', '/posts');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
@@ -27,17 +29,19 @@ const NewsCards = () => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
+
   return (
     <div className="relative bg-cover bg-center bg-no-repeat py-16 dark:bg-[#121212]">
       <div className="py-14 px-4 lg:px-0 max-w-[1200px] mx-auto">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-[30px] font-bold text-gray-800 dark:text-white">
-            So'ngi yangiliklar
+            {t("latest_news")}
           </h2>
           <button
-          onClick={() => router.push('/news/institute-news')} 
-          className="text-sm text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-400 px-4 py-2 rounded-md hover:bg-blue-600 dark:hover:bg-blue-400 hover:text-white dark:hover:text-gray-900 transition">
-            Barchasi
+            onClick={() => router.push('/news/institute-news')}
+            className="text-sm text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-400 px-4 py-2 rounded-md hover:bg-blue-600 dark:hover:bg-blue-400 hover:text-white dark:hover:text-gray-900 transition"
+          >
+            {t("see_all")}
           </button>
         </div>
 

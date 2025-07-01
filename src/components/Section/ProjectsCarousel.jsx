@@ -5,24 +5,28 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import greenBanner from "../../../public/images/green_banner.svg";
+import { useTranslation } from "react-i18next";
+import useIsClient from "@/hooks/useIsClient";
 
 const ProjectsCarousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-
+  const { t } = useTranslation();
+  const isClient = useIsClient();
+  if (!isClient) return null;
   const projects = [
     {
       id: 1,
-      description: '"Yoshlar bandligi dasturlari" Ijrosi yuzasidan amalga oshirilgan loyiha',
+      key: "project_1",
       bgImage: "/images/garden.svg",
     },
     {
       id: 2,
-      description: '"Yoshlar bandligi dasturlari" Ijrosi yuzasidan amalga oshirilgan loyiha',
+      key: "project_2",
       bgImage: "/images/garden.svg",
     },
     {
       id: 3,
-      description: '"Yoshlar bandligi dasturlari" Ijrosi yuzasidan amalga oshirilgan loyiha',
+      key: "project_3",
       bgImage: "/images/garden.svg",
     },
   ];
@@ -67,7 +71,7 @@ const ProjectsCarousel = () => {
 
       <div className="max-w-[1200px] mx-auto px-4 lg:px-0 relative z-10">
         <h2 className="text-3xl font-bold text-white mb-8 text-center">
-          Loyihalar
+          {t("projects")}
         </h2>
 
         <Slider {...settings}>
@@ -76,21 +80,20 @@ const ProjectsCarousel = () => {
             return (
               <div key={project.id} className="px-2">
                 <div
-                  className={`relative h-[500px] rounded-xl overflow-hidden shadow-lg transition-all duration-300 transform ${
-                    isActive ? "scale-100" : "scale-90 opacity-60"
-                  } flex flex-col`}
+                  className={`relative h-[500px] rounded-xl overflow-hidden shadow-lg transition-all duration-300 transform ${isActive ? "scale-100" : "scale-90 opacity-60"
+                    } flex flex-col`}
                 >
                   <div className="relative flex-1 w-full">
                     <Image
                       src={project.bgImage}
-                      alt={project.description}
+                      alt={t(project.key)}
                       fill
                       className="object-cover"
                     />
                   </div>
                   <div className="bg-black bg-opacity-70 text-white text-center p-4">
                     <p className="text-sm md:text-base">
-                      {project.description}
+                      {t(project.key)}
                     </p>
                   </div>
                 </div>
@@ -104,3 +107,4 @@ const ProjectsCarousel = () => {
 };
 
 export default ProjectsCarousel;
+

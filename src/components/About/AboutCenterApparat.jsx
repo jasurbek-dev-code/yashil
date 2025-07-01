@@ -10,8 +10,10 @@ import CardFooter from "../CardFooter";
 import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";
 import { useFetchData } from "@/hooks/useFetchData";
+import { useTranslation } from "react-i18next";
 
 export default function AboutCenterApparat() {
+  const { t } = useTranslation();
   const { data, isLoading, error } = useFetchData(
     'employees',
     '/about/employees?department=central_hardware'
@@ -27,7 +29,7 @@ export default function AboutCenterApparat() {
         {/* Breadcrumb */}
         <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
           <div>
-            <Link href="/" className="hover:underline">Asosiy</Link> / Markaziy apparat
+            <Link href="/" className="hover:underline">{t("home")}</Link> / {t("center_apparat")}
           </div>
           <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
             <Image src={eye} alt="eye" height={20} width={20} />
@@ -38,7 +40,7 @@ export default function AboutCenterApparat() {
         {/* Sarlavha */}
         <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300 dark:border-gray-700">
           <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">
-            Markaziy apparat
+           {t("center_apparat")}
           </h1>
         </div>
 

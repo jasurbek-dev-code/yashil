@@ -9,7 +9,6 @@ import LanguageSelect from "./LanguageSelect";
 
 export default function TopHeader() {
   const { toggleTheme } = useTheme();
-  const { t } = useTranslation();
 
   return (
     <div className="w-full px-5">
@@ -39,7 +38,6 @@ export default function TopHeader() {
             <Image src="/icons/call.svg" alt="call" width={20} height={20} />
             +998 (71) 256-86-53
           </div>
-          <p>{t("about")}</p>
           {/* Til tanlash */}
           <LanguageSelect/>
           <div

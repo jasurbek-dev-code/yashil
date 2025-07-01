@@ -1,11 +1,16 @@
 "use client";
 
+import useIsClient from "@/hooks/useIsClient";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+  const isClient = useIsClient();
+  if (!isClient) return null;
   return (
     <div className="relative py-[60px] px-5 overflow-hidden bg-white dark:bg-[#0f1a0f] transition-colors">
-      {/* Fon rasmi */}
+      {/* Background image */}
       <Image
         src="/images/banner.svg"
         alt="Banner Background"
@@ -16,48 +21,46 @@ const Hero = () => {
 
       <div className="max-w-[1200px] mx-auto flex flex-wrap gap-10 px-4 lg:px-0 items-start relative z-10">
         <h2 className="w-full text-[30px] text-left text-gray-800 dark:text-gray-100 font-bold">
-          Hududiy boshqarmalar
+          {t("regional_departments")}
         </h2>
 
-        {/* Xarita rasmi */}
+        {/* Map image */}
         <div className="flex-1 min-w-[300px]">
           <Image
             src="/images/karta.svg"
-            alt="Uzbekistan map"
+            alt={t("uzbekistan_map")}
             width={600}
             height={400}
             className="w-full h-auto rounded-lg"
           />
         </div>
 
-        {/* Ma'lumot bloki */}
+        {/* Info block */}
         <div className="flex-1 min-w-[300px] bg-transparent p-5 md:p-6 rounded-xl text-[18px] leading-relaxed text-gray-800 dark:text-gray-200">
           <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
-            Navoiy viloyati
+            {t("navoiy_region")}
           </h2>
 
           <p className="mt-2">
-            Boshqarma boshlig‘i:&nbsp;
+            {t("manager")}:&nbsp;
             <span className="underline font-medium dark:text-white">
-              Abdug‘aniyev Sardor Shuxratovich
+              {t("manager_name")}
             </span>
           </p>
           <p className="mt-2">
-            Qabul kunlari:&nbsp;
-            <span className="font-medium dark:text-white">Dushanba 09:00–13:00</span>
+            {t("reception_days")}:&nbsp;
+            <span className="font-medium dark:text-white">{t("reception_schedule")}</span>
           </p>
           <p className="mt-2">
-            Manzil:&nbsp;
-            <span className="font-medium dark:text-white">
-              Navoiy shahri, Navoiy ko‘chasi 30A-uy
-            </span>
+            {t("address")}:&nbsp;
+            <span className="font-medium dark:text-white">{t("address_value")}</span>
           </p>
           <p className="mt-2">
-            Telefon::&nbsp;
+            {t("phone")}:&nbsp;
             <span className="font-medium dark:text-white">36–224–36–51</span>
           </p>
           <p className="mt-2">
-            Faks:&nbsp;
+            {t("fax")}:&nbsp;
             <span className="font-medium dark:text-white">36–224–36–51</span>
           </p>
           <p className="mt-2">

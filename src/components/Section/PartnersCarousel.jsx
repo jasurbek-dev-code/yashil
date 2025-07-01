@@ -5,27 +5,32 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
+import useIsClient from '@/hooks/useIsClient';
 
 const PartnersCarousel = () => {
+  const { t } = useTranslation();
+    const isClient = useIsClient();
+    if (!isClient) return null;
   const partners = [
     {
-      title: "O'zbekiston Respublikasi prezidentining rasmiy vebsayti",
-      image: "/images/g.svg", 
-    },
-    {
-      title: "O'zbekiston Respublikasi Bosh Prokuraturasi rasmiy vebsayti",
-      image: "/images/p.svg",
-    },
-    {
-      title: "Yagona Davlat Interaktiv xizmatlari",
-      image: "/images/x.svg",
-    },
-    {
-      title: "O'zbekiston Respublikasi Hukumat portali",
+      key: "president_site",
       image: "/images/g.svg",
     },
     {
-      title: "O'zbekiston Respublikasi Adliya vazirligi",
+      key: "prosecutor_site",
+      image: "/images/p.svg",
+    },
+    {
+      key: "interactive_services",
+      image: "/images/x.svg",
+    },
+    {
+      key: "government_portal",
+      image: "/images/g.svg",
+    },
+    {
+      key: "justice_ministry",
       image: "/images/p.svg",
     }
   ];
@@ -50,7 +55,9 @@ const PartnersCarousel = () => {
 
   return (
     <div className="mx-auto px-4 lg:px-0 py-8 max-w-[1200px]">
-      <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white mb-8">Hamkorlarimiz</h2>
+      <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white mb-8">
+        {t("our_partners")}
+      </h2>
 
       <div className="relative">
         <Slider {...settings}>
@@ -66,23 +73,21 @@ const PartnersCarousel = () => {
                 style={{ height: '220px' }}
               >
                 <div className="h-28 flex items-center justify-center">
-                  {partner.image && (
-                    <Image
-                      src={partner.image}
-                      alt={partner.title}
-                      className="max-h-16 max-w-[80%] object-contain"
-                      width={160}
-                      height={80}
-                      style={{
-                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
-                      }}
-                    />
-                  )}
+                  <Image
+                    src={partner.image}
+                    alt={t(partner.key)}
+                    className="max-h-16 max-w-[80%] object-contain"
+                    width={160}
+                    height={80}
+                    style={{
+                      filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                    }}
+                  />
                 </div>
 
                 <div className="px-4 pb-4 flex-1 flex flex-col justify-start">
                   <h3 className="text-center font-semibold text-gray-800 dark:text-gray-300 text-sm md:text-base leading-tight">
-                    {partner.title}
+                    {t(partner.key)}
                   </h3>
                 </div>
               </div>

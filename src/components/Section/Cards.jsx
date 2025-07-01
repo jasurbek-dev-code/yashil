@@ -6,8 +6,10 @@ import greenBanner from "../../../public/images/green_banner.svg";
 import { useFetchData } from "@/hooks/useFetchData";
 import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";
+import { useTranslation } from "react-i18next";
 
 const Cards = () => {
+  const { t } = useTranslation()
   const { data, isLoading, error } = useFetchData('services', '/services');
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
@@ -22,7 +24,7 @@ const Cards = () => {
 
       <div className="max-w-[1200px] mx-auto px-4 lg:px-0 relative z-10">
         <h2 className="text-left text-white text-3xl mb-8 font-semibold">
-          Xizmatlar
+          {t("services")}
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data.length ? data.map((item, index) => (

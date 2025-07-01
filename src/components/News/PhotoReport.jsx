@@ -9,8 +9,10 @@ import CardFooter from '../CardFooter';
 import { useFetchData } from '@/hooks/useFetchData';
 import Loading from '../Loading';
 import ErrorAlert from '../ErrorAlert';
+import { useTranslation } from 'react-i18next';
 
 const PhotoReport = () => {
+  const { t } = useTranslation();
   const { data, isLoading, error } = useFetchData('photos', '/gallery/photos');
   const [page, setPage] = useState(1);
   const itemsPerPage = 9;
@@ -28,7 +30,7 @@ const PhotoReport = () => {
         {/* Breadcrumb */}
         <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-400 flex justify-between">
           <div>
-            <Link href="/" className="hover:underline">Asosiy</Link> / Fotoreportaj
+            <Link href="/" className="hover:underline">{t("home")}</Link> / {t("photo_report")}
           </div>
           <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
             <Image src={eye} alt="eye" height={20} width={20} className="dark:invert dark:brightness-0" />
@@ -38,7 +40,7 @@ const PhotoReport = () => {
 
         {/* Title */}
         <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300 dark:border-gray-600">
-          <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">Fotoreportaj</h1>
+          <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">{t("photo_report")}</h1>
         </div>
 
         {/* Cards */}
@@ -58,7 +60,7 @@ const PhotoReport = () => {
                   disabled={page === 1}
                   className="px-3 py-1 rounded-md bg-gray-200 disabled:opacity-50 dark:bg-gray-700 dark:text-white"
                 >
-                  Oldingi
+                  {t("prev")}
                 </button>
 
                 {[...Array(totalPages)].map((_, i) => (
@@ -80,7 +82,7 @@ const PhotoReport = () => {
                   disabled={page === totalPages}
                   className="px-3 py-1 rounded-md bg-gray-200 disabled:opacity-50 dark:bg-gray-700 dark:text-white"
                 >
-                  Keyingi
+                  {t("next")}
                 </button>
               </div>
             )}

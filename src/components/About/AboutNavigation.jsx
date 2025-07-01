@@ -3,21 +3,26 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import arrowUp from '../../../public/icons/arrow-up.svg';
-import arrowUpBlack from '../../../public/icons/arrow-up-black.svg';
-
-const subLinks = [
-  { title: "Intitut haqida", href: "/about/overview" },
-  { title: "Bo’lim tarkibi", href: "/about/departments" },
-  { title: "Tashkiliy tuzilma", href: "/about/structure" },
-  { title: "Rahbariyat", href: "/about/leadership" },
-  { title: "Markaziy apparat", href: "/about/center-apparat" },
-  { title: "Hududiy filiallar", href: "/about/suborganizations" },
-  { title: "Bo’sh ish o’rinlari", href: "/about/vacancies" },
-];
+import { useTranslation } from "react-i18next";
+import arrowUp from "../../../public/icons/arrow-up.svg";
+import arrowUpBlack from "../../../public/icons/arrow-up-black.svg";
+import useIsClient from "@/hooks/useIsClient";
 
 export default function SubNavigation() {
   const pathname = usePathname();
+  const { t } = useTranslation();
+    const isClient = useIsClient();
+    if (!isClient) return null;
+
+  const subLinks = [
+    { title: t("about"), href: "/about/overview" },
+    { title: t("departments"), href: "/about/departments" },
+    { title: t("structure"), href: "/about/structure" },
+    { title: t("leadership"), href: "/about/leadership" },
+    { title: t("center_apparat"), href: "/about/center-apparat" },
+    { title: t("suborganizations"), href: "/about/suborganizations" },
+    { title: t("vacancies"), href: "/about/vacancies" },
+  ];
 
   return (
     <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-4 w-full max-w-xs transition-colors">
