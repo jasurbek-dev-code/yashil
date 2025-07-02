@@ -9,18 +9,23 @@ import eye from "../../../public/icons/eye-little.svg";
 import facebook from "../../../public/icons/c-facebook.svg";
 import telegram from "../../../public/icons/c-telegram.svg";
 import greenBanner from "../../../public/images/green_banner.svg";
+import { useTranslation } from "react-i18next";
+import useIsClient from "@/hooks/useIsClient";
+import { usePostData } from '@/hooks/usePostData';
 
 export default function Contact() {
+  const postMutation = usePostData('/about/contact');
+  const { t } = useTranslation();
   const schema = yup.object().shape({
-    name: yup.string().required("Ismingizni kiriting"),
+    name: yup.string().required(t("contact_form.name_required")),
     phone: yup
       .string()
-      .required("Telefon raqamingizni kiriting")
+      .required(t("contact_form.phone_required"))
       .matches(
         /^(\+998|998)?(9[0-9]|3[3]|7[1]|8[8]|6[1])\d{7}$/,
-        "To'g'ri O‘zbekiston telefon raqamini kiriting"
+        t("contact_form.phone_invalid")
       ),
-    message: yup.string().required("Iltimos, izoh yozing"),
+    comment: yup.string().required(t("contact_form.message_required")),
   });
 
   const {
@@ -34,9 +39,12 @@ export default function Contact() {
 
   const onSubmit = (data) => {
     console.log("Yuborilgan ma'lumot:", data);
+    postMutation.mutate(data);
     reset();
   };
 
+  const isClient = useIsClient();
+  if (!isClient) return null;
   return (
     <div className="relative bg-cover bg-center bg-no-repeat py-0 -z-0">
       <Image
@@ -48,10 +56,9 @@ export default function Contact() {
 
       <div className="relative w-full py-10 px-4 md:px-10 -z-0">
         <div className="relative z-10 bg-white dark:bg-[#0f1a0f] backdrop-blur-md rounded-2xl shadow-xl max-w-[1200px] mx-auto overflow-hidden">
-          {/* Breadcrumb */}
           <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
             <div>
-              <Link href="/" className="hover:underline">Asosiy</Link> / Bog'lanish
+              <Link href="/" className="hover:underline">{t("home")}</Link> / {t("contact")}
             </div>
             <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
               <Image src={eye} alt="eye" height={20} width={20} className="dark:invert" />
@@ -59,43 +66,35 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Title */}
           <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300 dark:border-gray-600">
-            <h1 className="text-xl font-bold text-gray-800 dark:text-white">Bog'lanish</h1>
+            <h1 className="text-xl font-bold text-gray-800 dark:text-white">{t("contact")}</h1>
           </div>
 
-          {/* Map */}
           <div className="w-full h-[489px] rounded-xl overflow-hidden pl-5 pr-5 pt-5">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47951.75124390357!2d69.21533806699942!3d41.30810739188617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bfe06fdcdd3%3A0x8ac9b509d7e78f15!2z0KfQtdGA0LrQtdC90YLRgNCw!5e0!3m2!1sru!2s!4v1718552443047!5m2!1sru!2s"
+              src="https://www.google.com/maps?q=41.34601997212194,69.32722057799234&hl=es;z=14&output=embed"
               width="100%"
-              height="100%"
-              allowFullScreen=""
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="border-0 w-full h-full rounded-xl"
-            ></iframe>
+            />
+
           </div>
 
-          {/* Form & Info */}
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-5 items-stretch">
-              {/* Info block */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { icon: facebook, title: "Telefon:", value: "+998 71 262-29-34" },
-                  { icon: facebook, title: "Tarmoq ma'muri:", value: "+998 95 224-29-34" },
-                  { icon: telegram, title: "Email:", value: "yashilloyoha@yashil.uz" },
-                  {
-                    icon: telegram,
-                    title: "Telegram:",
-                    value: "100097 Toshkent sh., Do'rmon yo'li k., 2-A uy",
-                  },
+                  { icon: facebook, title: t("contact_info.phone"), value: "+998 71 262-29-34" },
+                  { icon: facebook, title: t("contact_info.admin"), value: "+998 95 224-29-34" },
+                  { icon: telegram, title: t("contact_info.email"), value: "yashilloyoha@yashil.uz" },
+                  { icon: telegram, title: t("contact_info.address"), value: "100097 Toshkent sh., Do'rmon yo'li k., 2-A uy" },
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className={`flex items-center gap-4 px-2 bg-[#F9F9F9] dark:bg-gray-800 rounded-xl shadow-sm ${index >= 2 ? "sm:col-span-2" : ""
-                      }`}
+                    className={`flex items-center gap-4 px-2 bg-[#F9F9F9] dark:bg-gray-800 rounded-xl shadow-sm ${index >= 2 ? "sm:col-span-2" : ""}`}
                   >
                     <div className="p-1 rounded-full flex-shrink-0 flex justify-center">
                       <Image src={item.icon} alt={item.title} width={50} height={50} className="dark:invert" />
@@ -108,55 +107,44 @@ export default function Contact() {
                 ))}
               </div>
 
-              {/* Form block */}
               <div className="grid grid-cols-1 gap-4 h-full">
                 <div>
                   <input
                     {...register("name")}
                     type="text"
-                    placeholder="Ismingiz"
-                    className={`w-full border ${errors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                      } bg-[#F9F9F9] dark:bg-gray-800 text-black dark:text-white rounded-md p-3 focus:ring-green-500 focus:border-green-500`}
+                    placeholder={t("contact_form.name")}
+                    className={`w-full border ${errors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"} bg-[#F9F9F9] dark:bg-gray-800 text-black dark:text-white rounded-md p-3`}
                   />
-                  {errors.name && (
-                    <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-                  )}
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
                 </div>
 
                 <div>
                   <input
                     {...register("phone")}
                     type="tel"
-                    placeholder="Telefon raqamingiz"
-                    className={`w-full border ${errors.phone ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                      } bg-[#F9F9F9] dark:bg-gray-800 text-black dark:text-white rounded-md p-3 focus:ring-green-500 focus:border-green-500`}
+                    placeholder={t("contact_form.phone")}
+                    className={`w-full border ${errors.phone ? "border-red-500" : "border-gray-300 dark:border-gray-600"} bg-[#F9F9F9] dark:bg-gray-800 text-black dark:text-white rounded-md p-3`}
                   />
-                  {errors.phone && (
-                    <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-                  )}
+                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
                 </div>
 
                 <div className="flex-grow">
                   <textarea
-                    {...register("message")}
-                    placeholder="Izoh"
-                    className={`w-full border ${errors.message ? "border-red-500" : "border-gray-300 dark:border-gray-600"
-                      } bg-[#F9F9F9] dark:bg-gray-800 text-black dark:text-white rounded-md p-3 min-h-[120px] h-full focus:ring-green-500 focus:border-green-500`}
+                    {...register("comment")}
+                    placeholder={t("contact_form.message")}
+                    className={`w-full border ${errors.comment ? "border-red-500" : "border-gray-300 dark:border-gray-600"} bg-[#F9F9F9] dark:bg-gray-800 text-black dark:text-white rounded-md p-3 min-h-[120px] h-full`}
                   ></textarea>
-                  {errors.message && (
-                    <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
-                  )}
+                  {errors.comment && <p className="text-red-500 text-sm mt-1">{errors.comment.message}</p>}
                 </div>
               </div>
             </div>
 
-            {/* Submit */}
             <div className="flex justify-end px-5 pb-6">
               <button
                 type="submit"
                 className="bg-green-800 hover:bg-green-700 text-white px-6 py-3 rounded-md transition duration-300"
               >
-                Yuborish
+                {t("contact_form.submit")}
               </button>
             </div>
           </form>

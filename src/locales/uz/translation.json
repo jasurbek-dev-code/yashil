@@ -99,5 +99,21 @@
   "code": "Shifr",
   "name": "Nomi",
   "file": "Fayl",
-  "open": "Ochish"
+  "open": "Ochish",
+  "contact_info": {
+    "phone": "Telefon:",
+    "admin": "Tarmoq ma'muri:",
+    "email": "Email:",
+    "address": "Manzil:"
+  },
+  "contact_form": {
+    "name": "Ismingiz",
+    "phone": "Telefon raqamingiz",
+    "message": "Izoh",
+    "submit": "Yuborish",
+    "name_required": "Ismingizni kiriting",
+    "phone_required": "Telefon raqamingizni kiriting",
+    "phone_invalid": "To'g'ri O‘zbekiston telefon raqamini kiriting",
+    "message_required": "Iltimos, izoh yozing"
+  }
 }

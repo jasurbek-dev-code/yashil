@@ -99,5 +99,21 @@
   "code": "Code",
   "name": "Name",
   "file": "File",
-  "open": "Open"
+  "open": "Open",
+  "contact_info": {
+    "phone": "Phone",
+    "admin": "Network Admin",
+    "email": "Email",
+    "address": "Address"
+  },
+  "contact_form": {
+    "name": "Your name",
+    "phone": "Your phone number",
+    "message": "Your message",
+    "submit": "Submit",
+    "name_required": "Please enter your name",
+    "phone_required": "Please enter your phone number",
+    "phone_invalid": "Enter a valid Uzbek phone number",
+    "message_required": "Please write a message"
+  }
 }
