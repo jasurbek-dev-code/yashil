@@ -12,12 +12,13 @@ import greenBanner from "../../../public/images/green_banner.svg";
 import { useTranslation } from "react-i18next";
 import useIsClient from "@/hooks/useIsClient";
 import { usePostData } from '@/hooks/usePostData';
+import toast from 'react-hot-toast';
 
 export default function Contact() {
   const postMutation = usePostData('/about/contact');
   const { t } = useTranslation();
   const schema = yup.object().shape({
-    name: yup.string().required(t("contact_form.name_required")),
+    fullname: yup.string().required(t("contact_form.name_required")),
     phone: yup
       .string()
       .required(t("contact_form.phone_required"))
@@ -37,11 +38,16 @@ export default function Contact() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Yuborilgan ma'lumot:", data);
-    postMutation.mutate(data);
+const onSubmit = async (data) => {
+  try {
+    await postMutation.mutateAsync(data);
+    toast.success("Ma'lumot muvaffaqiyatli yuborildi!");
     reset();
-  };
+  } catch (error) {
+    toast.error("Xatolik yuz berdi!");
+    console.error(error);
+  }
+};
 
   const isClient = useIsClient();
   if (!isClient) return null;
@@ -110,12 +116,12 @@ export default function Contact() {
               <div className="grid grid-cols-1 gap-4 h-full">
                 <div>
                   <input
-                    {...register("name")}
+                    {...register("fullname")}
                     type="text"
                     placeholder={t("contact_form.name")}
-                    className={`w-full border ${errors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"} bg-[#F9F9F9] dark:bg-gray-800 text-black dark:text-white rounded-md p-3`}
+                    className={`w-full border ${errors.fullname ? "border-red-500" : "border-gray-300 dark:border-gray-600"} bg-[#F9F9F9] dark:bg-gray-800 text-black dark:text-white rounded-md p-3`}
                   />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+                  {errors.fullname && <p className="text-red-500 text-sm mt-1">{errors.fullname.message}</p>}
                 </div>
 
                 <div>

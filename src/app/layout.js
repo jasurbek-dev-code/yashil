@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "react-medium-image-zoom/dist/styles.css";
+import { Toaster } from 'react-hot-toast';
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer/Footer";
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReactQueryProvider>
+          <Toaster position="top-right" reverseOrder={false} />
           <ScrollToTop />
           <ScrollToTopButton />
           <ProgressBar />
