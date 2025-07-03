@@ -7,29 +7,19 @@ import Image from "next/image";
 import greenBanner from "../../../public/images/green_banner.svg";
 import { useTranslation } from "react-i18next";
 import useIsClient from "@/hooks/useIsClient";
+import Loading from "../Loading";
+import ErrorAlert from "../ErrorAlert";
+import { useFetchData } from "@/hooks/useFetchData";
 
 const ProjectsCarousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const { t } = useTranslation();
+  const { data, isLoading, error } = useFetchData('projects', '/about/projects');
   const isClient = useIsClient();
   if (!isClient) return null;
-  const projects = [
-    {
-      id: 1,
-      key: "project_1",
-      bgImage: "/images/garden.svg",
-    },
-    {
-      id: 2,
-      key: "project_2",
-      bgImage: "/images/garden.svg",
-    },
-    {
-      id: 3,
-      key: "project_3",
-      bgImage: "/images/garden.svg",
-    },
-  ];
+
+  if (isLoading) return <Loading />;
+  if (error) return <ErrorAlert />;
 
   const settings = {
     dots: true,
@@ -75,25 +65,25 @@ const ProjectsCarousel = () => {
         </h2>
 
         <Slider {...settings}>
-          {projects.map((project, index) => {
+          {data.map((item, index) => {
             const isActive = index === activeSlide;
             return (
-              <div key={project.id} className="px-2">
+              <div key={item.id} className="px-2">
                 <div
                   className={`relative h-[500px] rounded-xl overflow-hidden shadow-lg transition-all duration-300 transform ${isActive ? "scale-100" : "scale-90 opacity-60"
                     } flex flex-col`}
                 >
                   <div className="relative flex-1 w-full">
                     <Image
-                      src={project.bgImage}
-                      alt={t(project.key)}
+                      src={item.file}
+                      alt={item.title}
                       fill
                       className="object-cover"
                     />
                   </div>
                   <div className="bg-black bg-opacity-70 text-white text-center p-4">
                     <p className="text-sm md:text-base">
-                      {t(project.key)}
+                      {t(item.title)}
                     </p>
                   </div>
                 </div>

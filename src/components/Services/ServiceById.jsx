@@ -7,8 +7,10 @@ import CardFooter from "../CardFooter";
 import ErrorAlert from "../ErrorAlert";
 import Loading from "../Loading";
 import { useFetchData } from "@/hooks/useFetchData";
+import { useTranslation } from "react-i18next";
 
 export default function ServiceById({ id }) {
+  const { t } = useTranslation();
   const { data, isLoading, error } = useFetchData('services', `/services/${id}`);
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
@@ -18,7 +20,7 @@ export default function ServiceById({ id }) {
       {/* Breadcrumb */}
       <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
         <div>
-          <Link href="/services" className="hover:underline">Services</Link> / {data.title}
+          <Link href="/services" className="hover:underline">{t("services")}</Link> / {data.title}
         </div>
         <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
           <Image src={eye} alt="eye" height={20} width={20} className="dark:invert dark:brightness-0" />

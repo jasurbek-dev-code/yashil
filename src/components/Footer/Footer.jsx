@@ -9,11 +9,18 @@ import youtube from '../../../public/icons/youtube_f.svg';
 import telegram from '../../../public/icons/telegram_f.svg';
 import { useTranslation } from "react-i18next";
 import useIsClient from "@/hooks/useIsClient";
+import Loading from "../Loading";
+import { useFetchData } from "@/hooks/useFetchData";
+import ErrorAlert from "../ErrorAlert";
+import Link from "next/link";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { data, isLoading, error } = useFetchData('contact', '/about/get-contact');
   const isClient = useIsClient();
   if (!isClient) return null;
+  if (isLoading) return <Loading />;
+  if (error) return <ErrorAlert />;
   return (
     <footer className="bg-green-900 dark:bg-[#0f1a0f] text-white py-10 transition-colors">
       <div className="max-w-[1200px] mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -33,10 +40,16 @@ const Footer = () => {
           </a>
 
           <div className="flex gap-4 mt-4 text-xl">
-            <Image src={instagram} alt="Instagram" />
-            <Image src={facebook} alt="Facebook" />
+            {data.facebook ? <Link href={data.facebook} target="_blank">
+              <Image src={facebook} alt="Facebook" />
+            </Link> : null}
+            {data?.instagram ? <Link href={data.instagram} target="_blank">
+              <Image src={instagram} alt="Instagram" />
+            </Link> : null}
+            {data?.telegram ? <Link href={data.telegram} target="_blank">
+              <Image src={telegram} alt="Telegram" />
+            </Link> : null}
             <Image src={youtube} alt="YouTube" />
-            <Image src={telegram} alt="Telegram" />
           </div>
         </div>
 
