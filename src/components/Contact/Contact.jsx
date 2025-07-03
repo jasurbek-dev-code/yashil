@@ -38,16 +38,16 @@ export default function Contact() {
     resolver: yupResolver(schema),
   });
 
-const onSubmit = async (data) => {
-  try {
-    await postMutation.mutateAsync(data);
-    toast.success("Ma'lumot muvaffaqiyatli yuborildi!");
-    reset();
-  } catch (error) {
-    toast.error("Xatolik yuz berdi!");
-    console.error(error);
-  }
-};
+  const onSubmit = async (data) => {
+    try {
+      await postMutation.mutateAsync(data);
+      toast.success("Ma'lumot muvaffaqiyatli yuborildi!");
+      reset();
+    } catch (error) {
+      toast.error("Xatolik yuz berdi!");
+      console.error(error);
+    }
+  };
 
   const isClient = useIsClient();
   if (!isClient) return null;

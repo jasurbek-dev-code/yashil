@@ -12,8 +12,7 @@ import { useTranslation } from "react-i18next";
 export default function DocsDetails({ id }) {
   const { t } = useTranslation();
   const { data, isLoading, error } = useFetchData("categories", `/documents/?category=${id}`);
-  console.log(data);
-  
+
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
 
