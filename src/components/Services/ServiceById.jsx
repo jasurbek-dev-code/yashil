@@ -20,7 +20,7 @@ export default function ServiceById({ id }) {
       {/* Breadcrumb */}
       <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
         <div>
-          <Link href="/services" className="hover:underline">{t("services")}</Link> / {data.title}
+          <Link href="/services" className="hover:underline">{t("services")}</Link> / {data?.title}
         </div>
         <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
           <Image src={eye} alt="eye" height={20} width={20} className="dark:invert dark:brightness-0" />
@@ -31,14 +31,14 @@ export default function ServiceById({ id }) {
       {/* Sarlavha */}
       <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300 dark:border-gray-600">
         <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">
-           {data.title}
+           {data?.title}
         </h1>
       </div>
 
       {/* Kontent */}
       <div className="p-5 mx-auto text-gray-800 dark:text-gray-200 leading-relaxed text-[15px] whitespace-pre-line">
         <p className="mb-4">
-           {data.body}
+           {data?.body}
         </p>
       </div>
 

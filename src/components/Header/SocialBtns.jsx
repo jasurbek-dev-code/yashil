@@ -13,7 +13,7 @@ export default function SocialBtns() {
       {/* Facebook */}
       {
         data.facebook ?
-          <Link href={data.facebook} target="_blank">
+          <Link href={data?.facebook} target="_blank">
             <div className="w-12 h-12 flex items-center justify-center p-1.5 border-b border-gray-300 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
               <Image src="/icons/facebook.svg" alt="facebook" width={32} height={32} />
             </div>
@@ -23,7 +23,7 @@ export default function SocialBtns() {
 
       {/* Instagram */}
       {
-        data.instagram ? <Link href={data.instagram} target="_blank">
+        data?.instagram ? <Link href={data?.instagram} target="_blank">
           <div className="w-12 h-12 flex items-center justify-center p-1.5 border-b border-gray-300 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
             <Image src="/icons/instagram.svg" alt="instagram" width={32} height={32} />
           </div>
@@ -33,7 +33,7 @@ export default function SocialBtns() {
 
       {/* Telegram */}
       {
-        data.telegram ? <Link href={data.telegram} target="_blank">
+        data?.telegram ? <Link href={data?.telegram} target="_blank">
           <div className="w-12 h-12 flex items-center justify-center p-1.5 border-b border-gray-300 dark:border-gray-600 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition">
             <Image src="/icons/telegram.svg" alt="telegram" width={32} height={32} />
           </div>

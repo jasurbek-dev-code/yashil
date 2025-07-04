@@ -62,17 +62,17 @@ export default function DocsDetails({ id }) {
             </thead>
             <tbody>
               {data?.results?.length
-                ? data.results.map((item, i) => (
+                ? data?.results?.map((item, i) => (
                     <tr key={i}>
                       <td className="text-center px-6 py-4 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-700 rounded-bl-lg shadow-sm">
-                        {item.shifr}
+                        {item?.shifr}
                       </td>
                       <td className="px-6 py-4 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-700 shadow-sm">
-                        {item.title}
+                        {item?.title}
                       </td>
                       <td className="text-center px-6 py-4 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-700 rounded-br-lg shadow-sm">
                         <button
-                          onClick={() => window.open(item.file, "_blank")}
+                          onClick={() => window.open(item?.file, "_blank")}
                           className="text-blue-600 dark:text-blue-400 hover:underline"
                         >
                           {t("open")}

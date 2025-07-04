@@ -40,13 +40,13 @@ const Footer = () => {
           </a>
 
           <div className="flex gap-4 mt-4 text-xl">
-            {data.facebook ? <Link href={data.facebook} target="_blank">
+            {data?.facebook ? <Link href={data?.facebook} target="_blank">
               <Image src={facebook} alt="Facebook" />
             </Link> : null}
-            {data?.instagram ? <Link href={data.instagram} target="_blank">
+            {data?.instagram ? <Link href={data?.instagram} target="_blank">
               <Image src={instagram} alt="Instagram" />
             </Link> : null}
-            {data?.telegram ? <Link href={data.telegram} target="_blank">
+            {data?.telegram ? <Link href={data?.telegram} target="_blank">
               <Image src={telegram} alt="Telegram" />
             </Link> : null}
             <Image src={youtube} alt="YouTube" />

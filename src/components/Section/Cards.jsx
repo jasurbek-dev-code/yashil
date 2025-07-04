@@ -30,10 +30,10 @@ const Cards = () => {
           {data.length ? data.map((item, index) => (
             <Card
               key={index}
-              id={item.id}
-              icon={item.icon}
-              title={item.title}
-              body={item.body}
+              id={item?.id}
+              icon={item?.icon}
+              title={item?.title}
+              body={item?.body}
             />
           )) : null}
         </div>

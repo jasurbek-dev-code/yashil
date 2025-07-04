@@ -14,19 +14,19 @@ import { useTranslation } from "react-i18next";
 export default function AboutSubOrganizations() {
   const { t } = useTranslation();
   const { data, isLoading, error } = useFetchData("regions", "/regions");
-  const [selectedRegionItem, setSelectedRegionItem] = useState(null);
+  const [selectedRegionSoato, setSelectedRegionSoato] = useState(null);
 
   useEffect(() => {
     if (data && data.length > 0) {
-      setSelectedRegionItem(data[0].region.name);
+      setSelectedRegionSoato(data[0].region.soato);
     }
   }, [data]);
 
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
 
-  const selectedInfo = data.find(
-    (item) => item.region.name === selectedRegionItem
+  const selectedInfo = data?.find(
+    (item) => item.region.soato === selectedRegionSoato
   );
 
   return (
@@ -62,8 +62,8 @@ export default function AboutSubOrganizations() {
         {/* SVG Map */}
         <div className="w-full px-6 pb-4 flex justify-center">
           <UzbekistanMap
-            selectedRegionItem={selectedRegionItem}
-            onRegionSelect={setSelectedRegionItem}
+            selectedRegionItem={selectedRegionSoato}
+            onRegionSelect={setSelectedRegionSoato}
           />
         </div>
 
@@ -72,29 +72,29 @@ export default function AboutSubOrganizations() {
           {selectedInfo ? (
             <div className="rounded-xl text-[18px] leading-relaxed text-gray-800 dark:text-gray-200 bg-[#F7F7F7] dark:bg-[#1a1a1a] p-6">
               <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white mt-3">
-                {selectedInfo.region.name}
+                {selectedInfo?.region?.name}
               </h2>
               <p className="mt-2">
                 {t("chief")}:{" "}
                 <span className="underline font-medium">
-                  {selectedInfo.fullname}
+                  {selectedInfo?.fullname}
                 </span>
               </p>
               <p className="mt-2">
                 {t("admission_days")}:{" "}
-                <span className="font-medium">{selectedInfo.admission_days}</span>
+                <span className="font-medium">{selectedInfo?.admission_days}</span>
               </p>
               <p className="mt-2">
-                {t("address")}: <span className="font-medium">{selectedInfo.address}</span>
+                {t("address")}: <span className="font-medium">{selectedInfo?.address}</span>
               </p>
               <p className="mt-2">
-                {t("phone")}: <span className="font-medium">{selectedInfo.phone}</span>
+                {t("phone")}: <span className="font-medium">{selectedInfo?.phone}</span>
               </p>
               <p className="mt-2">
-                {t("fax")}: <span className="font-medium">{selectedInfo.fax}</span>
+                {t("fax")}: <span className="font-medium">{selectedInfo?.fax}</span>
               </p>
               <p className="mt-2">
-                {t("email")}: <span className="font-medium">{selectedInfo.email}</span>
+                {t("email")}: <span className="font-medium">{selectedInfo?.email}</span>
               </p>
             </div>
           ) : (

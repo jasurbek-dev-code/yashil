@@ -20,8 +20,8 @@ const PhotoReport = () => {
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  const paginatedData = data.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+  const totalPages = Math.ceil(data?.length / itemsPerPage);
+  const paginatedData = data?.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
   return (
     <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
@@ -53,7 +53,7 @@ const PhotoReport = () => {
             </div>
 
             {/* Pagination */}
-            {data.length > itemsPerPage && (
+            {data?.length > itemsPerPage && (
               <div className="flex justify-center gap-2 mt-8">
                 <button
                   onClick={() => setPage(p => Math.max(p - 1, 1))}

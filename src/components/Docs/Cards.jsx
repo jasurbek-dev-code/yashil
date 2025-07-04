@@ -27,11 +27,11 @@ const Cards = () => {
         {t("legal_documents")}
       </h2>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {data.length ? data.map((item, index) => (
+        {data?.length ? data?.map((item, index) => (
           <Card
             key={index}
-            id={item.id}
-            title={item.name}
+            id={item?.id}
+            title={item?.name}
           />
         )) : null}
       </div>

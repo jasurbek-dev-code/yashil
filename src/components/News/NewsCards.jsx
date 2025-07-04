@@ -40,12 +40,12 @@ const NewsCards = () => {
         <div className="relative bg-cover bg-center bg-no-repeat px-6 my-3">
           <div className="px-4 lg:px-0 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data.results.map((item, index) => (
+              {data?.results?.map((item, index) => (
                 <NewsCard
                   key={index}
-                  imageSrc={item.photo.src}
-                  description={item.category.name}
-                  title={item.title}
+                  imageSrc={item?.photo?.src}
+                  description={item?.category?.name}
+                  title={item?.title}
                 />
               ))}
             </div>

@@ -20,8 +20,8 @@ const VideoReport = () => {
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  const paginatedData = data.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+  const totalPages = Math.ceil(data?.length / itemsPerPage);
+  const paginatedData = data?.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
   return (
     <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
@@ -47,17 +47,17 @@ const VideoReport = () => {
         <div className="relative bg-cover bg-center bg-no-repeat px-6 my-3">
           <div className="px-4 lg:px-0 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-              {paginatedData.map((item, index) => (
+              {paginatedData?.map((item, index) => (
                 <VideoReportCard
                   key={index}
-                  link={item.link}
-                  title={item.title}
+                  link={item?.link}
+                  title={item?.title}
                 />
               ))}
             </div>
 
             {/* Pagination */}
-            {data.length > itemsPerPage && (
+            {data?.length > itemsPerPage && (
               <div className="flex justify-center gap-2 mt-8">
                 <button
                   onClick={() => setPage((p) => Math.max(p - 1, 1))}

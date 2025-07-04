@@ -41,9 +41,9 @@ export default function AboutOverview() {
         {/* Rasm */}
         <div className="overflow-x-auto px-4 my-5 flex justify-center">
           <Image
-            src={data.photo.src}
-            width={data.photo.weight}
-            height={data.photo.height}
+            src={data?.photo?.src}
+            width={data?.photo?.weight}
+            height={data?.photo?.height}
             alt="overview"
             className="w-full h-auto"
           />

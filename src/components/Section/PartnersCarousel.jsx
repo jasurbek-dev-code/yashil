@@ -7,33 +7,20 @@ import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import useIsClient from '@/hooks/useIsClient';
+import Loading from '../Loading';
+import ErrorAlert from '../ErrorAlert';
+import { useFetchData } from '@/hooks/useFetchData';
+import Link from 'next/link';
 
 const PartnersCarousel = () => {
   const { t } = useTranslation();
-    const isClient = useIsClient();
-    if (!isClient) return null;
-  const partners = [
-    {
-      key: "president_site",
-      image: "/images/g.svg",
-    },
-    {
-      key: "prosecutor_site",
-      image: "/images/p.svg",
-    },
-    {
-      key: "interactive_services",
-      image: "/images/x.svg",
-    },
-    {
-      key: "government_portal",
-      image: "/images/g.svg",
-    },
-    {
-      key: "justice_ministry",
-      image: "/images/p.svg",
-    }
-  ];
+  const { data, isLoading, error } = useFetchData('useful-links', '/useful-links');
+
+  const isClient = useIsClient();
+  if (!isClient) return null;
+
+  if (isLoading) return <Loading />;
+  if (error) return <ErrorAlert />;
 
   const settings = {
     dots: false,
@@ -61,37 +48,39 @@ const PartnersCarousel = () => {
 
       <div className="relative">
         <Slider {...settings}>
-          {partners.map((partner, index) => (
-            <div key={index} className="px-2 h-full">
-              <div
-                className="bg-white dark:bg-[#1f1f1f] border border-gray-200 dark:border-gray-700 rounded-lg h-full flex flex-col
+          {data.map((item, index) => (
+            <Link href={item?.link} target='_blank'>
+              <div key={index} className="px-2 h-full">
+                <div
+                  className="bg-white dark:bg-[#1f1f1f] border border-gray-200 dark:border-gray-700 rounded-lg h-full flex flex-col
                 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06),0_0_0_1px_rgba(0,0,0,0.1)]
                 dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.05),0_2px_4px_-1px_rgba(255,255,255,0.04)]
                 hover:shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05),0_0_0_1px_rgba(0,0,0,0.1)]
                 dark:hover:shadow-[0_10px_15px_-3px_rgba(255,255,255,0.08),0_4px_6px_-2px_rgba(255,255,255,0.04)]
                 transition-shadow duration-300"
-                style={{ height: '220px' }}
-              >
-                <div className="h-28 flex items-center justify-center">
-                  <Image
-                    src={partner.image}
-                    alt={t(partner.key)}
-                    className="max-h-16 max-w-[80%] object-contain"
-                    width={160}
-                    height={80}
-                    style={{
-                      filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
-                    }}
-                  />
-                </div>
+                  style={{ height: '220px' }}
+                >
+                  <div className="h-28 flex items-center justify-center">
+                    <Image
+                      src={item?.photo}
+                      alt={item?.title}
+                      className="max-h-16 max-w-[80%] object-contain"
+                      width={160}
+                      height={80}
+                      style={{
+                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                      }}
+                    />
+                  </div>
 
-                <div className="px-4 pb-4 flex-1 flex flex-col justify-start">
-                  <h3 className="text-center font-semibold text-gray-800 dark:text-gray-300 text-sm md:text-base leading-tight">
-                    {t(partner.key)}
-                  </h3>
+                  <div className="px-4 pb-4 flex-1 flex flex-col justify-start">
+                    <h3 className="text-center font-semibold text-gray-800 dark:text-gray-300 text-sm md:text-base leading-tight">
+                      {item?.title}
+                    </h3>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </Slider>
       </div>

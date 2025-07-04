@@ -75,15 +75,15 @@ const ProjectsCarousel = () => {
                 >
                   <div className="relative flex-1 w-full">
                     <Image
-                      src={item.file}
-                      alt={item.title}
+                      src={item?.file}
+                      alt={item?.title}
                       fill
                       className="object-cover"
                     />
                   </div>
                   <div className="bg-black bg-opacity-70 text-white text-center p-4">
                     <p className="text-sm md:text-base">
-                      {t(item.title)}
+                      {item?.title}
                     </p>
                   </div>
                 </div>

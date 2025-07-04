@@ -48,12 +48,12 @@ export default function Vacancies() {
               </tr>
             </thead>
             <tbody>
-              {data.map((item) => (
+              {data?.map((item) => (
                 <tr key={item.id}>
-                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item.id}</td>
-                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600">{item.name}</td>
-                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item.education}</td>
-                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item.count}</td>
+                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item?.id}</td>
+                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600">{item?.name}</td>
+                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item?.education}</td>
+                  <td className="px-4 py-4 border border-gray-300 dark:border-gray-600 text-center">{item?.count}</td>
                 </tr>
               ))}
             </tbody>

@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-const Card = ({ id, icon, title, body }) => {
+const Card = ({ id, title }) => {
   const router = useRouter();
 
   const handleClick = () => {

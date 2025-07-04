@@ -51,10 +51,10 @@ export default function AboutCenterApparat() {
             <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden">
               <Zoom>
                 <Image
-                  src={person.photo.src}
-                  alt={person.fullname}
-                  width={person.photo.weight}
-                  height={person.photo.height}
+                  src={person?.photo?.src}
+                  alt={person?.fullname}
+                  width={person?.photo?.weight}
+                  height={person?.photo?.height}
                   className="object-cover w-full h-full"
                 />
               </Zoom>
@@ -63,10 +63,10 @@ export default function AboutCenterApparat() {
             {/* Text Content */}
             <div className="pr-10 mt-5">
               <h2 className="text-2xl font-semibold text-black dark:text-white mb-1">
-                {person.fullname}
+                {person?.fullname}
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mt-3">
-                {person.position}
+                {person?.position}
               </p>
 
               {/* Contact Info */}
@@ -74,11 +74,11 @@ export default function AboutCenterApparat() {
                 <div className="flex gap-3">
                   <div className="flex items-center gap-2">
                     <Image src={call} alt="phone" width={16} height={16} />
-                    <span>{person.phone}</span>
+                    <span>{person?.phone}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Image src={sms} alt="email" width={16} height={16} />
-                    <span>{person.email}</span>
+                    <span>{person?.email}</span>
                   </div>
                 </div>
               </div>

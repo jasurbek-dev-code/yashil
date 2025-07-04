@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "../../hooks/useTheme";
-import { useTranslation } from 'react-i18next';
 import LanguageSelect from "./LanguageSelect";
 
 

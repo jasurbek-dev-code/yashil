@@ -46,7 +46,7 @@ const NewsCards = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {paginatedData.map((item, index) => (
+          {paginatedData?.map((item, index) => (
             <NewsCard
               key={index}
               imageSrc={item.photo.src}
