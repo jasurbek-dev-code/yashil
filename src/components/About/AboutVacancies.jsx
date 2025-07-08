@@ -16,6 +16,7 @@ export default function Vacancies() {
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
 
+
   return (
     <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
       <div className="relative z-10 bg-white dark:bg-[#0f1a0f] backdrop-blur-md rounded-[20px] shadow-xl max-w-[1200px] mx-auto overflow-hidden">
@@ -37,7 +38,7 @@ export default function Vacancies() {
         </div>
 
         {/* Table */}
-        <div className="overflow-x-auto px-4 pb-6">
+        {/* <div className="overflow-x-auto px-4 pb-6">
           <table className="min-w-full text-sm text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg">
             <thead>
               <tr className="bg-gray-100 dark:bg-[#1a1a1a]">
@@ -58,6 +59,21 @@ export default function Vacancies() {
               ))}
             </tbody>
           </table>
+        </div> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 p-4">
+          {data?.map((item, index) => (
+            <div
+              key={index}
+              className="border rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition"
+            >
+              <h3 className="text-md font-semibold text-black mb-2">{item?.name}</h3>
+              <p className="text-green-700 font-medium">{item?.education}</p>
+                <div className="border-b border-gray-200 my-3" />
+              <div className="flex items-center justify-between text-sm text-gray-500 mt-4">
+                <span>{item?.date}</span>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Footer */}

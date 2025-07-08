@@ -24,7 +24,7 @@ export default function TopHeader() {
             />
           </Link>
           <h1 className="text-white dark:text-gray-100 text-sm md:text-base font-sans leading-tight">
-            YASHIL LOYIHA
+            YASHILLOYIHA
             <br />
             LOYIHALASH INSTITUTI
           </h1>

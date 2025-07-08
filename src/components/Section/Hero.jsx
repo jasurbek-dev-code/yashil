@@ -39,7 +39,7 @@ const Hero = () => {
 
       <div className="max-w-[1200px] mx-auto flex flex-wrap gap-10 px-4 lg:px-0 items-start relative z-10">
         <h2 className="w-full text-[30px] text-left text-gray-800 dark:text-gray-100 font-bold">
-          {t("regional_departments")}
+          {t("branches")}
         </h2>
 
         {/* Map image */}

@@ -12,14 +12,13 @@ export default function Header() {
   const specialRoutes = ['/services', '/docs', '/vacancies', "/news", "/contact", "/about"];
   const isSpecial = specialRoutes.some(route => pathname.startsWith(route));
 
-    const isClient = useIsClient();
-    if (!isClient) return null;
+  const isClient = useIsClient();
+  if (!isClient) return null;
 
   return (
     <div
       className={`relative w-full ${isSpecial ? "" : "min-h-screen"}`}
     >
-      {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         autoPlay
@@ -27,7 +26,7 @@ export default function Header() {
         muted
         playsInline
       >
-        <source src="/videos/bg_video.mp4" type="video/mp4" />
+        <source src="/videos/home_bg.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

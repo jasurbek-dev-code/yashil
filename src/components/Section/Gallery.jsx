@@ -6,7 +6,6 @@ import greenBanner from "../../../public/images/green_banner.svg";
 import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";
 import { useFetchData } from "@/hooks/useFetchData";
-import g from '../../../public/images/g2.svg';
 import { useTranslation } from 'react-i18next';
 
 const Gallery = () => {
@@ -40,7 +39,7 @@ const Gallery = () => {
           {data.map((src, index) => (
             <div key={index} className="relative w-full aspect-[4/5]">
               <Image
-                src={src?.file?.src ? src?.file?.src : g}
+                src={src?.file?.src}
                 alt={t("gallery_image_alt", { index: index + 1 })}
                 fill
                 className="object-cover rounded-sm"
