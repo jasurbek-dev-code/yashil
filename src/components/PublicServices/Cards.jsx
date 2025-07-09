@@ -9,12 +9,12 @@ import ErrorAlert from "../ErrorAlert";
 import { useTranslation } from "react-i18next";
 
 const Cards = () => {
-  const { t } = useTranslation()
-  const { data, isLoading, error } = useFetchData('services', '/services');
+  const { t } = useTranslation();
+  const { data, isLoading, error } = useFetchData('public-services', '/useful-links/public-services');
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
   return (
-    <div className="relative bg-cover bg-center bg-no-repeat py-16 -z-0">
+    <div className="relative bg-cover bg-center bg-no-repeat py-16 min-h-[50vh] -z-0">
       <Image
         src={greenBanner}
         alt="background"
@@ -24,19 +24,14 @@ const Cards = () => {
 
       <div className="max-w-[1200px] mx-auto px-4 lg:px-0 relative z-10">
         <h2 className="text-left text-white text-3xl mb-8 font-semibold">
-          {t("services")}
+          {t("gov_services")}
         </h2>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {data.length ? data.map((item, index) => (
+          {data?.length ? data?.map((item, index) => (
             <Card
-              key={index}
-              id={item?.id}
-              icon={item?.icon}
-              photo={item?.photo?.src}
-              width={item?.photo?.weight}
-              height={item?.photo?.height}
+              key={item?.id}
               title={item?.title}
-              body={item?.body}
+              link={item?.link}
             />
           )) : null}
         </div>

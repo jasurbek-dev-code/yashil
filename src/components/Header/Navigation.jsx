@@ -67,24 +67,15 @@ export default function Navigation() {
           )}
         </div>
 
-        <Link href="https://e-auksion.uz/home" target="_blank">
-          <div className="relative z-[1]">
-            <div className="text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition hover:bg-white/10 dark:hover:bg-white/20">
-              {t("gov_services")}
-            </div>
-          </div>
+        <Link href="/public-services" className={`text-white dark:text-gray-100 text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/public-services") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"}`}>
+          {t("gov_services")}
         </Link>
 
         <Link href="/docs" className={`text-white dark:text-gray-100 text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/docs") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"}`}>
           {t("legal_documents")}
         </Link>
-
-        <Link href="https://e-auksion.uz/home" target="_blank">
-          <div className="relative z-[1]">
-            <div className="text-white dark:text-gray-100 text-[18px] font-medium cursor-pointer flex items-center gap-1.5 px-3 py-2 rounded-md transition hover:bg-white/10 dark:hover:bg-white/20">
-              {t("info_systems")}
-            </div>
-          </div>
+        <Link href="/info" className={`text-white dark:text-gray-100 text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/info") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"}`}>
+          {t("info_systems")}
         </Link>
 
         <Link href="/contact" className={`text-white dark:text-gray-100 text-[18px] font-medium px-3 py-2 rounded-md transition ${pathname.startsWith("/contact") ? "bg-white/10 dark:bg-white/20" : "hover:bg-white/10 dark:hover:bg-white/20"}`}>
