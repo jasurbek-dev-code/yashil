@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import eye from "../../../public/icons/eye-little.svg";
 import CardFooter from "../CardFooter";
 import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";
@@ -24,16 +22,6 @@ export default function DocsDetails({ id }) {
         <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
           <div>
             <Link href="/docs" className="hover:underline">{t("documents")}</Link> / {data?.results?.[0]?.category?.name || null}
-          </div>
-          <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
-            <Image
-              src={eye}
-              alt="eye"
-              height={20}
-              width={20}
-              className="dark:invert dark:brightness-0 dark:contrast-100"
-            />
-            <p>326</p>
           </div>
         </div>
 

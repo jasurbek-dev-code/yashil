@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Zoom from "react-medium-image-zoom";
-import eye from "../../../public/icons/eye-little.svg";
 import call from "../../../public/icons/call_l.svg";
 import sms from "../../../public/icons/sms_l.svg";
 import CardFooter from "../CardFooter";
@@ -30,10 +29,6 @@ export default function AboutCenterApparat() {
         <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
           <div>
             <Link href="/" className="hover:underline">{t("home")}</Link> / {t("center_apparat")}
-          </div>
-          <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
-            <Image src={eye} alt="eye" height={20} width={20} />
-            <p>326</p>
           </div>
         </div>
 

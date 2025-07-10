@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import eye from "../../../public/icons/eye-little.svg";
 import CardFooter from "../CardFooter";
 import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";
@@ -39,16 +37,6 @@ export default function AboutSubOrganizations() {
               {t("home")}
             </Link>{" "}
             / {t("regional_branches")}
-          </div>
-          <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
-            <Image
-              src={eye}
-              alt="eye"
-              height={20}
-              width={20}
-              className="dark:invert dark:brightness-0"
-            />
-            <p>326</p>
           </div>
         </div>
 

@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import eye from "../../../public/icons/eye-little.svg";
 import CardFooter from "../CardFooter";
 import ErrorAlert from "../ErrorAlert";
 import Loading from "../Loading";
@@ -21,10 +19,6 @@ export default function ServiceById({ id }) {
       <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-300 flex justify-between">
         <div>
           <Link href="/services" className="hover:underline">{t("services")}</Link> / {data?.title}
-        </div>
-        <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
-          <Image src={eye} alt="eye" height={20} width={20} className="dark:invert dark:brightness-0" />
-          <p>326</p>
         </div>
       </div>
 

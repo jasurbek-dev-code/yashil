@@ -25,7 +25,7 @@ const Card = ({ id, icon, photo, width, height ,title, body }) => {
             </h3>
           </div>
           <p className="p-5 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-            {body}...
+            {body?.length > 100 ? body?.slice(0, 100) + "..." : body}
           </p>
         </div>
 

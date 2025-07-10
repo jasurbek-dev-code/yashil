@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Zoom from "react-medium-image-zoom";
+import eye from "../../../public/icons/eye-little.svg";
 import "react-medium-image-zoom/dist/styles.css";
 
-const NewsCard = ({ imageSrc, description, title }) => {
+const NewsCard = ({ imageSrc, description, title, views }) => {
   return (
-    <div className="bg-white dark:bg-[#0f1a0f] overflow-hidden w-full cursor-pointer rounded-xl shadow-sm transition">
+    <div className="bg-white dark:bg-[#0f1a0f] overflow-hidden w-full cursor-pointer rounded-xl shadow-sm transition flex flex-col">
       {/* Image */}
-
       <div className="w-full h-48 relative">
         <Zoom>
           <Image
@@ -20,10 +20,34 @@ const NewsCard = ({ imageSrc, description, title }) => {
         </Zoom>
       </div>
 
-      {/* Description and Title */}
-      <div className="py-4 px-3">
-        <p className="text-gray-500 dark:text-gray-400 text-sm mb-2">{description}</p>
-        <h3 className="text-[15px] font-semibold text-gray-900 dark:text-white">{title}</h3>
+      {/* Description, Title va Views */}
+      <div className="flex flex-col flex-1 justify-between p-3 gap-2">
+        <div>
+          <p className="text-gray-500 dark:text-gray-400 text-sm mb-2">
+            {description.length > 100 ? description.slice(0, 100) + "..." : description}
+          </p>
+          <h3 className="text-[15px] font-semibold text-gray-900 dark:text-white">
+            {title}
+          </h3>
+        </div>
+
+        {/* Views - past o‘ngda flex bilan */}
+        {
+          views ?
+            <div className="flex justify-end">
+              <div className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-1">
+                <Image
+                  src={eye}
+                  alt="eye"
+                  height={16}
+                  width={16}
+                  className="dark:invert dark:brightness-0"
+                />
+                <p>{views}</p>
+              </div>
+            </div>
+            : null
+        }
       </div>
     </div>
   );

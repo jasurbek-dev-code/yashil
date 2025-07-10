@@ -1,7 +1,6 @@
 "use client";
-import eye from "../../../public/icons/eye-little.svg";
+
 import NewsCard from './NewsCard';
-import Image from 'next/image';
 import Link from 'next/link';
 import CardFooter from '../CardFooter';
 import { useFetchData } from '@/hooks/useFetchData';
@@ -25,10 +24,6 @@ const NewsCards = () => {
           <div>
             <Link href="/" className="hover:underline">{t("home")}</Link> / {t("latest_news")}
           </div>
-          <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
-            <Image src={eye} alt="eye" height={20} width={20} className="dark:invert dark:brightness-0" />
-            <p>326</p>
-          </div>
         </div>
 
         {/* Title */}
@@ -46,6 +41,7 @@ const NewsCards = () => {
                   imageSrc={item?.photo?.src}
                   description={item?.category?.name}
                   title={item?.title}
+                  views={item?.views}
                 />
               ))}
             </div>

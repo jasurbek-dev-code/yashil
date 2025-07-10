@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import date from '../../../public/icons/calendar.svg';
-import eye from "../../../public/icons/eye-little.svg"
+// import Image from "next/image";
+// import date from '../../../public/icons/calendar.svg';
+// import eye from "../../../public/icons/eye-little.svg"
 
 const VideoReportCard = ({ link, title }) => {
   // YouTube ID ni ajratish
@@ -45,7 +45,7 @@ const VideoReportCard = ({ link, title }) => {
       </div>
 
       {/* Date and Views */}
-      <div className="flex justify-between text-sm">
+      {/* <div className="flex justify-between text-sm">
         <div className="flex gap-2 text-gray-600 dark:text-gray-400 opacity-50">
           <Image src={date} height={20} width={20} alt="date" className="dark:invert dark:brightness-0 dark:contrast-100"/>
           <p>12.12.23 - 13:00</p>
@@ -54,7 +54,7 @@ const VideoReportCard = ({ link, title }) => {
           <Image src={eye} height={20} width={20} alt="eye" className="dark:invert dark:brightness-0 dark:contrast-100"/>
           <p>326</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

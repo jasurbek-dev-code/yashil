@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import eye from "../../../public/icons/eye-little.svg";
-import Image from 'next/image';
 import Link from 'next/link';
 import PhotoReportCard from './PhotoReportCard';
 import CardFooter from '../CardFooter';
@@ -31,10 +29,6 @@ const PhotoReport = () => {
         <div className="px-6 pt-6 text-sm text-gray-600 dark:text-gray-400 flex justify-between">
           <div>
             <Link href="/" className="hover:underline">{t("home")}</Link> / {t("photo_report")}
-          </div>
-          <div className="text-gray-500 dark:text-gray-400 text-sm flex gap-1">
-            <Image src={eye} alt="eye" height={20} width={20} className="dark:invert dark:brightness-0" />
-            <p>326</p>
           </div>
         </div>
 
