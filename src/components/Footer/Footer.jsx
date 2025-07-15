@@ -18,6 +18,7 @@ const Footer = () => {
   const { t } = useTranslation();
   const { data, isLoading, error } = useFetchData('contact', '/about/get-contact');
   const isClient = useIsClient();
+  const currentYear = new Date().getFullYear();
   if (!isClient) return null;
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
@@ -55,24 +56,21 @@ const Footer = () => {
 
         {/* First Link Group */}
         <div className="text-sm flex flex-col gap-2">
-          <a href="#">{t("footer.about_ministry")}</a>
-          <a href="#">{t("footer.activity")}</a>
-          <a href="#">{t("footer.legal_base")}</a>
-          <a href="#">{t("footer.press_service")}</a>
-          <a href="#">{t("footer.government_services")}</a>
-          <a href="#">{t("footer.for_investors")}</a>
-          <a href="#">{t("footer.contacts")}</a>
-          <a href="#">{t("footer.anticorruption")}</a>
+          <Link href="/about/overview">{t("about")}</Link>
+          <Link href="/about/departments">{t("departments")}</Link>
+          <Link href="/about/structure">{t("structure")}</Link>
+          <Link href="/about/leadership">{t("leadership")}</Link>
+          <Link href="/about/suborganizations">{t("suborganizations")}</Link>
+          <Link href="/about/vacancies">{t("vacancies")}</Link>
         </div>
 
         {/* Second Link Group */}
         <div className="text-sm flex flex-col gap-2">
-          <a href="#">{t("footer.for_investors")}</a>
-          <a href="#">{t("footer.contacts")}</a>
-          <a href="#">{t("footer.advanced_search")}</a>
-          <a href="#">{t("footer.feedback")}</a>
-          <a href="#">{t("footer.site_map")}</a>
-          <a href="#">{t("footer.rss")}</a>
+          <Link href="/news/institute-news">{t("news")}</Link>
+          <Link href="/news/photo-report">{t("photo_report")}</Link>
+          <Link href="/news/video-report">{t("video_report")}</Link>
+          <Link href="/services">{t("services")}</Link>
+          <Link href="/contact">{t("contact")}</Link>
         </div>
 
         {/* Newsletter & Branding */}
@@ -99,8 +97,8 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="max-w-[1200px] mx-auto mt-10 border-t border-white dark:border-gray-600 pt-4 px-4 lg:px-0 flex flex-col md:flex-row justify-between text-sm">
-        <p>© 2025 {t("footer.institute_name")}</p>
-        <p>{t("footer.last_updated")}</p>
+        <p>© {currentYear} {t("footer.institute_name")}</p>
+        {/* <p>{t("footer.last_updated")}</p> */}
       </div>
     </footer>
   );
