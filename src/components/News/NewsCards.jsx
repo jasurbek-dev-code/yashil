@@ -38,6 +38,7 @@ const NewsCards = () => {
               {data?.results?.map((item, index) => (
                 <NewsCard
                   key={index}
+                  id={item?.id}
                   imageSrc={item?.photo?.src}
                   description={item?.category?.name}
                   title={item?.title}

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import "./Card.css";
 
-const Card = ({ id, icon, photo, width, height ,title, body }) => {
+const Card = ({ id, icon, photo, width, height, title, body }) => {
   const router = useRouter();
 
   const handleClick = () => {
@@ -24,15 +24,19 @@ const Card = ({ id, icon, photo, width, height ,title, body }) => {
               {title}
             </h3>
           </div>
-          <p className="p-5 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+          {/* <p className="p-5 text-gray-600 dark:text-gray-300 text-base leading-relaxed">
             {body?.length > 100 ? body?.slice(0, 100) + "..." : body}
-          </p>
+          </p> */}
+          <div
+          className="p-5 text-gray-600 dark:text-gray-300 text-base leading-relaxed"
+          dangerouslySetInnerHTML={{ __html:body }}
+        />
         </div>
 
         {/* Back Side */}
         <div className="card-back bg-green-900 text-white rounded-xl shadow-md flex flex-col items-center justify-center text-center p-5">
           {/* <p className="text-lg font-medium">Ko‘proq ma’lumot olish uchun bosing</p> */}
-          <Image src={photo} width={width} height={height} alt="photo"/>
+          <Image src={photo} width={width} height={height} alt="photo" />
         </div>
       </div>
     </div>

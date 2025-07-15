@@ -25,15 +25,16 @@ export default function ServiceById({ id }) {
       {/* Sarlavha */}
       <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300 dark:border-gray-600">
         <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">
-           {data?.title}
+          {data?.title}
         </h1>
       </div>
 
       {/* Kontent */}
       <div className="p-5 mx-auto text-gray-800 dark:text-gray-200 leading-relaxed text-[15px] whitespace-pre-line">
-        <p className="mb-4">
-           {data?.body}
-        </p>
+        <div
+          className="mb-4"
+          dangerouslySetInnerHTML={{ __html: data?.body }}
+        />
       </div>
 
       {/* Footer */}

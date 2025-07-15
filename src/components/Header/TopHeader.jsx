@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "../../hooks/useTheme";
 import LanguageSelect from "./LanguageSelect";
+import { useTranslation } from "react-i18next";
 
 
 export default function TopHeader() {
   const { toggleTheme } = useTheme();
-
+  const { t } = useTranslation();
   return (
     <div className="w-full px-5">
       <header className="max-w-[1200px] mx-auto flex flex-wrap justify-between items-center py-5 bg-transparent">
@@ -24,9 +25,9 @@ export default function TopHeader() {
             />
           </Link>
           <h1 className="text-white dark:text-gray-100 text-sm md:text-base font-sans leading-tight">
-            YASHILLOYIHA
+            {t("green_title1")}
             <br />
-            LOYIHALASH INSTITUTI
+            {t("green_title2")}
           </h1>
         </div>
 
@@ -38,7 +39,7 @@ export default function TopHeader() {
             +998 (71) 256-86-53
           </div>
           {/* Til tanlash */}
-          <LanguageSelect/>
+          <LanguageSelect />
           <div
             onClick={toggleTheme}
             className="w-10 h-10 flex items-center justify-center border-2 border-white dark:border-gray-400 rounded-md text-white dark:text-gray-100 hover:border-green-900 cursor-pointer transition-colors"

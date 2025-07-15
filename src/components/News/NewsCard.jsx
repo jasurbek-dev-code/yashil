@@ -1,23 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import Zoom from "react-medium-image-zoom";
 import eye from "../../../public/icons/eye-little.svg";
-import "react-medium-image-zoom/dist/styles.css";
+import { useRouter } from "next/navigation";
 
-const NewsCard = ({ imageSrc, description, title, views }) => {
+const NewsCard = ({ imageSrc, description, title, views, id }) => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/news/institute-news/${id}`);
+  };
+
   return (
-    <div className="bg-white dark:bg-[#0f1a0f] overflow-hidden w-full cursor-pointer rounded-xl shadow-sm transition flex flex-col">
+    <div
+    onClick={handleClick} 
+    className="bg-white dark:bg-[#0f1a0f] overflow-hidden w-full cursor-pointer rounded-xl shadow-sm transition flex flex-col">
       {/* Image */}
       <div className="w-full h-48 relative">
-        <Zoom>
           <Image
             src={imageSrc}
             alt={title}
             fill
             className="object-cover"
           />
-        </Zoom>
       </div>
 
       {/* Description, Title va Views */}

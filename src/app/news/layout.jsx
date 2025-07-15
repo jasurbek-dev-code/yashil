@@ -1,8 +1,13 @@
+"use client"
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import SubNavigation from "@/components/News/NewsNavigation";
 import greenBanner from "../../../public/images/green_banner.svg";
 
 export default function NewsLayout({ children }) {
+  const params = useParams();
+  const showSubNavigation = !params?.id;
+
   return (
     <div className="relative bg-cover bg-center bg-no-repeat py-16 -z-0 dark:bg-gray-900">
       <Image
@@ -16,9 +21,11 @@ export default function NewsLayout({ children }) {
           <div className="flex-1 mt-3 lg:mt-0">
             {children}
           </div>
-          <div className="w-full lg:w-[267px] pr-4 lg:pr-0 pl-4 lg:pl-0">
-            <SubNavigation />
-          </div>
+          {showSubNavigation && (
+            <div className="w-full lg:w-[267px] pr-4 lg:pr-0 pl-4 lg:pl-0">
+              <SubNavigation />
+            </div>
+          )}
         </div>
       </main>
     </div>
