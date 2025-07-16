@@ -32,7 +32,6 @@ export default function Navigation() {
           {hoveredItem === "about" && (
             <div className="absolute top-full left-0 mt-0 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-[1]">
               <Link href="/about/overview" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">{t("about_institute")}</Link>
-              <Link href="/about/departments" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">{t("departments")}</Link>
               <Link href="/about/structure" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">{t("structure")}</Link>
               <Link href="/about/leadership" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">{t("leadership")}</Link>
               <Link href="/about/center-apparat" className="block px-4 py-2 text-[#8DC63F] hover:bg-gray-100 dark:hover:bg-gray-700">{t("central_apparatus")}</Link>

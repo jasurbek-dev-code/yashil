@@ -16,7 +16,6 @@ export default function SubNavigation() {
 
   const subLinks = [
     { title: t("about"), href: "/about/overview" },
-    { title: t("departments"), href: "/about/departments" },
     { title: t("structure"), href: "/about/structure" },
     { title: t("leadership"), href: "/about/leadership" },
     { title: t("center_apparat"), href: "/about/center-apparat" },
