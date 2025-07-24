@@ -36,7 +36,7 @@ export default function AboutLeadership() {
         </div>
 
         {/* Card 1 */}
-        {data?.results?.map((person, i) => (
+        {data?.map((person, i) => (
           <div key={i} className="flex flex-wrap md:flex-nowrap items-start gap-6 rounded-xl p-6">
             {/* Image */}
             <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden">
