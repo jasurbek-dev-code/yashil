@@ -39,7 +39,8 @@ export default function AboutLeadership() {
         {data?.map((person, i) => (
           <div key={i} className="flex flex-wrap md:flex-nowrap items-start gap-6 rounded-xl p-6">
             {/* Image */}
-            <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden">
+            {/* <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden"> */}
+            <div className="w-[132px] h-[160px] flex-shrink-0 rounded-lg overflow-hidden flex items-center justify-center">
               <Zoom>
                 <Image
                   src={person?.photo?.src}
@@ -50,6 +51,7 @@ export default function AboutLeadership() {
                 />
               </Zoom>
             </div>
+            {/* </div> */}
 
             {/* Text Content */}
             <div className="pr-10 mt-5">

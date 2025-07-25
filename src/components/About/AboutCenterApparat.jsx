@@ -34,8 +34,8 @@ export default function AboutCenterApparat() {
 
         {/* Sarlavha */}
         <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300 dark:border-gray-700">
-          <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">
-           {t("center_apparat")}
+          <h1 className="text-[28px] font-bold text-gray-800 dark:text-white">  
+            {t("center_apparat")}
           </h1>
         </div>
 
@@ -43,7 +43,7 @@ export default function AboutCenterApparat() {
         {data?.map((person, i) => (
           <div key={i} className="flex flex-wrap md:flex-nowrap items-start gap-6 rounded-xl p-6">
             {/* Image */}
-            <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden">
+            {/* <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden">
               <Zoom>
                 <Image
                   src={person?.photo?.src}
@@ -53,7 +53,19 @@ export default function AboutCenterApparat() {
                   className="object-cover w-full h-full"
                 />
               </Zoom>
+            </div> */}
+            <div className="w-[132px] h-[160px] flex-shrink-0 rounded-lg overflow-hidden flex items-center justify-center">
+              <Zoom>
+                <Image
+                  src={person?.photo?.src}
+                  alt={person?.fullname}
+                  width={person?.photo?.weight}
+                  height={person?.photo?.height}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </Zoom>
             </div>
+
 
             {/* Text Content */}
             <div className="pr-10 mt-5">
