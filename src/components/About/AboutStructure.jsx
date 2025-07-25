@@ -11,8 +11,8 @@ import ErrorAlert from "../ErrorAlert";
 import { useTranslation } from "react-i18next";
 
 export default function AboutStructure() {
-    const { t } = useTranslation();
-    const { data, isLoading, error } = useFetchData('struct', '/about/struct');
+    const { t, i18n } = useTranslation();
+    const { data, isLoading, error } = useFetchData(['struct', i18n.language], '/about/struct');
 
     if (isLoading) return <Loading />;
     if (error) return <ErrorAlert />;

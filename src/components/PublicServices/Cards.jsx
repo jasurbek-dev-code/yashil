@@ -9,8 +9,8 @@ import ErrorAlert from "../ErrorAlert";
 import { useTranslation } from "react-i18next";
 
 const Cards = () => {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('public-services', '/useful-links/public-services');
+  const { t , i18n} = useTranslation();
+  const { data, isLoading, error } = useFetchData(['public-services', i18n.language], '/useful-links/public-services');
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
   return (

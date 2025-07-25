@@ -11,8 +11,8 @@ import ErrorAlert from "../ErrorAlert";
 import { useTranslation } from "react-i18next";
 
 export default function NewsById({ id }) {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('postsbyid', `/posts/${id}`);
+  const { t , i18n} = useTranslation();
+  const { data, isLoading, error } = useFetchData(['postsbyid', i18n.language], `/posts/${id}`);
 
 
   if (isLoading) return <Loading />;

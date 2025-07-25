@@ -10,8 +10,8 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function AboutSubOrganizations() {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData("regions", "/regions");
+  const { t , i18n} = useTranslation();
+  const { data, isLoading, error } = useFetchData(["regions", i18n.language], "/regions");
   const [selectedRegionSoato, setSelectedRegionSoato] = useState(null);
 
   useEffect(() => {
@@ -77,9 +77,6 @@ export default function AboutSubOrganizations() {
               </p>
               <p className="mt-2">
                 {t("phone")}: <span className="font-medium">{selectedInfo?.phone}</span>
-              </p>
-              <p className="mt-2">
-                {t("fax")}: <span className="font-medium">{selectedInfo?.fax}</span>
               </p>
               <p className="mt-2">
                 {t("email")}: <span className="font-medium">{selectedInfo?.email}</span>

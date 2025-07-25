@@ -8,8 +8,8 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { useTranslation } from "react-i18next";
 
 export default function ServiceById({ id }) {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('services', `/services/${id}`);
+  const { t, i18n } = useTranslation();
+  const { data, isLoading, error } = useFetchData(['services', i18n.language], `/services/${id}`);
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
   return (

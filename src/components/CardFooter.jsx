@@ -8,9 +8,11 @@ import { useFetchData } from "@/hooks/useFetchData";
 import Loading from "./Loading";
 import ErrorAlert from "./ErrorAlert";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function CardFooter() {
-    const { data, isLoading, error } = useFetchData('contact', '/about/get-contact');
+    const {i18n} = useTranslation()
+    const { data, isLoading, error } = useFetchData(['contact', i18n.language], '/about/get-contact');
     if (isLoading) return <Loading />;
     if (error) return <ErrorAlert />;
     return (

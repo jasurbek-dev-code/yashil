@@ -8,8 +8,8 @@ import ErrorAlert from "../ErrorAlert";
 import { useTranslation } from "react-i18next";
 
 export default function Vacancies() {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('vacancy', '/about/vacancy');
+  const { t, i18n } = useTranslation();
+  const { data, isLoading, error } = useFetchData(['vacancy', i18n.language], '/about/vacancy');
 
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;

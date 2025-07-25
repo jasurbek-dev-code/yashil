@@ -12,9 +12,9 @@ import ErrorAlert from "../ErrorAlert";
 import { useTranslation } from "react-i18next";
 
 export default function AboutLeadership() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { data, isLoading, error } = useFetchData(
-    'employees',
+    ['employees', i18n.language],
     '/about/employees?department=management'
   );
   if (isLoading) return <Loading />;

@@ -13,8 +13,8 @@ import { useFetchData } from "@/hooks/useFetchData";
 
 const ProjectsCarousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('projects', '/about/projects');
+  const { t,  i18n} = useTranslation();
+  const { data, isLoading, error } = useFetchData(['projects', i18n.language], '/about/projects');
   const isClient = useIsClient();
   if (!isClient) return null;
 

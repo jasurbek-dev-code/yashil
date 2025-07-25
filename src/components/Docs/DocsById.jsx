@@ -8,10 +8,10 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { useTranslation } from "react-i18next";
 
 export default function DocsDetails({ id }) {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData("categories", `/documents/?category=${id}`);
+  const { t, i18n } = useTranslation();
+  const { data, isLoading, error } = useFetchData(["categories", i18n.language], `/documents/?category=${id}`);
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading />; 
   if (error) return <ErrorAlert />;
 
   return (

@@ -11,9 +11,11 @@ import s1 from '../../../public/icons/s1.svg'
 import s2 from '../../../public/icons/s2.svg'
 import s3 from '../../../public/icons/s3.svg'
 import s4 from '../../../public/icons/s4.svg'
+import { useTranslation } from "react-i18next";
 
 const Statistics = () => {
-  const { data, isLoading, error } = useFetchData('statistics', '/about/statistics');
+  const {i18n} = useTranslation()
+  const { data, isLoading, error } = useFetchData(['statistics', i18n.language], '/about/statistics');
   const isClient = useIsClient();
   const [hasAnimated, setHasAnimated] = useState(false);
 

@@ -12,11 +12,11 @@ import { useFetchData } from "@/hooks/useFetchData";
 import { useTranslation } from "react-i18next";
 
 export default function AboutCenterApparat() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { data, isLoading, error } = useFetchData(
-    'employees',
-    '/about/employees?department=central_hardware'
-  );
+  ['employees', i18n.language],
+  '/about/employees?department=central_hardware' 
+);
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
   return (

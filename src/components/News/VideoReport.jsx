@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import eye from "../../../public/icons/eye-little.svg";
-import Image from 'next/image';
 import Link from 'next/link';
 import VideoReportCard from './VideoReportCard';
 import CardFooter from '../CardFooter';
@@ -12,8 +10,8 @@ import ErrorAlert from '../ErrorAlert';
 import { useTranslation } from 'react-i18next';
 
 const VideoReport = () => {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('videos', '/gallery/videos');
+  const { t , i18n} = useTranslation();
+  const { data, isLoading, error } = useFetchData(['videos', i18n.language], '/gallery/videos');
   const [page, setPage] = useState(1);
   const itemsPerPage = 8;
 

@@ -10,8 +10,8 @@ import { useTranslation } from 'react-i18next';
 
 const Gallery = () => {
   const router = useRouter();
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('photos', '/gallery/photos');
+  const { t, i18n } = useTranslation();
+  const { data, isLoading, error } = useFetchData(['photos', i18n.language], '/gallery/photos');
 
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;

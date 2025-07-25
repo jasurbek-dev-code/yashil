@@ -9,8 +9,8 @@ import ErrorAlert from "../ErrorAlert";
 import { useTranslation } from "react-i18next";
 
 export default function AboutOverview() {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('about', '/about/get-about-data');
+  const { t, i18n } = useTranslation();
+  const { data, isLoading, error } = useFetchData(['about', i18n.language], '/about/get-about-data');
 
 
   if (isLoading) return <Loading />;

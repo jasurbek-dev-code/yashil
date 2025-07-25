@@ -13,8 +13,8 @@ import { useFetchData } from '@/hooks/useFetchData';
 import Link from 'next/link';
 
 const PartnersCarousel = () => {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('useful-links', '/useful-links');
+  const { t, i18n } = useTranslation();
+  const { data, isLoading, error } = useFetchData(['useful-links', i18n.language], '/useful-links');
 
   const isClient = useIsClient();
   if (!isClient) return null;

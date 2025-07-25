@@ -10,9 +10,9 @@ import ErrorAlert from "../ErrorAlert";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [selectedRegionSoato, setSelectedRegionSoato] = useState(null);
-  const { data, isLoading, error } = useFetchData("regions", "/regions");
+  const { data, isLoading, error } = useFetchData(["regions", i18n.language], "/regions");
   const isClient = useIsClient();
   useEffect(() => {
     if (data && data.length > 0) {
@@ -72,9 +72,6 @@ const Hero = () => {
               </p>
               <p className="mt-2">
                 {t("phone")}: <span className="font-medium">{selectedInfo?.phone}</span>
-              </p>
-              <p className="mt-2">
-                {t("fax")}: <span className="font-medium">{selectedInfo?.fax}</span>
               </p>
               <p className="mt-2">
                 {t("email")}: <span className="font-medium">{selectedInfo?.email}</span>

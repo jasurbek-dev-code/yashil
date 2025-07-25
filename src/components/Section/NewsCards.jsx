@@ -10,8 +10,8 @@ import { useTranslation } from 'react-i18next';
 
 const NewsCards = () => {
   const router = useRouter();
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('posts', '/posts');
+  const { t, i18n } = useTranslation();
+  const { data, isLoading, error } = useFetchData(['posts', i18n.language], '/posts');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 

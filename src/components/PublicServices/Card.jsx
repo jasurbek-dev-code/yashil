@@ -3,8 +3,6 @@
 import Link from "next/link";
 
 const Card = ({ title, link }) => {
-  console.log(link);
-  
   return (
     <Link href={link} target="_blank">
       <div

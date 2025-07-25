@@ -10,8 +10,8 @@ import ErrorAlert from '../ErrorAlert';
 import { useTranslation } from 'react-i18next';
 
 const PhotoReport = () => {
-  const { t } = useTranslation();
-  const { data, isLoading, error } = useFetchData('photos', '/gallery/photos');
+  const { t, i18n } = useTranslation();
+  const { data, isLoading, error } = useFetchData(['photos', i18n.language], '/gallery/photos');
   const [page, setPage] = useState(1);
   const itemsPerPage = 9;
 
