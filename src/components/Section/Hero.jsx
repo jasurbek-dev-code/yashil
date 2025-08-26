@@ -24,7 +24,7 @@ const Hero = () => {
   if (error) return <ErrorAlert />;
 
   const selectedInfo = data?.find(
-    (item) => item.region.soato === selectedRegionSoato
+    (item) => item.region?.soato === selectedRegionSoato
   );
   return (
     <div className="relative py-[60px] px-5 overflow-hidden bg-white dark:bg-[#0f1a0f] transition-colors">
