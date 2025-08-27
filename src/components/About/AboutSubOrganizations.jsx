@@ -16,7 +16,7 @@ export default function AboutSubOrganizations() {
 
   useEffect(() => {
     if (data && data.length > 0) {
-      setSelectedRegionSoato(data[0].region.soato);
+      setSelectedRegionSoato(data[0]?.region.soato);
     }
   }, [data]);
 
@@ -24,7 +24,7 @@ export default function AboutSubOrganizations() {
   if (error) return <ErrorAlert />;
 
   const selectedInfo = data?.find(
-    (item) => item.region.soato === selectedRegionSoato
+    (item) => item.region?.soato === selectedRegionSoato
   );
 
   return (
