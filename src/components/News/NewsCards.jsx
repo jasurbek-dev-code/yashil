@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from 'react';
 import NewsCard from './NewsCard';
 import Link from 'next/link';
 import CardFooter from '../CardFooter';
@@ -12,8 +13,19 @@ const NewsCards = () => {
   const { t, i18n } = useTranslation();
   const { data, isLoading, error } = useFetchData(['posts', i18n.language], '/posts');
 
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 9;
+
   if (isLoading) return <Loading />;
   if (error) return <ErrorAlert />;
+
+  const totalItems = data?.results?.length || 0;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  const paginatedData = data?.results?.slice(
+    (page - 1) * itemsPerPage,
+    page * itemsPerPage
+  );
 
   return (
     <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
@@ -35,7 +47,7 @@ const NewsCards = () => {
         <div className="relative bg-cover bg-center bg-no-repeat px-6 my-3">
           <div className="px-4 lg:px-0 max-w-[1200px] mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data?.results?.map((item, index) => (
+              {paginatedData?.map((item, index) => (
                 <NewsCard
                   key={index}
                   id={item?.id}
@@ -46,6 +58,41 @@ const NewsCards = () => {
                 />
               ))}
             </div>
+
+            {/* Pagination */}
+            {totalItems > itemsPerPage && (
+              <div className="flex justify-center gap-2 mt-8">
+                <button
+                  onClick={() => setPage(p => Math.max(p - 1, 1))}
+                  disabled={page === 1}
+                  className="px-3 py-1 rounded-md bg-gray-200 disabled:opacity-50 dark:bg-gray-700 dark:text-white"
+                >
+                  {t("prev")}
+                </button>
+
+                {[...Array(totalPages)].map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setPage(i + 1)}
+                    className={`px-3 py-1 rounded-md ${
+                      page === i + 1
+                        ? 'bg-blue-500 text-white'
+                        : 'bg-gray-200 dark:bg-gray-700 dark:text-white'
+                    }`}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+
+                <button
+                  onClick={() => setPage(p => Math.min(p + 1, totalPages))}
+                  disabled={page === totalPages}
+                  className="px-3 py-1 rounded-md bg-gray-200 disabled:opacity-50 dark:bg-gray-700 dark:text-white"
+                >
+                  {t("next")}
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
