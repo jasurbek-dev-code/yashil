@@ -14,8 +14,8 @@ export default function TopHeader() {
     <div className="w-full px-5">
       <header className="max-w-[1200px] mx-auto flex flex-wrap justify-between items-center py-5 bg-transparent">
         {/* Chap tomondagi logo va matn */}
-        <div className="flex items-center mb-2 md:mb-0">
-          <Link href="/">
+        <Link href="/">
+          <div className="flex items-center mb-2 md:mb-0">
             <Image
               width={20}
               height={20}
@@ -23,13 +23,13 @@ export default function TopHeader() {
               alt="Logo"
               className="w-16 h-16 mr-3"
             />
-          </Link>
-          <h1 className="text-white dark:text-gray-100 text-sm md:text-base font-sans leading-tight">
-            {t("green_title1")}
-            <br />
-            {t("green_title2")}
-          </h1>
-        </div>
+            <h1 className="text-white dark:text-gray-100 text-sm md:text-base font-sans leading-tight">
+              {t("green_title1")}
+              <br />
+              {t("green_title2")}
+            </h1>
+          </div>
+        </Link>
 
         {/* O‘ng tomondagi aloqa va tugmalar */}
         <div className="flex flex-wrap items-center gap-4">

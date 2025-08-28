@@ -27,18 +27,19 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Logo & Info */}
         <div>
+          <Link href={"/"}>
           <div className="flex items-center gap-3 mb-4">
             <Image src={logo} alt="Logo" width={50} height={50} />
             <p className="font-bold leading-5">
               {t("footer.institute_name")}
             </p>
           </div>
+          </Link>
           <p className="text-sm">{t("footer.address")}</p>
           <p className="text-sm mt-2">{t("footer.phone")}</p>
-          <p className="text-sm mt-1">{t("footer.fax")}</p>
-          <a href="#" className="underline text-sm mt-1 inline-block hover:text-gray-300">
+          {/* <a href="#" className="underline text-sm mt-1 inline-block hover:text-gray-300">
             {t("footer.bank_details")}
-          </a>
+          </a> */}
 
           <div className="flex gap-4 mt-4 text-xl">
             {data?.facebook ? <Link href={data?.facebook} target="_blank">
@@ -57,7 +58,7 @@ const Footer = () => {
         {/* First Link Group */}
         <div className="text-sm flex flex-col gap-2">
           <Link href="/about/overview">{t("about")}</Link>
-          <Link href="/about/departments">{t("departments")}</Link>
+          <Link href="/about/center-apparat">{t("center_apparat")}</Link>
           <Link href="/about/structure">{t("structure")}</Link>
           <Link href="/about/leadership">{t("leadership")}</Link>
           <Link href="/about/suborganizations">{t("suborganizations")}</Link>

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 import greenBanner from "../../../public/images/green_banner.svg";
 import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";
@@ -34,28 +36,17 @@ const Gallery = () => {
             {t("see_all")}
           </button>
         </div>
-
-        {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2">
-          {data.map((src, index) => (
-            <div key={index} className="relative w-full aspect-[4/5]">
-              <Image
-                src={src?.file?.src}
-                alt={t("gallery_image_alt", { index: index + 1 })}
-                fill
-                className="object-cover rounded-sm"
-              />
-            </div>
-          ))}
-        </div> */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2">
           {data.slice(0, 12).map((src, index) => (
             <div key={index} className="relative w-full aspect-[4/5]">
-              <Image
-                src={src?.file?.src}
-                alt={t("gallery_image_alt", { index: index + 1 })}
-                fill
-                className="object-cover rounded-sm"
-              />
+              <Zoom>
+                <Image
+                  src={src?.file?.src}
+                  alt={t("gallery_image_alt", { index: index + 1 })}
+                  fill
+                  className="object-cover rounded-sm"
+                />
+              </Zoom>
             </div>
           ))}
         </div>

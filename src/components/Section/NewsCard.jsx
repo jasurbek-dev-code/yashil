@@ -1,10 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const NewsCard = ({ imageSrc, description, title }) => {
+const NewsCard = ({ id, imageSrc, description, title }) => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/news/institute-news/${id}`);
+  };
   return (
-    <div className="bg-white dark:bg-[#1f1f1f] rounded-xl shadow-md overflow-hidden w-full transition-colors">
+    <div
+      onClick={handleClick}
+      className="bg-white dark:bg-[#1f1f1f] rounded-xl shadow-md overflow-hidden w-full transition-colors cursor-pointer"
+    >
       {/* Image */}
       <div className="w-full h-48 relative">
         <Image

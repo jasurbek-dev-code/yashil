@@ -49,9 +49,10 @@ const NewsCards = () => {
           {paginatedData?.map((item, index) => (
             <NewsCard
               key={index}
-              imageSrc={item.photo.src}
-              description={item.category.name}
-              title={item.title}
+              id={item?.id}
+              imageSrc={item?.photo?.src}
+              description={item?.category?.name}
+              title={item?.title}
             />
           ))}
         </div>
@@ -65,11 +66,10 @@ const NewsCards = () => {
                 <button
                   key={page}
                   onClick={() => handlePageChange(page)}
-                  className={`px-4 py-2 rounded-md border text-sm ${
-                    currentPage === page
+                  className={`px-4 py-2 rounded-md border text-sm ${currentPage === page
                       ? "bg-blue-600 text-white"
                       : "border-gray-300 text-gray-700 dark:text-white dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
-                  }`}
+                    }`}
                 >
                   {page}
                 </button>
