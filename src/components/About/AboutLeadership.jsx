@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Zoom from "react-medium-image-zoom";
 import call from "../../../public/icons/call_l.svg";
 import sms from "../../../public/icons/sms_l.svg";
 import CardFooter from "../CardFooter";
@@ -41,15 +40,13 @@ export default function AboutLeadership() {
             {/* Image */}
             {/* <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden"> */}
             <div className="w-[132px] h-[160px] flex-shrink-0 rounded-lg overflow-hidden flex items-center justify-center">
-              <Zoom>
                 <Image
                   src={person?.photo?.src}
                   alt={person?.fullname}
                   width={person?.photo?.weight}
                   height={person?.photo?.height}
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full h-full rounded-md"
                 />
-              </Zoom>
             </div>
             {/* </div> */}
 

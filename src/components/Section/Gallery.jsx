@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
 import greenBanner from "../../../public/images/green_banner.svg";
 import Loading from "../Loading";
 import ErrorAlert from "../ErrorAlert";

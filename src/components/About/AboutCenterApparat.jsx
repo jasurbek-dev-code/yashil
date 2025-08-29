@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Zoom from "react-medium-image-zoom";
 import call from "../../../public/icons/call_l.svg";
 import sms from "../../../public/icons/sms_l.svg";
 import CardFooter from "../CardFooter";
@@ -42,28 +41,14 @@ export default function AboutCenterApparat() {
         {/* Card 1 */}
         {data?.map((person, i) => (
           <div key={i} className="flex flex-wrap md:flex-nowrap items-start gap-6 rounded-xl p-6">
-            {/* Image */}
-            {/* <div className="w-[132px] h-[160] flex-shrink-0 rounded-lg overflow-hidden">
-              <Zoom>
-                <Image
-                  src={person?.photo?.src}
-                  alt={person?.fullname}
-                  width={person?.photo?.weight}
-                  height={person?.photo?.height}
-                  className="object-cover w-full h-full"
-                />
-              </Zoom>
-            </div> */}
             <div className="w-[132px] h-[160px] flex-shrink-0 rounded-lg overflow-hidden flex items-center justify-center">
-              <Zoom>
                 <Image
                   src={person?.photo?.src}
                   alt={person?.fullname}
                   width={person?.photo?.weight}
                   height={person?.photo?.height}
-                  className="max-w-full max-h-full object-contain"
+                  className="max-w-full max-h-full object-contain rounded-md"
                 />
-              </Zoom>
             </div>
 
 

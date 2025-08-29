@@ -10,6 +10,7 @@ import ProgressBar from "./ProgressBar";
 import '../i18n.js';
 import ReactQueryProvider from "./ReactQueryProvider";
 import Head from "next/head";
+import MarqueeBanner from "./MarqueeBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -124,6 +125,7 @@ export default function RootLayout({ children }) {
         <ReactQueryProvider>
           <Toaster position="top-right" reverseOrder={false} />
           <ScrollToTop />
+          <MarqueeBanner/>
           <ScrollToTopButton />
           <ProgressBar />
           <Header />

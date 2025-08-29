@@ -90,7 +90,7 @@ const Footer = () => {
               →
             </button>
           </form>
-          <p className="text-sm mt-6">{t("footer.ctrl_enter_hint")}</p>
+          {/* <p className="text-sm mt-6">{t("footer.ctrl_enter_hint")}</p> */}
           <Image src={carp} alt="TechnoCorp" width={120} height={40} className="mt-4" />
           <p className="text-sm">{t("footer.developed_by")}</p>
         </div>
