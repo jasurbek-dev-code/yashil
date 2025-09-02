@@ -55,20 +55,17 @@ export const metadata = {
   description:
     "Yashil Loyiha instituti – ekologik va barqaror rivojlanishga ixtisoslashgan loyiha tashkiloti. Institut проектирования устойчивых решений в Узбекистане. Sustainable environmental design institute in Uzbekistan.",
   keywords: [
-    // O'zbekcha
     "yashil loyiha",
     "yashilloyiha",
     "yashil loyiha instituti",
     "ekologik loyiha",
     "barqaror rivojlanish",
     "loyihalash instituti",
-    // Ruscha
     "зелёный проект",
     "институт проектирования",
     "экологический проект Узбекистан",
     "устойчивое развитие",
     "институт экологии",
-    // Inglizcha
     "green project",
     "green project Uzbekistan",
     "green construction",

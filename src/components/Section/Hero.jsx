@@ -28,7 +28,6 @@ const Hero = () => {
   );
   return (
     <div className="relative py-[60px] px-5 overflow-hidden bg-white dark:bg-[#0f1a0f] transition-colors">
-      {/* Background image */}
       <Image
         src="/images/banner.svg"
         alt="Banner Background"

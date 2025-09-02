@@ -6,7 +6,6 @@ import { FaArrowUp } from "react-icons/fa";
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Scroll holatini kuzatish
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 100);

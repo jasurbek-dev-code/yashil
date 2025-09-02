@@ -10,7 +10,7 @@ const ServiceByIdPage = async ({ params }) => {
         src={greenBanner}
         alt="background"
         fill
-        className="-z-20"
+        className="-z-20 object-cover"
       />
       <ServiceById id={id} />
     </div>

@@ -16,7 +16,6 @@ export default function HeadSection() {
         {t("institute_title_line1")} <br /> {t("institute_title_line2")}
       </h1>
 
-
       <Link
         href="/about/overview"
         className="bg-[#0d3d0d] dark:bg-gray-900 text-white border-none px-8 py-[12px] text-[16px] rounded-md cursor-pointer mt-[30px] mb-[10px] hover:bg-[#0d3d0d] dark:hover:bg-green-800 transition"
@@ -33,14 +32,34 @@ export default function HeadSection() {
 
         {/* Card 2 */}
         <div className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4">
-          <Image src="/icons/nxol.svg" alt="Yashil makon" width={30} height={30} />
+          <Image
+            src="/icons/nxol.svg"
+            alt="Yashil makon"
+            width={30}
+            height={30}
+          />
           <span>{t("green_space_project")}</span>
         </div>
 
         {/* Card 3 */}
         <div className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4">
-          <Image src="/icons/therd.svg" alt="Loyihalar" width={30} height={30} />
+          <Image
+            src="/icons/therd.svg"
+            alt="Loyihalar"
+            width={30}
+            height={30}
+          />
           <span>{t("projects")}</span>
+        </div>
+        {/* Card 4 */}
+        <div className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4">
+          <Image
+            src="/icons/therd.svg"
+            alt="Xalqaro loyihalar"
+            width={30}
+            height={30}
+          />
+          <span>{t("international_projects")}</span>
         </div>
       </div>
     </div>
