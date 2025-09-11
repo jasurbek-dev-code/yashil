@@ -5,21 +5,28 @@ import Select from "react-select";
 
 interface Data {
   id: number;
-  name: string;
+  value: string;
   label: string;
 }
 interface FilterProps {
   data: Data[];
   label: string;
   queryKey: string;
+  placeholder:string
   onChange: (queryKey: string, value: string) => void;
 }
 
-export function SelectFilter({ data,queryKey, label, onChange }: FilterProps) {
+export function SelectFilter({
+  data = [],
+  queryKey,
+  label,
+  placeholder,
+  onChange,
+}: FilterProps) {
   const { t } = useTranslation();
 
   const options = data.map((item) => ({
-    value: item.name,
+    value: item.value,
     label: t(item.label),
   }));
   return (
@@ -27,9 +34,9 @@ export function SelectFilter({ data,queryKey, label, onChange }: FilterProps) {
       <h1 className="text-white text-[20px]">{t(label)} :</h1>
       <Select
         options={options}
-        placeholder={t("all")}
+        placeholder={t(placeholder)}
         styles={{
-          control: (base) => ({ ...base, width: "400px", height: "50px" }),
+          control: (base) => ({ ...base, width: "350px", height: "50px" }),
           option: (provided, state) => ({
             ...provided,
             backgroundColor: state.isFocused ? "green" : "white",

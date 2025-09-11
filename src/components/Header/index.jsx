@@ -9,7 +9,17 @@ import TopNavbar from "./TopNavbar";
 
 export default function Header() {
   const pathname = usePathname();
-  const specialRoutes = ['/services', '/docs', '/vacancies', "/news", "/contact", "/about", "/public-services", "/info"];
+  const specialRoutes = [
+    "/services",
+    "/docs",
+    "/vacancies",
+    "/news",
+    "/contact",
+    "/about",
+    "/public-services",
+    "/info",
+    "/international_projects",
+  ];
   const isSpecial = specialRoutes.some(route => pathname.startsWith(route));
 
   const isClient = useIsClient();

@@ -4,11 +4,13 @@ import greenBanner from "../../../../public/images/green_banner.svg";
 
 import CardFooter from "@/components/CardFooter";
 import Image from "next/image";
-import Link from "next/link";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useFetchData } from "@/hooks/useFetchData";
 import { regions } from "@/constants/regions";
+import InputFilter from "@/components/Fiters/input-filter";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface Document {
   id: number;
@@ -35,11 +37,6 @@ interface ProjectData {
   sector: Sector;
   created_at: string; // ISO datetime
   documents: Document[];
-}
-interface selectFilterData {
-  direction: string;
-  sector: string;
-  sector_region: string;
 }
 
 export default function EgologicalClassification() {
@@ -68,23 +65,70 @@ export default function EgologicalClassification() {
       ).toString(),
     [filters]
   );
-  console.log( Object.entries(filters) );
   const { data, isLoading, error } = useFetchData(
     ["categories", i18n.language],
     `projects?${query}`
   );
+  const { data: initialDirections } = useFetchData(
+    ["categories", i18n.language],
+    `projects/directions/`
+  );
+  const { data: initialSectors } = useFetchData(
+    ["categories", i18n.language],
+    `projects/sectors?region=${filters.sector__region}`
+  );
+  const directions =
+    initialDirections?.map((item: { id: number; name: string }) => ({
+      id: item.id,
+      value: item.id,
+      label: item.name,
+    })) ?? [];
+  const sectors =
+    initialSectors?.map((item: { id: number; name: string }) => ({
+      id: item.id,
+      value: item.id,
+      label: item.name,
+    })) ?? [];
 
   const results: ProjectData[] = data?.results ?? [];
+  const router = useRouter();
   return (
     <div className="relative w-full pl-4 pr-4 -z-0 py-16">
-      <div className="w-full flex items-center justify-center">
+      <div className="w-full flex items-center justify-center gap-10">
         <SelectFilter
           data={regions}
           queryKey="sector__region"
+          placeholder="Region"
           label="Region"
           onChange={(key, value) =>
             setFilters((prev) => ({ ...prev, [key]: value }))
           }
+        />
+        <SelectFilter
+          data={sectors}
+          queryKey="sector"
+          label="Sectors"
+          placeholder="Sectors"
+          onChange={(key, value) =>
+            setFilters((prev) => ({ ...prev, [key]: value }))
+          }
+        />
+        <SelectFilter
+          data={directions}
+          queryKey="direction"
+          label="Project direction"
+          placeholder="Project direction"
+          onChange={(key, value) =>
+            setFilters((prev) => ({ ...prev, [key]: value }))
+          }
+        />
+        <InputFilter
+          label="Year"
+          placeholder="Year"
+          onChange={(key, value) =>
+            setFilters((prev) => ({ ...prev, [key]: value }))
+          }
+          queryKey="year"
         />
       </div>
       <Image
@@ -119,7 +163,7 @@ export default function EgologicalClassification() {
                     {t("project_direction")}
                   </th>
                   <th className="text-center px-6 py-5 font-bold bg-gray-100 dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-600 rounded-tr-lg">
-                    {t("details")}
+                    {t("Documents")}
                   </th>
                 </tr>
               </thead>
@@ -145,9 +189,17 @@ export default function EgologicalClassification() {
                         <td className="px-6 py-4 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-700 shadow-sm">
                           {item?.direction.name}
                         </td>
-                        <td className="px-6 py-4 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-700 shadow-sm">
+
+                        <th
+                          onClick={() =>
+                            router.push(
+                              `/international_projects/ecological_classification/docs/${item.id}`
+                            )
+                          }
+                          className="px-6 py-4 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-700 shadow-sm cursor-pointer hover:underline text-blue-600"
+                        >
                           Files
-                        </td>
+                        </th>
                       </tr>
                     ))
                   : null}
