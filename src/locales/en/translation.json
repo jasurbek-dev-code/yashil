@@ -115,5 +115,6 @@
     "phone_required": "Please enter your phone number",
     "phone_invalid": "Enter a valid Uzbek phone number",
     "message_required": "Please write a message"
-  }
+  },
+  "international_projects":"International projects"
 }

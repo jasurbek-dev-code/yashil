@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import SocialBtns from "./SocialBtns";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 export default function HeadSection() {
   const { t } = useTranslation();
@@ -52,7 +52,10 @@ export default function HeadSection() {
           <span>{t("projects")}</span>
         </div>
         {/* Card 4 */}
-        <div className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4">
+        <Link
+          href={"/international_projects"}
+          className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4"
+        >
           <Image
             src="/icons/therd.svg"
             alt="Xalqaro loyihalar"
@@ -60,7 +63,7 @@ export default function HeadSection() {
             height={30}
           />
           <span>{t("international_projects")}</span>
-        </div>
+        </Link>
       </div>
     </div>
   );
