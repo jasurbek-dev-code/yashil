@@ -1,0 +1,16 @@
+export const regions = [
+  { id: 1, name: "andijon", label: "Andijon" },
+  { id: 2, name: "bukhara", label: "Buxoro" },
+  { id: 3, name: "fergana", label: "Farg'ona" },
+  { id: 4, name: "jizzakh", label: "Jizzax" },
+  { id: 5, name: "namangan", label: "Namangan" },
+  { id: 6, name: "navoiy", label: "Navoiy" },
+  { id: 7, name: "qashqadaryo", label: "Qashqadaryo" },
+  { id: 8, name: "qoraqalpogiston", label: "Qoraqalpog'iston" },
+  { id: 9, name: "samarqand", label: "Samarqand" },
+  { id: 10, name: "sirdaryo", label: "Sirdaryo" },
+  { id: 11, name: "surxondaryo", label: "Surxondaryo" },
+  { id: 12, name: "tashkent", label: "Toshkent" },
+  { id: 13, name: "tashkent_vil", label: "Toshkent Viloyati" },
+  { id: 14, name: "xorazm", label: "Xorazm" },
+];

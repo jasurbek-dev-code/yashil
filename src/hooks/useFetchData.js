@@ -3,7 +3,7 @@ import apiClient from '../lib/apiClient';
 
 export function useFetchData(key, endpoint) {
   return useQuery({
-    queryKey: [key],
+    queryKey: [key,endpoint],
     queryFn: async () => {
       const response = await apiClient.get(endpoint);
       return response.data;
