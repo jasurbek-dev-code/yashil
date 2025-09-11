@@ -6,12 +6,12 @@ const ServiceByIdPage = async ({ params }) => {
   const { id } = params;
   return (
     <div className="relative w-full pl-4 pr-4 -z-0 py-16">
-      {/* <Image
+      <Image
         src={greenBanner}
         alt="background"
         fill
         className="-z-20 object-cover"
-      /> */}
+      />
       <NewsById id={id} />
     </div>
   )

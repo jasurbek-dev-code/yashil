@@ -1,6 +1,6 @@
 import greenBanner from "../../../../public/images/green_banner.svg";
 import Image from "next/image";
-import DocsDetails from "../../../components/Docs/DocsById";
+import DocsById from "@/components/Docs/DocsById";
 
 const DocsByIdPage = async ({ params }) => {
   const { id } = params;
@@ -12,7 +12,7 @@ const DocsByIdPage = async ({ params }) => {
         fill
         className="-z-20 object-cover"
       />
-      <DocsByIdPage id={id} />
+      <DocsById id={id} />
     </div>
   );
 };
