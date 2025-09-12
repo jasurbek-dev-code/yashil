@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://yashilloyiha.uz
+
+# Sitemaps
+Sitemap: https://yashilloyiha.uz/sitemap.xml
