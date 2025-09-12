@@ -1,11 +1,15 @@
+"use client"
+
 import Image from "next/image";
 import greenBanner from "../../../public/images/green_banner.svg";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 export default function InternationalProjects() {
   const data: { value: number; label: string }[] = [
     { value: 1, label: "ecological_classification" },
     { value: 2, label: "forest_inventory" },
   ];
+  const {t}=useTranslation()
   return (
     <div className="relative bg-cover bg-center bg-no-repeat py-16 min-h-[50vh] -z-0">
       <Image
@@ -25,7 +29,7 @@ export default function InternationalProjects() {
                 >
                   <div className="flex items-center gap-3 p-5 dark:bg-[#2a2a2a]">
                     <h3 className="text-green-900 dark:text-green-400 text-xl font-semibold">
-                      {item.label}
+                      {t(item.label)}
                     </h3>
                   </div>
                 </Link>

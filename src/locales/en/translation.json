@@ -116,5 +116,18 @@
     "phone_invalid": "Enter a valid Uzbek phone number",
     "message_required": "Please write a message"
   },
-  "international_projects":"International projects"
+  "international_projects": "International projects",
+  "ecological_classification": "Ecological classification",
+  "forest_inventory": "Forest inventory",
+  "year": "Year",
+  "region": "Region",
+  "forestry_name": "Forestry name",
+  "project_direction": "Project direction",
+  "Documents": "Documents",
+  "Region": "Region",
+  "Sector": "Sector",
+  "Year": "Year",
+  "Project direction": "Project direction",
+  "Documents not found": "Documents not found",
+  "Information is available upon additional request !":"Information is available upon additional request !"
 }

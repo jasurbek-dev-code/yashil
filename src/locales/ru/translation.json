@@ -116,5 +116,18 @@
     "phone_invalid": "Введите правильный узбекский номер телефона",
     "message_required": "Пожалуйста, введите сообщение"
   },
-  "international_projects": "Международные проекты"
+  "international_projects": "Международные проекты",
+  "ecological_classification": "Экологическая классификация",
+  "forest_inventory": "Лесная инвентаризация",
+  "year": "Год",
+  "region": "Регион",
+  "forestry_name": "Название лесхоза",
+  "project_direction": "Направление проекта",
+  "Documents": "Документы",
+  "Region": "Регион",
+  "Sector": "Сектор",
+  "Year": "Год",
+  "Project direction": "Направление проекта",
+  "Documents not found": "Документы не найдены",
+  "Information is available upon additional request !":"Информация предоставляется по дополнительному запросу !"
 }

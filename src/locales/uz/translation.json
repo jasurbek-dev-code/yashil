@@ -116,5 +116,18 @@
     "phone_invalid": "To'g'ri O‘zbekiston telefon raqamini kiriting",
     "message_required": "Iltimos, izoh yozing"
   },
-  "international_projects": "Xalqaro loyihalar"
+  "international_projects": "Xalqaro loyihalar",
+  "ecological_classification": "Ekologik klassifikatsiya",
+  "forest_inventory": "O‘rmon inventarizatsiyasi",
+  "year": "Yil",
+  "region": "Hudud",
+  "forestry_name": "O‘rmon xo‘jaligi nomi",
+  "project_direction": "Loyiha yo‘nalishi",
+  "Documents": "Hujjatlar",
+  "Region": "Hudud",
+  "Sector": "Sektor",
+  "Year": "Yil",
+  "Project direction": "Loyiha yo‘nalishi",
+  "Documents not found": "Hujjatlar topilmadi",
+  "Information is available upon additional request !": " Ma'lumotlar qo'shimcha so'rov asosida taqdim qilinadi !"
 }

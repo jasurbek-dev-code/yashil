@@ -40,17 +40,19 @@ export default function Docs({ params }: { params: Promise<{ id: string }> }) {
     `projects/${id}`
   );
   const result: ProjectData = data ?? {};
-  console.log(result);
   return (
-    <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="min-h-[60vh] flex items-center justify-center flex-col py-5">
       {isLoading ? (
         <div>
           <div className="w-[70px] h-[70px] border-2 border-blue-500 border-dashed rounded-full animate-spin" />
         </div>
       ) : result.documents.length ? (
-        <div className="flex items-center justify-center gap-[50px] w-[1000px] py-[100px] bg-gray-100 rounded-lg">
+        <div className="flex items-center justify-center gap-[50px] w-[1000px] py-[100px] bg-gray-100 rounded-lg flex-wrap">
           {result.documents.map((doc) => (
-            <div key={doc.id} className="min-w-[200px] min-h-[50px] py-2 bg-white rounded-md flex items-center gap-[20px] px-4">
+            <div
+              key={doc.id}
+              className="min-w-[200px] min-h-[50px] py-2 bg-white rounded-md flex items-center gap-[20px] px-4 "
+            >
               <Image
                 src={"/icons/document.svg"}
                 width={"40"}
@@ -58,20 +60,29 @@ export default function Docs({ params }: { params: Promise<{ id: string }> }) {
                 alt={doc.file}
               />
               <div>
-                <Link href={doc.file} className="text-[18px] text-blue-600 hover:underline cursor-pointer" target="_blank">
+                <Link
+                  href={doc.file}
+                  className="text-[18px] text-blue-600 hover:underline cursor-pointer"
+                  target="_blank"
+                >
                   {doc.file.replace(
                     "http://yashilloyiha.uz/media/project_documents/",
                     ""
                   )}
                 </Link>
-                <p className="text-[14px] text-gray-500">{doc.uploaded_at.substring(0, 10)}</p>
+                <p className="text-[14px] text-gray-500">
+                  {doc.uploaded_at.substring(0, 10)}
+                </p>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <h1 className="text-[30px]">Documents not found</h1>
+        <h1 className="text-[30px]">{t(`Documents not found`)}</h1>
       )}
+      <div className="pt-10">
+        <h1 className="text-[22px] text-red-500">{t("Information is available upon additional request !")}</h1>
+      </div>
     </div>
   );
 }

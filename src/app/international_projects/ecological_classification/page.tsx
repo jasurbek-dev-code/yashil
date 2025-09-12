@@ -9,8 +9,8 @@ import { useTranslation } from "react-i18next";
 import { useFetchData } from "@/hooks/useFetchData";
 import { regions } from "@/constants/regions";
 import InputFilter from "@/components/Fiters/input-filter";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Pagination from "@/components/Pagination/pagination";
 
 interface Document {
   id: number;
@@ -35,13 +35,15 @@ interface ProjectData {
   year: number;
   direction: Direction;
   sector: Sector;
-  created_at: string; // ISO datetime
+  created_at: string;
   documents: Document[];
 }
 
 export default function EgologicalClassification() {
   const { t, i18n } = useTranslation();
-
+  const [paginationPages, setPaginationPages] = useState(0);
+  const [pageSize, setPageSize] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState<{
     year: number | null;
     direction: number | null;
@@ -89,9 +91,15 @@ export default function EgologicalClassification() {
       value: item.id,
       label: item.name,
     })) ?? [];
-
   const results: ProjectData[] = data?.results ?? [];
   const router = useRouter();
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+
+  const cuttedData = results
+    ? results.slice(startIndex, endIndex)
+    : [];
+
   return (
     <div className="relative w-full pl-4 pr-4 -z-0 py-16">
       <div className="w-full flex items-center justify-center gap-10">
@@ -107,8 +115,8 @@ export default function EgologicalClassification() {
         <SelectFilter
           data={sectors}
           queryKey="sector"
-          label="Sectors"
-          placeholder="Sectors"
+          label="Sector"
+          placeholder="Sector"
           onChange={(key, value) =>
             setFilters((prev) => ({ ...prev, [key]: value }))
           }
@@ -139,7 +147,6 @@ export default function EgologicalClassification() {
       />
       <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0 mt-10 mb-10">
         <div className="relative z-10 bg-white dark:bg-[#0f1a0f] backdrop-blur-md rounded-2xl shadow-xl max-w-[1200px] mx-auto overflow-hidden">
-          {/* Table */}
           <div className="overflow-x-auto px-4 my-5">
             <table className="min-w-full text-sm text-black-700 dark:text-gray-200">
               <thead>
@@ -157,7 +164,7 @@ export default function EgologicalClassification() {
                     {t("region")}
                   </th>
                   <th className="text-center px-6 py-5 font-bold bg-gray-100 dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-600 rounded-tr-lg">
-                    {t("foresty_name")}
+                    {t("forestry_name")}
                   </th>
                   <th className="text-center px-6 py-5 font-bold bg-gray-100 dark:bg-[#1a1a1a] border border-gray-300 dark:border-gray-600 rounded-tr-lg">
                     {t("project_direction")}
@@ -168,11 +175,11 @@ export default function EgologicalClassification() {
                 </tr>
               </thead>
               <tbody>
-                {results?.length
-                  ? results?.map((item, i) => (
+                {cuttedData?.length
+                  ? cuttedData?.map((item, i) => (
                       <tr key={i}>
                         <td className="text-center px-6 py-4 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-700 rounded-bl-lg shadow-sm">
-                          {item?.id}
+                          {(currentPage - 1) * pageSize + i + 1}
                         </td>
                         <td className="px-6 py-4 bg-white dark:bg-transparent border border-gray-300 dark:border-gray-700 shadow-sm">
                           {item?.name}
@@ -207,10 +214,17 @@ export default function EgologicalClassification() {
             </table>
           </div>
 
-          {/* Footer */}
           <CardFooter />
         </div>
       </div>
+      <Pagination
+        paginationPages={results.length}
+        currentPage={currentPage}
+        pageSize={pageSize}
+        changePage={(pageNumber: number | string) =>
+          typeof pageNumber === "number" && setCurrentPage(pageNumber)
+        }
+      />
     </div>
   );
 }
