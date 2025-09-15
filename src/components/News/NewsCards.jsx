@@ -26,7 +26,7 @@ const NewsCards = () => {
     (page - 1) * itemsPerPage,
     page * itemsPerPage
   );
-
+  console.log(data)
   return (
     <div className="relative w-full pl-4 xl:pl-0 pr-4 -z-0">
       <div className="relative z-10 bg-white dark:bg-[#0f1a0f] backdrop-blur-md rounded-2xl shadow-xl max-w-[1000px] mx-auto overflow-hidden">

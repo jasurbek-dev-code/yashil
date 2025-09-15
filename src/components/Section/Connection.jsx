@@ -45,7 +45,7 @@ const Connection = () => {
           </div>
           <div>
             <p className="text-gray-400">{t("phone")}</p>
-            <p className="text-black">71-262-2934</p>
+            <p className="text-black">+998 (95)-520-06-06</p>
           </div>
         </div>
       </div>

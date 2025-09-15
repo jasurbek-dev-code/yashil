@@ -102,7 +102,7 @@ export default function TopHeader() {
           {/* Telefon raqam */}
           <div className="inline-flex items-center gap-1.5 text-white dark:text-gray-100 text-lg">
             <Image src="/icons/call.svg" alt="call" width={20} height={20} />
-            +998 (71) 256-86-53
+            +998 (95)-520-06-06
           </div>
           {/* Til tanlash */}
           <LanguageSelect />
