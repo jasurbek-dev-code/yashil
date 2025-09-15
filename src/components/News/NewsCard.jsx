@@ -9,7 +9,6 @@ const NewsCard = ({ imageSrc, description, title, views, id }) => {
   const handleClick = () => {
     router.push(`/news/institute-news/${id}`);
   };
-
   return (
     <div
     onClick={handleClick} 
@@ -28,7 +27,7 @@ const NewsCard = ({ imageSrc, description, title, views, id }) => {
       <div className="flex flex-col flex-1 justify-between p-3 gap-2">
         <div>
           <p className="text-gray-500 dark:text-gray-400 text-sm mb-2">
-            {description.length > 100 ? description.slice(0, 100) + "..." : description}
+            {description?.length > 100 ? description.slice(0, 100) + "..." : description}
           </p>
           <h3 className="text-[15px] font-semibold text-gray-900 dark:text-white">
             {title}

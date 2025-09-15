@@ -41,7 +41,6 @@ interface ProjectData {
 
 export default function EgologicalClassification() {
   const { t, i18n } = useTranslation();
-  const [paginationPages, setPaginationPages] = useState(0);
   const [pageSize, setPageSize] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState<{
