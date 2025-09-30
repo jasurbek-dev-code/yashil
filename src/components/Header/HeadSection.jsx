@@ -7,7 +7,11 @@ import Link from "next/link";
 
 export default function HeadSection() {
   const { t } = useTranslation();
-
+   const handleScroll = () => {
+     const section = document.getElementById("institue_projects");
+     console.log(section)
+     section?.scrollIntoView({ behavior: "smooth" });
+   };
   return (
     <div className="bg-transparent px-5 py-[60px] text-center text-white dark:text-gray-100 max-w-[1920px] mx-auto relative">
       <SocialBtns />
@@ -25,13 +29,21 @@ export default function HeadSection() {
 
       <div className="my-20 flex justify-center flex-wrap gap-5">
         {/* Card 1 */}
-        <div className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4">
+        <Link
+          href={"https://lex.uz/ru/docs/-6600413"}
+          target="_blank"
+          className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4"
+        >
           <Image src="/icons/gerb.svg" alt="Gerb" width={30} height={30} />
           <span>{t("uzbekistan_2030")}</span>
-        </div>
+        </Link>
 
         {/* Card 2 */}
-        <div className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4">
+        <Link
+          href={"https://lex.uz/uz/docs/-7552003"}
+          target="_blank"
+          className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4"
+        >
           <Image
             src="/icons/nxol.svg"
             alt="Yashil makon"
@@ -39,10 +51,13 @@ export default function HeadSection() {
             height={30}
           />
           <span>{t("green_space_project")}</span>
-        </div>
+        </Link>
 
         {/* Card 3 */}
-        <div className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4">
+        <div
+          onClick={handleScroll}
+          className="cursor-pointer bg-white/10 dark:bg-white/5 rounded-2xl px-5 py-7 w-[260px] text-white dark:text-gray-100 text-[16px] font-medium backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg transition-transform hover:-translate-y-1 flex flex-col items-center gap-4"
+        >
           <Image
             src="/icons/therd.svg"
             alt="Loyihalar"

@@ -50,8 +50,9 @@ const ProjectsCarousel = () => {
     ],
   };
 
+
   return (
-    <div className="relative py-16 overflow-hidden">
+    <div className="relative py-16 overflow-hidden" id="institue_projects">
       <Image
         src={greenBanner}
         alt="background"
@@ -70,8 +71,9 @@ const ProjectsCarousel = () => {
             return (
               <div key={item.id} className="px-2">
                 <div
-                  className={`relative h-[500px] rounded-xl overflow-hidden shadow-lg transition-all duration-300 transform ${isActive ? "scale-100" : "scale-90 opacity-60"
-                    } flex flex-col`}
+                  className={`relative h-[500px] rounded-xl overflow-hidden shadow-lg transition-all duration-300 transform ${
+                    isActive ? "scale-100" : "scale-90 opacity-60"
+                  } flex flex-col`}
                 >
                   <div className="relative flex-1 w-full">
                     <Image
@@ -82,9 +84,7 @@ const ProjectsCarousel = () => {
                     />
                   </div>
                   <div className="bg-black bg-opacity-70 text-white text-center p-4">
-                    <p className="text-sm md:text-base">
-                      {item?.title}
-                    </p>
+                    <p className="text-sm md:text-base">{item?.title}</p>
                   </div>
                 </div>
               </div>

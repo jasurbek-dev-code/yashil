@@ -5,9 +5,9 @@ import greenBanner from "../../../public/images/green_banner.svg";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 export default function InternationalProjects() {
-  const data: { value: number; label: string }[] = [
-    { value: 1, label: "ecological_classification" },
-    { value: 2, label: "forest_inventory" },
+  const data: { value: number; label: string,href:string }[] = [
+    { value: 1, label: "ecological_classification",href:"/international_projects/ecological_classification" },
+    { value: 2, label: "forest_inventory",href:"" },
   ];
   const {t}=useTranslation()
   return (
@@ -23,7 +23,7 @@ export default function InternationalProjects() {
           {data?.length
             ? data?.map((item) => (
                 <Link
-                  href="/international_projects/ecological_classification"
+                  href={item.href}
                   key={item.value}
                   className="cursor-pointer bg-white dark:bg-[#2a2a2a] rounded-xl shadow-md transition-transform duration-200 hover:-translate-y-1 flex flex-col overflow-hidden"
                 >
