@@ -9,7 +9,6 @@ export default function HeadSection() {
   const { t } = useTranslation();
    const handleScroll = () => {
      const section = document.getElementById("institue_projects");
-     console.log(section)
      section?.scrollIntoView({ behavior: "smooth" });
    };
   return (
